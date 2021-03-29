@@ -64,19 +64,23 @@ The features that will be utilised in this project will be as follows:
 
 #### Databases
 1. [Mongodb:](https://www.mongodb.com/)
-    - Database which stores the data to be recalled onto the website 
+    - Database which stores the data to be recalled onto the website.
 
 #### Frameworks
-
+1. [Materialize:](https://materializecss.com/)
+    - Responsive front-end framework to assist with the responsiveness and styling of the website.
+1. [JQuery Core 3.6.0:](https://code.jquery.com/)
+    - JQuery library was implemented to use features within Materialize
 
 #### Library
-
+1. [Font Awesome 5.13.3:](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css)
+    - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
 #### Programs
 1. [Grammerly:](https://app.grammarly.com/)
     - Online tool which assists with the English grammar.
 1. [GitHub:](https://github.com/)
-    - GitHub is used to store the code of the project after being pushed from GitPod
+    - GitHub is used to store the code of the project after being pushed from GitPod.
 1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
     - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
 1. [Balsamiq:](https://balsamiq.com/)
