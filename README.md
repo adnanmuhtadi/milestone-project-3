@@ -83,6 +83,8 @@ The features that will be utilised in this project will be as follows:
     - Balsamiq was used to create the [wireframes](#) during the design process.
 1. [RandomKeygen:](https://randomkeygen.com/)
     - A tool to randomly generate a password.
+1. [Heroku:](https://www.heroku.com)
+    - A platform as a service (PaaS) that enables me to deploy my website in the cloud.
 
 #### Templates
 
