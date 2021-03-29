@@ -4,9 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Manager</title>
+    <title>Recipe Manager</title>
 </head>
 <body>
+    <!-- the variable that is created to display content from the DB "recipe" -->
     {% for recipe in recipes %}
         {{ recipe.recipe_name }}<br>
         {{ recipe.meal_name }}<br>
