@@ -1,17 +1,11 @@
-  
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Manager</title>
-</head>
-<body>
+{% extends "base.html" %}
+{% block content %}
+
     <!-- the variable that is created to display content from the DB "recipe" -->
     {% for recipe in recipes %}
         {{ recipe.recipe_name }}<br>
         {{ recipe.meal_name }}<br>
         {{ recipe.is_share }}<br>
     {% endfor %}
-</body>
-</html>
+    
+{% endblock %}
