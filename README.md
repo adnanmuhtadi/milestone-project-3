@@ -57,11 +57,14 @@ The features that will be utilised in this project will be as follows:
     - CSS3 was used to provide my website with style
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
     - JavaScript was used to make the site interactive
+-   [Python](#)
+    - 
 
-### APIs, Frameworks, Libraries, Programs and Templates Used
+### Databases, Frameworks, Libraries, Programs and Templates Used
 
-#### APIs
-
+#### Databases
+1. [Mongodb:](https://www.mongodb.com/)
+    - Database which stores the data to be recalled onto the website 
 
 #### Frameworks
 
@@ -70,7 +73,14 @@ The features that will be utilised in this project will be as follows:
 
 
 #### Programs
-
+1. [Grammerly:](https://app.grammarly.com/)
+    - Online tool which assists with the English grammar.
+1. [GitHub:](https://github.com/)
+    - GitHub is used to store the code of the project after being pushed from GitPod
+1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
+    - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
+1. [Balsamiq:](https://balsamiq.com/)
+    - Balsamiq was used to create the [wireframes](#) during the design process.
 
 #### Templates
 
