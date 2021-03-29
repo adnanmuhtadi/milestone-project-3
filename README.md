@@ -81,6 +81,8 @@ The features that will be utilised in this project will be as follows:
     - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
 1. [Balsamiq:](https://balsamiq.com/)
     - Balsamiq was used to create the [wireframes](#) during the design process.
+1. [RandomKeygen:](https://randomkeygen.com/)
+    - A tool to randomly generate a password.
 
 #### Templates
 
