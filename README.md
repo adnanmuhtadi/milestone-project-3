@@ -37,7 +37,23 @@
 
 *   ### Wireframes
 
+    #### Home Page
+    - Home Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
+    - Home Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
+    - Home Page Wireframe (Mobile) - [View PDF]() | [View Image]()
 
+    #### Register Page
+    - Register Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
+    - Register Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
+    - Register Page Wireframe (Mobile) - [View PDF]() | [View Image]()
+
+    #### Login Page
+    - Login Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
+    - Login Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
+    - Login Page Wireframe (Mobile) - [View PDF]() | [View Image]()
+
+    Master Wireframe
+    - Master Wireframe - [View]()
     
 ## Features
 
