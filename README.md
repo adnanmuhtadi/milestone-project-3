@@ -2,9 +2,15 @@
 
 [View project here](https://home-cooking-milestone3-proj.herokuapp.com/)
 
-This interactive site is based around individuals who would like a place to keep their recipes all in one place as well as share it with the rest of the world. Being able to create new recipes, edit and delete recipes on demand from the computers to their mobile phones. If any issues arise, they would have the chance to reach out to the site administrator by sending them an email. 
+This interactive site is based around individuals who would like a place to keep their recipes all 
+in one place as well as share it with the rest of the world. Being able to create new recipes, 
+edit and delete recipes on demand from the computers to their mobile phones. They would have the chance to write 
+down the ingredients needed and the steps required to make the specific dish. 
+If any issues arise, they would have the chance to reach out to the site administrator by sending them an email. 
 
-This site would be utilizing Python which was taught from the Code Institute as well as using MongoDB. I will be using various technologies as well such as HTML5, CSS3, JQuery and Materialize. This project will be responsive and accessible to different size browsers and devices.
+This site would be utilizing Python which was taught from the Code Institute as well as using MongoDB. 
+I will be using various technologies as well such as HTML5, CSS3, JQuery and Materialize. 
+This project will be responsive and accessible to different size browsers and devices.
 
 <h2 align="center"><img src="#">
 
@@ -12,7 +18,9 @@ This site would be utilizing Python which was taught from the Code Institute as 
 
 ### The Audience
 
-
+The intended audience for this project is all individuals, from students who are about to leave home for the first time to go 
+to universities and want to write down Mums cooking, all way to individuals who like to experiment in the kitchen but need a 
+place to remember what they have done.  
 
 ### User Objectives
 
@@ -24,7 +32,9 @@ This site would be utilizing Python which was taught from the Code Institute as 
 
 ## User Stories
 
+The intended type of users for which this site would be focused towards are individuals who would like to store their homemade recipes online
 
+1. As a user,
 
 ## Design
 
@@ -61,6 +71,8 @@ This site would be utilizing Python which was taught from the Code Institute as 
 
 The features that will be utilised in this project will be as follows:
 
+
+
 ### Existing Features
 
 
@@ -72,11 +84,11 @@ The features that will be utilised in this project will be as follows:
 -   [HTML5](https://en.wikipedia.org/wiki/HTML5)
     - HTML5 was used to structure and present content on my website.
 -   [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
-    - CSS3 was used to provide my website with style
+    - CSS3 was used to provide my website with style.
 -   [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    - JavaScript was used to make the site interactive
--   [Python](#)
-    - 
+    - JavaScript was used to make the site interactive.
+-   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+    - Python was used as the backend language to access and parse data.
 
 ### Databases, Frameworks, Libraries, Programs and Templates Used
 
@@ -99,6 +111,8 @@ The features that will be utilised in this project will be as follows:
     - Online tool which assists with the English grammar.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the code of the project after being pushed from GitPod.
+1. [GitPod:](https://www.gitpod.io/)
+    - A cloud development environment that allows us to create the website.
 1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
     - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
 1. [Balsamiq:](https://balsamiq.com/)
@@ -110,6 +124,8 @@ The features that will be utilised in this project will be as follows:
 
 #### Templates
 
+1. [Github Code Institute Template:](https://github.com/Code-Institute-Org/gitpod-full-template)
+    - A template provided by the Code Institute which has the preinstalled tools that will get us started.
 
 ## Testing
 
