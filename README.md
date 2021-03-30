@@ -1,8 +1,10 @@
 <h1 align="center">Milestone Project 3 - Home Cooking</h1>
 
-[View project here](#)
+[View project here](https://home-cooking-milestone3-proj.herokuapp.com/)
 
+This interactive site is based around individuals who would like a place to keep their recipes all in one place as well as share it with the rest of the world. Being able to create new recipes, edit and delete recipes on demand from the computers to their mobile phones. If any issues arise, they would have the chance to reach out to the site administrator by sending them an email. 
 
+This site would be utilizing Python which was taught from the Code Institute as well as using MongoDB. I will be using various technologies as well such as HTML5, CSS3, JQuery and Materialize. This project will be responsive and accessible to different size browsers and devices.
 
 <h2 align="center"><img src="#">
 
