@@ -24,7 +24,16 @@ place to remember what they have done.
 
 ### User Objectives
 
+To have a place to store customised recipes and for them to be accessed anywhere from any device. The user would be able to 
+register to begin the journey of adding a recipe to their account. From there, they would be able to log in and create their recipe. 
+They would be able to add the ingredients and steps taken to make their dish once saved. The user would have the option to edit, 
+delete and even share their recipes because by default all recipes would be set to private. 
 
+The user would be able to edit their recipes and if they are logged into their account. Users who do not have an account but can 
+see shared recipes, will not be able to edit or amend recipes. If the user is trying to look for something, there would be search 
+functionality for them to be able to search by ingredient or by the name of the dish. Once all is achieved, the user can log out. 
+If the user is trying to look for something, there would be search functionality for them to be able to search by ingredient or 
+by the name of the dish. Once all is achieved, the user can log out. 
 
 ### My Objectives
 
@@ -32,14 +41,17 @@ place to remember what they have done.
 
 ## User Stories
 
-The intended type of users for which this site would be focused towards are individuals who would like to store their homemade recipes online
+The intended type of users for which this site would be focused towards are individuals who would like to store their 
+homemade recipes online
 
 1. As a user,
 
 ## Design
 
 -   #### Colour Scheme
-    -   
+    -   The colour scheme I will be working with is mainly white but with a touch of greasy of-white/cream colour 
+    to portray cooking and grease as well as it is most commonly used for baking. The text colour will be black to keep 
+    the text easy to read (Will be using WebAIM to check the contrast of the colour scheme).
 
 -   #### Typography
     -   
