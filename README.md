@@ -37,7 +37,20 @@ by the name of the dish. Once all is achieved, the user can log out.
 
 ### My Objectives
 
+My objectives are going to be achieved by taking images from free image stock websites that would have images of recipes, meals and 
+kitchen crockery that I want to advertise. The recipes and ingredients would be taken from other websites to use as the data being 
+pulled from the database. The users would be able to contact the site admin if they have any queries or questions as it would 
+incorporate a contact form that would be linked to a live email address. The site would have a registration form and a login/logout 
+functionality to allow users to have their profiles. It would also have validation included with error messages if 
+the username or password is wrong.
 
+The site would have a CRUD software architectural style (Create, Read, Update and Delete) for basic operations of persistent storage 
+with the recipes being added by the users. Validation would also be in this part of the site as only the recipe owner would be able 
+to edit and share the specific recipe.
+
+The navigation bar and footer would be built within the base file and the content for the rest of the site would be built within 
+their specific .html files. Within the footer, there would be social media links which would connect the user to the sites alternative 
+social platforms.
 
 ## User Stories
 
