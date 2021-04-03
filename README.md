@@ -195,7 +195,16 @@ The features that will be utilised in this project will be as follows:
 
 ### Making a Clone
 
+To make a clone, I used the [Code Institute Template](https://github.com/Code-Institute-Org/gitpod-full-template) that was provided and from there, I download the 
+[GitPod extension](https://www.gitpod.io/docs/browser-extension/) to be able to direct me to the cloud development tool.
 
+When using GitPid, whenever code was created and saved, I would use the terminal to push it to GitHub by using the following commands:
+1. git status (to check what needs to be pushed to GitHub)
+1. git add -A
+1. git commit -m "[Comment]"
+1. git push
+
+<img src="documentation/images/terminal-clone.png">
 
 ## Credits
 
