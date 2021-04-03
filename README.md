@@ -54,10 +54,15 @@ homemade recipes online
     the text easy to read (Will be using WebAIM to check the contrast of the colour scheme).
 
 -   #### Typography
-    -   
+    -   I have chosen to use [Merriweather](https://fonts.google.com/specimen/Merriweather) and [Heebo](https://fonts.google.com/specimen/Heebo) 
+    font as the main fonts throughout the website with Sans Serif as the emergency font in the case for any reason 
+    the font is not being imported into the site correctly. Both [Merriweather](https://fonts.google.com/specimen/Merriweather)
+    and [Heebo](https://fonts.google.com/specimen/Heebo) are attractive fonts to use as it easy to clear and easy to read, they are also has a touch formality 
+    without being formal.
 
 -   #### Imagery
-    -   
+    -   The images that were used are based on the content of what it is portraying. Displaying ingredients, finished 
+    meals and kitchen crockery without diverting them for the task they need to complete. 
 
 *   ### Wireframes
 
@@ -115,6 +120,8 @@ The features that will be utilised in this project will be as follows:
     - JQuery library was implemented to use features within Materialize
 
 #### Library
+1. [Google Fonts:](https://fonts.google.com/)
+    - Google fonts were used to import the font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome 5.13.3:](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
 
