@@ -57,7 +57,16 @@ social platforms.
 The intended type of users for which this site would be focused towards are individuals who would like to store their 
 homemade recipes online
 
-1. As a user,
+1. As a user, I want to be able to register to the website so I can have an account.
+1. As a user, I want to be able to login to the website so I start creating recipes.
+1. As a user, I want an error message to appear if I typed my username/password incorrectly so I can attempt again with the correct username/password.
+1. As a user, I want to be able to create and save a recipe and categories so I can start building a list of meals.
+1. As a user, I want to be able to add my recipes to pre-created and newly-created categories.
+1. As a user, I want to be able to update the saved recipe so I can change what has been saved.
+1. As a user,  I want to be able to delete a saved recipe so I can remove it from the list of saved recipes.
+1. As a user, I want to share my recipes with users who have not logged in so I can share my favourite recipes with other site visitors.
+1. As a user, I want to be to send an email to the site admin so I can contact them if I have any issues.
+1. As a user, I want to be able to logout from the website so I can go on other websites.
 
 ## Design
 
