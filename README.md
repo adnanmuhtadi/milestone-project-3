@@ -179,6 +179,8 @@ The features that will be utilised in this project will be as follows:
     - GitHub is used to store the code of the project after being pushed from GitPod.
 1. [GitPod:](https://www.gitpod.io/)
     - A cloud development environment that allows us to create the website.
+1. [GitHub Desktop:](https://desktop.github.com/)
+    - A tool that allows you to interact with GitHub from the desktop
 1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
     - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
 1. [Balsamiq:](https://balsamiq.com/)
@@ -225,11 +227,36 @@ The features that will be utilised in this project will be as follows:
 
 ## Deployment
 
-
+The project was deployed to Heroku and connected to GitHub pages using the following method:
+1. To direct Heroku which application and dependencies are required to run the app being developed, 
+create a requirements file.
+1. Install the Procfile file as that what Heroku looks for to know which files run the app and how to.
+1. In [Heroku Dashboard](https://dashboard.heroku.com/), click on 'New', then click on 'Create new app'.
+1. Providing it with a unique name and changing the region to 'Europe'. Then click on 'Create app'.
+1. In 'Deployment method' click on 'GitHub', Ensuring your GitHub username is visible, either 
+search for your repository or type in exactly how your repository is spelt in GitHub. 
+When it finds your Repository, it will be visible and you would click on 'Connect'
+1. Scroll to the top of the page and click on 'Settings'.
+1. Scroll down till you are in 'Config Vars' since we hide the environment variables. It would need to be 
+added into Heroku manually. Would need to add the following: IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME.
+1. Going back to the terminal within GitPod. Commit and push the files that were created.
+1. nce successfully pushed into GitHub, go back to Heroku and click on 'Enable Automatic 
+Deployment' and then 'Deploy Branch'.
+1. Once completed, a 'View' button would appear meaning the app has been deployed and successfully connected to Github.
 
 ### Making a Clone
 
+I had to get the SSH key from the repository which allowed me to clone the repository to my local hard drive. 
+The method which I used to clone the project was via Github Desktop. I was able to connect my Github 
+repository and clone my files through that method. 
 
+1. Open the repository that needs to be cloned.
+1. On the top-right, above the files, you will see a button 'Code' with an arrow down.
+1. Once clicked, a drop-down would appear which would give me the option 'Open with GitHub Desktop' 
+(as I had already pre-installed [GitHub Desktop]() previously).
+1. Once clicked, it would automatically open the application and request where for it to be saved.
+
+<img src="documentation/images/making-a-clone.png">
 
 ## Credits
 
