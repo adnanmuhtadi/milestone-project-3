@@ -28,6 +28,10 @@ nav ul a {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 } 
 
+.carousel {
+    height: 90vh !important;
+}
+
 /*-------------------------- footer */
 .page-footer{
     position: relative;
@@ -45,6 +49,10 @@ nav ul a {
 .quicklinks a, 
 .fab{
     color: #000000;
+}
+
+.quicklinks a:hover, 
+.fab:hover{
 }
 
 .social-media {

@@ -9,6 +9,9 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" type="text/css"/>
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
+    <!-- CDN for hover effects -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css" 
+        integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" type="text/css"/>
     <!-- Custom script-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     
@@ -20,7 +23,7 @@
 <body>
 
     <header>
-        <nav class="nav-extended text-shadow orange accent-1">
+        <nav class="nav-extended text-shadow orange lighten-5">
             <!-- Top navbar -->
             <div class="nav-wrapper">
             <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
@@ -53,12 +56,12 @@
     {% block content %}
     {% endblock %}
 
-    <footer class="page-footer black-text orange accent-1">
+    <footer class="page-footer black-text orange lighten-5">
             <div class="row">
                 <div class="shortcuts col s12 m4 l4">
                     <h5 class="footer-title">Quick Links</h5>
                     <ul class="quicklinks col s4 m6"> 
-                        <li><a href="#">Profile</a></li>
+                        <li><a class="hvr-grow" href="#">Profile</a></li>
                         <li><a href="#">New Recipe</a></li>
                         <li><a href="#">New Category</a></li>
                     </ul>
