@@ -1,4 +1,4 @@
 $(document).ready(function () {
     //for the Navbar
-    $(".sidenav").sideNav();      
+    $(".sidenav").sidenav({edge: "right"});   
 });
