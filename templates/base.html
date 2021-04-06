@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    
     <!-- Fontawesome, CDN taken from cdnjs.com-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" 
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" type="text/css"/>
@@ -11,34 +11,76 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" type="text/css">
     <!-- Custom script-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
+    
     {% block styles %}
     {% endblock %}
-    <title>Home Cooking</title>
+    
+    <title>Task Manager</title>
 </head>
 <body>
 
-      <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="fas fa-bars"></i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
-      </ul>
-    </div>
-  </nav>
+    <header>
+        <nav class="nav-extended text-shadow orange accent-1">
+            <!-- Top navbar -->
+            <div class="nav-wrapper">
+            <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">New Recipe</a></li>
+                <li><a href="#">New Category</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+            </div>
+        </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
+        <!-- Mobile sidenav -->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="centre-align orange accent-1 black-text text-darken-4">Home Cooking</h4></li>
+                <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">New Recipe</a></li>
+                <li><a href="#">New Category</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Register</a></li>
+        </ul>
+    </header>
 
     {% block content %}
     {% endblock %}
+
+    <footer class="page-footer black-text orange accent-1">
+            <div class="row">
+                <div class="shortcuts col s12 m4 l4">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="quicklinks col s4 m6"> 
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">New Recipe</a></li>
+                        <li><a href="#">New Category</a></li>
+                    </ul>
+                    <ul class=" quicklinks col s4 m6">
+                        <li><a href="#">Log Out</a></li>
+                        <li><a href="#">Log In</a></li>
+                        <li><a href="#">Register</a></li>
+                    </ul>
+                </div>
+                <div class="social-media col s12 m4 l4 center">
+                    <h5 class="footer-title">Social Links</h5>
+                    <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>                                
+                </div> 
+                <div class="col s12 m4 l4">
+                    <p class="copyright right">© 2014 Copyright Text</p>
+                </div>
+            </div>
+    </footer>
 
     <!-- jquery from code.jquery.com -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
@@ -47,6 +89,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Custom Script -->
     <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
     {% block scripts %}
     {% endblock %}
 </body>

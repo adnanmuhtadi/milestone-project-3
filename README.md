@@ -89,22 +89,47 @@ homemade recipes online
 *   ### Wireframes
 
     #### Home Page
-    - Home Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
-    - Home Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
-    - Home Page Wireframe (Mobile) - [View PDF]() | [View Image]()
-
-    #### Register Page
-    - Register Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
-    - Register Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
-    - Register Page Wireframe (Mobile) - [View PDF]() | [View Image]()
+    - Home Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-web-browser.png)
+    - Home Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.png)    
+    - Home Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-mobile.png)
 
     #### Login Page
-    - Login Page Wireframe (Web Browser) - [View PDF]() | [View Image]()
-    - Login Page Wireframe (Tablet) - [View PDF]() | [View Image]()    
-    - Login Page Wireframe (Mobile) - [View PDF]() | [View Image]()
+    - Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-web-browser.png)
+    - Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-tablet.png)    
+    - Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-mobile.png)
+
+    #### Register Page
+    - Register Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-web-browser.png)
+    - Register Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-tablet.png)    
+    - Register Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-mobile.png)
+
+    #### Home Login Page
+    - Home Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.png)
+    - Home Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.png)    
+    - Home Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.png)
+
+    #### New Meal Page
+    - New Meal Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-web-browser.png)
+    - New Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-tablet.png)    
+    - New Meal Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-mobile.png)
+
+    #### Profile Page
+    - Profile Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-web-browser.png)
+    - Profile Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-tablet.png)    
+    - Profile Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-mobile.png)
+
+    #### Admin Page
+    - Admin Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-web-browser.png)
+    - Admin Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-tablet.png)    
+    - Admin Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-mobile.png)
+
+    #### Contact Us Page
+    - Contact Us Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-web-browser.png)
+    - Contact Us Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-tablet.png)    
+    - Contact Us Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-page-mobile.png)
 
     Master Wireframe
-    - Master Wireframe - [View]()
+    - Master Wireframe - [View](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/homemade-recipes.bmpr)
     
 ## Features
 
@@ -154,6 +179,8 @@ The features that will be utilised in this project will be as follows:
     - GitHub is used to store the code of the project after being pushed from GitPod.
 1. [GitPod:](https://www.gitpod.io/)
     - A cloud development environment that allows us to create the website.
+1. [GitHub Desktop:](https://desktop.github.com/)
+    - A tool that allows you to interact with GitHub from the desktop
 1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
     - Default browser used to visually display the build process as well as utilising Chrome Dev Tools to assist where needed.
 1. [Balsamiq:](https://balsamiq.com/)
@@ -200,20 +227,36 @@ The features that will be utilised in this project will be as follows:
 
 ## Deployment
 
-
+The project was deployed to Heroku and connected to GitHub pages using the following method:
+1. To direct Heroku which application and dependencies are required to run the app being developed, 
+create a requirements file.
+1. Install the Procfile file as that what Heroku looks for to know which files run the app and how to.
+1. In [Heroku Dashboard](https://dashboard.heroku.com/), click on 'New', then click on 'Create new app'.
+1. Providing it with a unique name and changing the region to 'Europe'. Then click on 'Create app'.
+1. In 'Deployment method' click on 'GitHub', Ensuring your GitHub username is visible, either 
+search for your repository or type in exactly how your repository is spelt in GitHub. 
+When it finds your Repository, it will be visible and you would click on 'Connect'
+1. Scroll to the top of the page and click on 'Settings'.
+1. Scroll down till you are in 'Config Vars' since we hide the environment variables. It would need to be 
+added into Heroku manually. Would need to add the following: IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME.
+1. Going back to the terminal within GitPod. Commit and push the files that were created.
+1. nce successfully pushed into GitHub, go back to Heroku and click on 'Enable Automatic 
+Deployment' and then 'Deploy Branch'.
+1. Once completed, a 'View' button would appear meaning the app has been deployed and successfully connected to Github.
 
 ### Making a Clone
 
-To make a clone, I used the [Code Institute Template](https://github.com/Code-Institute-Org/gitpod-full-template) that was provided and from there, I download the 
-[GitPod extension](https://www.gitpod.io/docs/browser-extension/) to be able to direct me to the cloud development tool.
+I had to get the SSH key from the repository which allowed me to clone the repository to my local hard drive. 
+The method which I used to clone the project was via Github Desktop. I was able to connect my Github 
+repository and clone my files through that method. 
 
-When using GitPid, whenever code was created and saved, I would use the terminal to push it to GitHub by using the following commands:
-1. git status (to check what needs to be pushed to GitHub)
-1. git add -A
-1. git commit -m "[Comment]"
-1. git push
+1. Open the repository that needs to be cloned.
+1. On the top-right, above the files, you will see a button 'Code' with an arrow down.
+1. Once clicked, a drop-down would appear which would give me the option 'Open with GitHub Desktop' 
+(as I had already pre-installed [GitHub Desktop]() previously).
+1. Once clicked, it would automatically open the application and request where for it to be saved.
 
-<img src="documentation/images/terminal-clone.png">
+<img src="documentation/images/making-a-clone.png">
 
 ## Credits
 
