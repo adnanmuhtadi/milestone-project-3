@@ -3,39 +3,15 @@
 
 <div class="registration-bg-image" ></div>
 
-    <h3 class="center-header">Register</h3>
+    <h3 class="center-header">Log In</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2 registration-form" method="POST" action="{{ url_for('registration') }}">
+        <form class="col s12 m8 offset-m2 registration-form" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
-                <!-- First Name placeholder -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="fname" name="fname" type="text" class="validate">
-						<label for="fname">First Name</label>
-					</div>
-                </div>
-                <!-- Surname placeholder -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="sname" name="sname" type="text" class="validate">
-						<label for="sname">Surname Name</label>
-					</div>
-                </div>
-                <!-- Email placeholder -->
-                <div class="row">
-					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
-						<input id="email" name="email" type="text" class="validate">
-						<label for="email">Email Address</label>
-					</div>
-                </div>
                 <!-- Username placeholder-->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -59,13 +35,22 @@
                         <label for="confirm">Confirm Password</label>
                     </div>
                 </div>-->
-                <!-- register button placeholder-->
+                <!-- login button placeholder-->
                 <div class="row">
                     <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
-                        Register <i class="fas fa-sign-in-alt"></i>
+                        Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
             </div>
         </form>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <p class="center-align">
+                New Here?
+                <a href="{{ url_for('registration') }}" class="light-blue-text text-darken-4">Register Account</a>
+            </p>
+        </div>
     </div>
 {% endblock %}
