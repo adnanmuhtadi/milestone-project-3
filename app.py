@@ -26,7 +26,7 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/register", methods=["GET", "POST"])
+@app.route("/registration", methods=["GET", "POST"])
 def registration():
     if request.method == "POST":
         # checking if username already exists in the db
@@ -40,8 +40,18 @@ def registration():
 
         # data from the form will post acting as the post method
         registration = {
-            "username": request.form.get("username")
+            "fname": request.form.get("fname").lower(),
+            "sname": request.form.get("sname").lower(),
+            "email": request.form.get("email").lower(),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))
+            # "cpassword": generate_password_hash(request.form.get("cpassword"))
         }
+        mongo.db.users.insert_one(registration)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Registration Successful!")
+
     return render_template("registration.html")
 
 

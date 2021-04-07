@@ -38,6 +38,10 @@ nav ul a {
     text-align: center;
 }
 
+.notification-flash h4 {
+    line-height: 2;
+}
+
 div.registration-bg-image {
     background-image: url(../img/registration-bg.jpeg);
     background-position: center;
