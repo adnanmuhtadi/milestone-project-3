@@ -32,6 +32,28 @@ nav ul a {
     height: 90vh !important;
 }
 
+.center-header{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+div.registration-bg-image {
+    background-image: url(../img/registration-bg.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    opacity: 0.5;
+}
+
+.registration-form {
+    position: relative;
+    margin: 20px;
+    padding: 16px;
+opacity: 1;
+}
+
 /*-------------------------- footer */
 .page-footer{
     position: relative;
