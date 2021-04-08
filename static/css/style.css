@@ -50,21 +50,28 @@ nav ul a {
     opacity: 0.2;
 }
 
-.registration-form {
+.registration-form,
+.login-form {
     position: relative;
     margin: 20px;
     padding: 16px;
     opacity: 1;
 }
 
-.row {
+.card-panel .row {
     margin: 0;
+}
+
+.enter {
+    margin-bottom: 20px;
 }
 
 /*-------------------------- footer */
 .page-footer{
-    position: relative;
-    padding-bottom: 10px;
+    position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
 
 .page-footer h5 {

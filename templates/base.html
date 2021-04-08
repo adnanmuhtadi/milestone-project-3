@@ -30,7 +30,7 @@
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="#">New Recipe</a></li>
                 <li><a href="#">New Category</a></li>
                 <li><a href="#">Log Out</a></li>
@@ -44,7 +44,7 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="centre-align orange accent-1 black-text text-darken-4">Home Cooking</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                <li><a href="#">Profile</a></li>
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
                 <li><a href="#">New Recipe</a></li>
                 <li><a href="#">New Category</a></li>
                 <li><a href="#">Log Out</a></li>
@@ -53,8 +53,8 @@
         </ul>
     </header>
 
-    <!-- section>
-        Flash messages 
+    <!-- section> -->
+        <!--Flash messages -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -64,7 +64,7 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section> -->
+    </section>
 
     
         {% block content %}

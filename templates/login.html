@@ -6,7 +6,7 @@
     <h3 class="center-header">Log In</h3>
 
     <div class="row">
-        <form class="col s12 m8 offset-m2 registration-form" method="POST" action="{{ url_for('login') }}">
+        <form class="col s12 m7 login-form" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel">
                 <!-- Username placeholder-->
                 <div class="row">
@@ -27,18 +27,18 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow">
+                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow enter">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
                 <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                New Here?
-                <a href="{{ url_for('registration') }}" class="light-blue-text text-darken-4">Register Account</a>
-            </p>
-        </div>
-    </div>
+                    <div class="col s12">
+                        <p class="center-align">
+                            New Here?
+                            <a href="{{ url_for('registration') }}" class="light-blue-text text-darken-4">Register Account</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </form>
     </div>
