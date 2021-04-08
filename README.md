@@ -161,7 +161,7 @@ The features that will be utilised in this project will be as follows:
     - Database which stores the data to be recalled onto the website.
 
 #### Frameworks
-1. [Materialize:](https://materializecss.com/)
+1. [Materialize 1.0.0:](https://materializecss.com/)
     - Responsive front-end framework to assist with the responsiveness and styling of the website.
 1. [JQuery Core 3.6.0:](https://code.jquery.com/)
     - JQuery library was implemented to use features within Materialize
@@ -171,6 +171,8 @@ The features that will be utilised in this project will be as follows:
     - Google fonts were used to import the font into the style.css file which is used on all pages throughout the project.
 1. [Font Awesome 5.13.3:](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css)
     - Font Awesome was used on all pages throughout the website to add icons for aesthetic and UX purposes.
+1. [Hover 5.15.3](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css)
+    - Hover effects used for the animation on hovering over links and buttons.
 
 #### Programs
 1. [Grammerly:](https://app.grammarly.com/)
@@ -179,6 +181,8 @@ The features that will be utilised in this project will be as follows:
     - GitHub is used to store the code of the project after being pushed from GitPod.
 1. [GitPod:](https://www.gitpod.io/)
     - A cloud development environment that allows us to create the website.
+1. [Visual Studio Code](https://code.visualstudio.com/)
+    - Code editing software was used to replace GitPod as the free license expired due to over 50 hours useage. 
 1. [GitHub Desktop:](https://desktop.github.com/)
     - A tool that allows you to interact with GitHub from the desktop
 1. [Google Chrome:](https://www.google.co.uk/intl/en_uk/chrome/)
@@ -230,28 +234,32 @@ The features that will be utilised in this project will be as follows:
 The project was deployed to Heroku and connected to GitHub pages using the following method:
 1. To direct Heroku which application and dependencies are required to run the app being developed, 
 create a requirements file.
+    - In the terminal, enter "pip3 freeze --local > requirements.txt"
 1. Install the Procfile file as that what Heroku looks for to know which files run the app and how to.
+    - In the terminal, enter echo web: python app.py>Procfile
+    - Note:  In the Procfile, there could be a blank line automatically created, go into the file, remove the blank line and save it again.
 1. In [Heroku Dashboard](https://dashboard.heroku.com/), click on 'New', then click on 'Create new app'.
-1. Providing it with a unique name and changing the region to 'Europe'. Then click on 'Create app'.
+1. Providing it with a unique name and changing the region to 'Europe' (or whatever region you are in). Then click on 'Create app'.
 1. In 'Deployment method' click on 'GitHub', Ensuring your GitHub username is visible, either 
 search for your repository or type in exactly how your repository is spelt in GitHub. 
 When it finds your Repository, it will be visible and you would click on 'Connect'
 1. Scroll to the top of the page and click on 'Settings'.
-1. Scroll down till you are in 'Config Vars' since we hide the environment variables. It would need to be 
-added into Heroku manually. Would need to add the following: IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME.
+1. Scroll down till you are in 'Config Vars' section and since we hide the environment variables. It would need to be 
+added into Heroku manually. You would need to add the following: IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME, ensuring you putting the same values as you did in the env.py file
 1. Going back to the terminal within GitPod. Commit and push the files that were created.
-1. nce successfully pushed into GitHub, go back to Heroku and click on 'Enable Automatic 
+1. Once successfully pushed into GitHub, go back to Heroku and click on 'Enable Automatic 
 Deployment' and then 'Deploy Branch'.
 1. Once completed, a 'View' button would appear meaning the app has been deployed and successfully connected to Github.
+1. As Heroku is now connected to Github, for the remaining for project, upload your files into GitHub and it would automatically sync with Heroku.
 
 ### Making a Clone
 
 I had to get the SSH key from the repository which allowed me to clone the repository to my local hard drive. 
 The method which I used to clone the project was via Github Desktop. I was able to connect my Github 
-repository and clone my files through that method. 
+repository and clone my files through this method. 
 
 1. Open the repository that needs to be cloned.
-1. On the top-right, above the files, you will see a button 'Code' with an arrow down.
+1. On the top-right side of the page, above the files, you will see a button 'Code' with an arrow point down.
 1. Once clicked, a drop-down would appear which would give me the option 'Open with GitHub Desktop' 
 (as I had already pre-installed [GitHub Desktop]() previously).
 1. Once clicked, it would automatically open the application and request where for it to be saved.
@@ -266,11 +274,22 @@ repository and clone my files through that method.
 
 ### Code
 
+Utilising the code that was used taught from the Code Instute Lessons consisted of (HTML5, CCS3, JavaScript and Python), i also utilised other sources which assisted me in the developing the specific areas.
+ 
 
 
 ### Media
 
+The main source for the images i have used is from [Unsplash](https://unsplash.com/) as they provide free useable images:
 
+Carousel:
+- [Image 1](https://unsplash.com/photos/EzH46XCDQRY)
+- [Image 2](https://unsplash.com/photos/3D43SBDDkAc)
+- [Image 3](https://unsplash.com/photos/KPDbRyFOTnE)
+Backgrounds:
+- [Registration Page](https://unsplash.com/photos/NT3qP7WbmzE)
+- [Log In Page]()
+- [Log Out Page]()
 
 ### Acknowledgements
 
