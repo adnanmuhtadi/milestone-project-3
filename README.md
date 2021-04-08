@@ -288,8 +288,7 @@ Carousel:
 - [Image 3](https://unsplash.com/photos/KPDbRyFOTnE)
 Backgrounds:
 - [Registration Page](https://unsplash.com/photos/NT3qP7WbmzE)
-- [Log In Page]()
-- [Log Out Page]()
+- [Log In Page](https://unsplash.com/photos/lmFJOx7hPc4)
 
 ### Acknowledgements
 

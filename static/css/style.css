@@ -50,6 +50,18 @@ nav ul a {
     opacity: 0.2;
 }
 
+.login-bg-image {
+    background: url(../img/login-bg.jpeg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: absolute;
+    height: 80%;
+    width: 100%;
+    opacity: 0.2;
+}
+
 .registration-form,
 .login-form {
     position: relative;
