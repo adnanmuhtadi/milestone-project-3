@@ -22,18 +22,18 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
+    recipes = list(mongo.db.recipes.find())
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/")
-@app.route("/get_my_recipes")
+@ app.route("/")
+@ app.route("/get_my_recipes")
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("my-recipes.html", recipes=recipes)
 
 
-@app.route("/registration", methods=["GET", "POST"])
+@ app.route("/registration", methods=["GET", "POST"])
 def registration():
     if request.method == "POST":
         # checking if username already exists in the db
@@ -63,7 +63,7 @@ def registration():
     return render_template("registration.html")
 
 
-@app.route("/login", methods=["GET", "POST"])
+@ app.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
         # check if username exists in db
@@ -90,7 +90,7 @@ def login():
     return render_template("login.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
+@ app.route("/profile/<username>", methods=["GET", "POST"])
 def profile(username):
     # grab the session user's fname from db
     fname = mongo.db.users.find_one(
@@ -102,7 +102,7 @@ def profile(username):
     return redirect(url_for("login"))
 
 
-@app.route("/logout")
+@ app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
