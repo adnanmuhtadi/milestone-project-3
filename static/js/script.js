@@ -3,6 +3,8 @@ $(document).ready(function () {
     $(".sidenav").sidenav({ edge: "right" });
     //for the carousel
     $(".carousel").carousel();
+    //for the recipes 
+    $('.collapsible').collapsible();
 
     //Carousel function which would go round on a set timer
     setInterval(function () {
