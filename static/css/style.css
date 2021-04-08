@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,400,500,600,700|Heebo:100,200,300,400,500,600,700');
 
-* {
+*, body {
     margin: 0;
     padding: 0;
     border: 0;
@@ -38,24 +38,27 @@ nav ul a {
     text-align: center;
 }
 
-.notification-flash h4 {
-    line-height: 2;
-}
-
-div.registration-bg-image {
-    background-image: url(../img/registration-bg.jpeg);
-    background-position: center;
+.registration-bg-image {
+    background: url(../img/registration-bg.jpeg);
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
     position: absolute;
-    opacity: 0.5;
+    height: 80%;
+    width: 100%;
+    opacity: 0.2;
 }
 
 .registration-form {
     position: relative;
     margin: 20px;
     padding: 16px;
-opacity: 1;
+    opacity: 1;
+}
+
+.row {
+    margin: 0;
 }
 
 /*-------------------------- footer */

@@ -53,8 +53,8 @@
         </ul>
     </header>
 
-    <section>
-        <!-- Flash messages -->
+    <!-- section>
+        Flash messages 
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -64,12 +64,12 @@
                 {% endfor %}
             {% endif %}
         {% endwith %}
-    </section>
+    </section> -->
 
-    <main class="container">
+    
         {% block content %}
         {% endblock %}
-    </main>
+    
 
     <footer class="page-footer black-text orange lighten-5">
             <div class="row">

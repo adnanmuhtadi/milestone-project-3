@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="registration-bg-image" ></div>
+<div class="registration-bg-image"></div>
 
-    <h3 class="center-header">Register</h3>
 
     <div class="row">
         <form class="col s12 m8 offset-m2 registration-form" method="POST" action="{{ url_for('registration') }}">
             <div class="card-panel">
+                    <h3 class="center-header">Register</h3>
                 <!-- First Name placeholder -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -65,16 +65,14 @@
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
+                <div class="row">
+                    <div class="col s12">
+                        <p class="center-align">If you already have an account, 
+                            <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In!</a>
+                        </p>
+                    </div>
+                </div>
             </div>
         </form>
-    </div>
-
-    <div class="row">
-        <div class="col s12">
-            <p class="center-align">
-                Already Registered?
-                <a href="{{ url_for('login') }}" class="light-blue-text text-darken-4">Log In</a>
-            </p>
-        </div>
     </div>
 {% endblock %}
