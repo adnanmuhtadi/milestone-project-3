@@ -3,5 +3,38 @@
 
     <h3 class="center-header">Add Recipe</h3>
 
+    <div class="row">
+        <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="light-blue-text text-darken-4"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
+                        type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
+                    <textarea id="task_description" name="task_description" minlength="5"
+                        maxlength="200" class="materialize-textarea validate" required></textarea>
+                    <label for="task_description">Task Description</label>
+                </div>
+            </div>
+			<div class="row">
+				<div class="input-field col s12">
+					<div class="switch">
+                        <i class="light-blue-text text-darken-4"></i>
+						<label for="to_share">
+                            <input type="checkbox" id="to_share" name="to_share">
+                            <span class="lever"></span>
+                            To Share
+                        </label>
+					</div>
+				</div>
+			</div>
+        </form>
+    </div>
+
 
 {% endblock %}
