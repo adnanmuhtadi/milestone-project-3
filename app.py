@@ -52,9 +52,10 @@ def registration():
             "email": request.form.get("email").lower(),
             "username": request.form.get("username").lower(),
             "password": generate_password_hash(request.form.get("password")),
-            # "confirm": generate_password_hash(request.form.get("confirm"))
+            "confirm": generate_password_hash(request.form.get("confirm"))
         }
-        mongo.db.users.insert_one(registration)
+        if "password" == "confirm":
+            mongo.db.users.insert_one(registration)
 
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful!")

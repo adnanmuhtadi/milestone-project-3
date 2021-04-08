@@ -40,12 +40,11 @@ nav ul a {
 
 .registration-bg-image {
     background: url(../img/registration-bg.jpeg);
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     position: absolute;
-    height: 80%;
+    height: 115vh;
     width: 100%;
     opacity: 0.2;
 }
@@ -65,6 +64,7 @@ nav ul a {
 .registration-form,
 .login-form {
     position: relative;
+    border-radius: 2.5em;
     margin: 20px;
     padding: 16px;
     opacity: 1;
@@ -72,6 +72,7 @@ nav ul a {
 
 .card-panel .row {
     margin: 0;
+    border-radius: 2.5em;
 }
 
 .enter {
@@ -79,11 +80,9 @@ nav ul a {
 }
 
 /*-------------------------- footer */
-.page-footer{
+footer {
     position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+    width: 100%;
 }
 
 .page-footer h5 {
@@ -99,16 +98,11 @@ nav ul a {
     color: #000000;
 }
 
-.quicklinks a:hover, 
-.fab:hover{
-}
-
 .social-media {
     font-size: 30px;
 }
 
 .copyright {
-    padding: 60px 30px 0px 0px;
 }
 
 @media only screen and (max-width: 1024px) {
