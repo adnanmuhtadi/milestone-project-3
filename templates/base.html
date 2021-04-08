@@ -31,7 +31,7 @@
             <ul class="right hide-on-med-and-down">
             {% if session.user %}
                 <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
-                <li><a href="#">New Recipe</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                 <li><a href="#">New Category</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
@@ -48,7 +48,7 @@
             <li><h4 class="centre-align orange accent-1 black-text text-darken-4">Home Cooking</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
                 <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="#">New Recipe</a></li>
+                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                 <li><a href="#">New Category</a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
                 <li><a href="{{ url_for('login') }}">Log In</a></li>

@@ -110,6 +110,12 @@ def logout():
     return redirect(url_for("login"))
 
 
+@ app.route("/add_recipe")
+def add_recipe():
+    # remove user from session cookie
+    return render_template("add_recipe.html")
+
+
 # This tells the application where and how to run.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
