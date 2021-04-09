@@ -9,6 +9,6 @@ $(document).ready(function () {
     //Carousel function which would go round on a set timer
     setInterval(function () {
         $('.carousel').carousel('next');
-
     }, 3000);
+    
 });

@@ -30,7 +30,7 @@ def get_recipes():
 @ app.route("/get_my_recipes")
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("my-recipes.html", recipes=recipes)
+    return render_template("my_recipes.html", recipes=recipes)
 
 
 @ app.route("/registration", methods=["GET", "POST"])
