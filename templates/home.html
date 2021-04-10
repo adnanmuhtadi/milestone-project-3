@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Carousel which would go through 3 images -->
+<div class="carousel carousel-slider" data-indicators ="true">
+    <a href="#one!" class="carousel-item"><img src="../static/img/carousel-img1.jpeg"></a>
+    <a href="#two!" class="carousel-item"><img src="../static/img/carousel-img2.jpeg"></a>
+    <a href="#three!" class="carousel-item"><img src="../static/img/carousel-img3.jpeg"></a>
+</div>
+
+<h3 class="center-header">Home Recipes</h3>
+<div class="row">
+    <img src="../static/img/hp-recipe.jpeg" class="hp-recipe col s4">
+    <p class="description col s8"><strong>Are you about to leave home to either be independent or go to university?</br>
+        Have you ever had a time when you had to store a specific recipe?</br>
+        Have you ever lost a recipe that you wrote down and you can't find it?</strong></br></br>   
+        As there is nothing like home-cooked, mums style cooking, Your problems have been answered.
+        A place for you to add your recipes, A place for you to share them with the rest of the world. 
+    A place for you to even search depending on what specific ingredient you want to use.</p>
+</div>
+
+<hr>
+    <!-- the variable that is created to display content from the DB "recipe" -->
+    <ul class="global-recipes collapsible popout">
+        {% for recipe in recipes %}
+        <li>
+            <div class="global-shared-recipes collapsible-header white-text light-blue darken-4 text-shadow">
+                <i class="fas fa-caret-down"></i>
+                <strong>{{ recipe.recipe_name }}</strong>
+            </div>
+            <div class="collapsible-body">
+                {{ recipe.meal_name }}
+            </div>
+        </li>
+         {% endfor %}
+    </ul>
+
+{% endblock %}
