@@ -1,13 +1,13 @@
 {% extends "base.html" %}
-{% block content %}
+{% block structure %}
 
-<div class="registration-bg-image"></div>
+<img src="{{ url_for('static', filename='img/login-bg.jpeg') }}" class="login-bg-image">
 
-
+    {% block content %}
     <div class="row">
-        <form class="col s12 m7 offset-m5 registration-form" method="POST" action="{{ url_for('registration') }}">
-            <div class="card-panel">
-                    <h3 class="center-header">Register</h3>
+        <form class="col s12 m7 offset-m5" method="POST" action="{{ url_for('registration') }}">
+            <div class="card-panel login-form">
+                <h3 class="center-header">Register</h3>
                 <!-- First Name placeholder -->
                 <div class="row">
 					<div class="input-field col s12">
@@ -75,4 +75,5 @@
             </div>
         </form>
     </div>
+    {% endblock %}
 {% endblock %}

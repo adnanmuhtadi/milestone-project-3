@@ -6,6 +6,7 @@
     border: 0;
 }
 
+/*////////////////////////////// Navigation Bar*/
 nav ul a,
 nav .brand-logo {
     font-family: "Merriweather", sans-serif;
@@ -28,17 +29,21 @@ nav ul a {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 } 
 
+/*////////////////////////////// Home Page Carousel*/
 .carousel {
-    border-radius: 40px;
+    border-radius: 0px 0px 40px 40px;
     height: 90vh !important;
 }
 
+/*////////////////////////////// Header for all pages*/
 .center-header{
     font-family: "Merriweather", sans-serif;    
     text-align: center;
     text-decoration: underline;
+    position: relative;
 }
 
+/*////////////////////////////// Home Page */
 .hp-recipe {
     border-radius: 25px;
 }
@@ -46,7 +51,7 @@ nav ul a {
 .description {
     font-family: "Heebo", sans-serif;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 hr {
@@ -65,33 +70,21 @@ hr {
     margin: 10px 0;
 }
 
-.registration-bg-image {
-    background: url(../img/registration-bg.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    height: 115vh;
-    width: 100%;
-    opacity: 0.2;
-}
-
+/*////////////////////////////// Login/Registration Page */
 .login-bg-image {
-    background: url(../img/login-bg.jpeg);
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     position: absolute;
-    height: 80%;
     width: 100%;
-    opacity: 0.2;
+    opacity: 0.5;
+    object-fit: fill;
 }
 
 .registration-form,
 .login-form {
     position: relative;
-    border-radius: 2.5em;
+    border-radius: 25px;
     margin: 20px;
     padding: 16px;
     opacity: 1;
@@ -106,7 +99,7 @@ hr {
     margin-bottom: 20px;
 }
 
-/*-------------------------- footer */
+/*////////////////////////////// Footer */
 footer {
     position: absolute;
     width: 100%;
@@ -127,9 +120,6 @@ footer {
 
 .social-media {
     font-size: 30px;
-}
-
-.copyright {
 }
 
 @media only screen and (max-width: 1024px) {
