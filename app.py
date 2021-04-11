@@ -114,8 +114,10 @@ def logout():
 
 @ app.route("/add_recipe")
 def add_recipe():
-    # remove user from session cookie
-    return render_template("add_recipe.html")
+    # to pull the meal type names from the mongodb
+    meals = mongo.db.meals.find().sort("meal_name", 1)
+    # reloads user to add_recipe page
+    return render_template("add_recipe.html", meals=meals)
 
 
 # This tells the application where and how to run.

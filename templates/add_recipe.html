@@ -3,23 +3,49 @@
 
     <h3 class="center-header">Add Recipe</h3>
 
-    <div class="row">
+    <div class="row card-panel white lighten-5">
         <form class="col s12" method="POST" action="">
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="light-blue-text text-darken-4"></i>
+                    <select id="meal_name" name="meal_name" class="validate" required>
+                    <option value="" disabled selected>Choose Meal Type </option>
+                    {% for meal in meals %}
+                        <option value="{{ meal.meal_name}}">{{ meal.meal_name}}</option>
+                    {% endfor %}
+                    </select>
+                </div>
+            </div>
             <div class="row">
                 <div class="input-field col s6">
                     <i class="light-blue-text text-darken-4"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50"
-                        type="text" class="validate" required>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s6">
-                    <i class="fas fa-align-left prefix light-blue-text text-darken-4"></i>
-                    <textarea id="task_description" name="task_description" minlength="5"
-                        maxlength="200" class="materialize-textarea validate" required></textarea>
-                    <label for="task_description">Task Description</label>
+                    <i class="light-blue-text text-darken-4"></i>
+                    <input id="prep_time" name="prep_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="prep_time">Prep Time</label>
                 </div>
+                <div class="input-field col s6">
+                    <i class="light-blue-text text-darken-4"></i>
+                    <input id="cooking_time" name="cooking_time" minlength="5" maxlength="50" type="text" class="validate" required>
+                    <label for="cooking_time">Cooking Time</label>
+                </div>
+            </div>
+            <div class="row">
+                <div id="cooking_ing">
+                    <div class="cooking_ings" id="cooking_ings0">
+                        <div class="input-field col s6">
+                            <i class="light-blue-text text-darken-4"></i>
+                            <input id="ingredients" name="ingredients" minlength="5" maxlength="50" type="text" class="validate" required>
+                            <label for="recipe_name">Ingredients</label>
+                            <div class="addmoreadd">
+                                <button type="button" class="addmore">Add More Address</button>
+                            </div>
+                        </div>
             </div>
 			<div class="row">
 				<div class="input-field col s12">
