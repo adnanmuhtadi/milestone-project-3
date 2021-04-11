@@ -4,11 +4,10 @@
 <img src="{{ url_for('static', filename='img/login-bg.jpeg') }}" class="login-bg-image">
 
     {% block content %}
-    <h3 class="center-header">Log In</h3>
-
     <div class="row">
         <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('login') }}">
             <div class="card-panel login-form">
+                <h3 class="center-header">Log In</h3>
                 <!-- Username placeholder-->
                 <div class="row">
 					<div class="input-field col s12">

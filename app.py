@@ -21,6 +21,7 @@ mongo = PyMongo(app)
 
 @app.route("/")
 @app.route("/get_recipes")
+# Function to get the list of recepes from Mongo DB and display in the home page
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("home.html", recipes=recipes)
@@ -28,6 +29,7 @@ def get_recipes():
 
 @ app.route("/")
 @ app.route("/get_my_recipes")
+# Function to get the list of recepes from Mongo DB and display them in your personal list of recipes
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("my_recipes.html", recipes=recipes)

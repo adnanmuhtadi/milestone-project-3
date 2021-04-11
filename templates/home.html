@@ -3,14 +3,15 @@
 
     <!-- Carousel which would go through 3 images -->
     <div class="carousel carousel-slider" data-indicators ="true">
-        <a href="#one!" class="carousel-item"><img src="../static/img/carousel-img1.jpeg"></a>
-        <a href="#two!" class="carousel-item"><img src="../static/img/carousel-img2.jpeg"></a>
-        <a href="#three!" class="carousel-item"><img src="../static/img/carousel-img3.jpeg"></a>
+        <a href="#one!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img1.jpeg') }}"></a>
+        <a href="#two!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img2.jpeg') }}"></a>
+        <a href="#three!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img3.jpeg') }}"></a>
     </div>
 
+    <!-- Main content for the section -->
     <h3 class="center-header">Home Recipes</h3>
     <div class="row">
-        <img src="../static/img/hp-recipe.jpeg" class="hp-recipe col s4">
+        <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col s4">
         <p class="description col s8"><strong>Are you about to leave home to either be independent or go to university?</br>
             Have you ever had a time when you had to store a specific recipe?</br>
             Have you ever lost a recipe that you wrote down and you can't find it?</strong></br></br>   
@@ -25,14 +26,19 @@
 
     <!-- Place holder for the search button -->
 
-    <!-- the variable that is created to display content from the DB "recipe" -->
+    <!-- The variable that is created to display content from the DB "recipe" -->
     <ul class="global-recipes collapsible popout">
         {% for recipe in recipes %}
         <li>
-            <div class="global-shared-recipes collapsible-header white-text light-blue darken-4 text-shadow">
+            <!-- The recipe name will be displayed in this area-->
+            <div class="global-shared-recipes collapsible-header white-text text-shadow">
                 <i class="fas fa-caret-down"></i>
                 <strong>{{ recipe.recipe_name }}</strong>
+                <div class="timing">
+                    Cook Time: {{ recipe.cooking_time }}min
+                </div>
             </div>
+            <!-- The main boder for the recipe -->
             <div class="collapsible-body">
                 {{ recipe.meal_name }}
             </div>
