@@ -3,13 +3,14 @@
 
 <div class="registration-bg-image"></div>
 
-    <h3 class="center-header">Profile</h3>
+    <h3 class="center-header">{{ fname }}'s Profile</h3>
 
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
                 <div class="h3 center-align light-blue-text text-darken-4">
-                    {{ fname }}'s Profile
+                    <a class="waves-effect waves-light btn-large" 
+                    href="{{ url_for('edit_username', username=session['user']) }}">Change Username</a>
                 </div>
             </div>
         </div>

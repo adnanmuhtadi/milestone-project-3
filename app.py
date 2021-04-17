@@ -1,27 +1,39 @@
+from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
 if os.path.exists("env.py"):
     import env
 
 app = Flask(__name__)
 
-# To get hold of the database
+
+"""
+To get hold of the Database
+"""
+
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-# Setting up an instance of PyMongo and adding the app into the constructor method
+"""
+Setting up an instance of PyMongo and adding the app into the constructor method
+"""
+
+
 mongo = PyMongo(app)
+
+
+"""
+Function to get the list of recepes from Mongo DB and display in the home page
+"""
 
 
 @app.route("/")
 @app.route("/get_recipes")
-# Function to get the list of recepes from Mongo DB and display in the home page
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     return render_template("home.html", recipes=recipes)
@@ -48,20 +60,20 @@ def registration():
             return redirect(url_for("registration"))
 
         # data from the form will post acting as the post method
-        registration = {
-            "fname": request.form.get("fname").capitalize(),
-            "sname": request.form.get("sname").capitalize(),
-            "email": request.form.get("email").lower(),
-            "username": request.form.get("username").lower(),
-            "password": generate_password_hash(request.form.get("password")),
-            "confirm": generate_password_hash(request.form.get("confirm"))
-        }
-        if "password" == "confirm":
+        if request.form.get("password") == request.form.get("confirm"):
+            registration = {
+                "fname": request.form.get("fname").capitalize(),
+                "sname": request.form.get("sname").capitalize(),
+                "email": request.form.get("email").lower(),
+                "username": request.form.get("username").lower(),
+                "password": generate_password_hash(request.form.get("password")),
+            }
             mongo.db.users.insert_one(registration)
 
-        session["user"] = request.form.get("username").lower()
-        flash("Registration Successful!")
-        return redirect(url_for("profile", username=session["user"]))
+            session["user"] = request.form.get("username").lower()
+            flash("Registration Successful!")
+            return redirect(url_for("profile", username=session["user"]))
+        flash("Password does not match!")
     return render_template("registration.html")
 
 
@@ -118,6 +130,25 @@ def add_recipe():
     meals = mongo.db.meals.find().sort("meal_name", 1)
     # reloads user to add_recipe page
     return render_template("add_recipe.html", meals=meals)
+
+
+@ app.route("/edit_username/<username>", methods=["GET", "POST"])
+def edit_username(username):
+    if request.method == "POST":
+        submit = {
+            "new_username": request.form.get("username"),
+        }
+        mongo.db.user.update({"_id": ObjectId(username)}, submit)
+        flash("Task Successfully Updated")
+
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("edit_username.html", username=username)
+
+    return redirect(url_for("login"))
 
 
 # This tells the application where and how to run.
