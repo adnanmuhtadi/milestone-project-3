@@ -20,11 +20,17 @@
     
     <title>Task Manager</title>
 </head>
-
-
+<body>
+    <div class="main-body">
     <header>
-        <nav class="nav-extended text-shadow orange lighten-5">
-            <!-- Top navbar -->
+        <ul id="myprofile-dropdown" class="dropdown-content">
+            <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ url_for('edit_username', username=session['user']) }}">Edit Username</a></li>
+            <li><a href="#!">Edit Password</a></li>
+        </ul>
+        <nav class="nav-extended text-shadow">
+            <!-- Main navigation navbar with the profile link connected to the session-->
             <div class="nav-wrapper">
             <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -33,7 +39,8 @@
                 <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
                 <li><a href="#">New Category</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
+                <!-- Dropdown Trigger -->
+                <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -43,7 +50,7 @@
             </div>
         </nav>
 
-        <!-- Mobile sidenav -->
+        <!-- Mobile navigation sidenav -->
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="centre-align orange accent-1 black-text text-darken-4">Home Cooking</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
@@ -55,6 +62,8 @@
                 <li><a href="{{ url_for('registration') }}">Register</a></li>
         </ul>
     </header>
+
+    <div class="backing"></div>
 
     <section>
         <!--Flash messages -->
@@ -69,15 +78,16 @@
         {% endwith %}
     </section>
 
-        {% block structure %}
+    {% block structure %}
         <main class="container">
             {% block content %}
             {% endblock %}
         </main>
-
     {% endblock %}
     
-    <footer class="page-footer black-text orange lighten-5">
+    <!-- Footer with social links and Copyright label-->
+    <footer class="footer">
+        <div class="page-footer black-text orange lighten-5">
             <div class="row">
                 <div class="social-media col s12 center">
                     <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
@@ -90,6 +100,7 @@
                     <p>© 2021 Adnan Muhtadi</p>
                 </div>
             </div>
+        </div>
     </footer>
 
     <!-- jquery from code.jquery.com -->
@@ -102,5 +113,6 @@
 
     {% block scripts %}
     {% endblock %}
+    <div class="main-body">
 </body>
 </html>

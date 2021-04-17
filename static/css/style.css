@@ -1,12 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,400,500,600,700|Heebo:100,200,300,400,500,600,700');
 
-*, body {
+* {
     margin: 0;
     padding: 0;
     border: 0;
 }
 
 /*////////////////////////////// Navigation Bar*/
+nav {
+    background: #fefefa;
+}
+
 nav ul a,
 nav .brand-logo {
     font-family: "Merriweather", sans-serif;
@@ -61,25 +65,11 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-.global-recipes {
-    margin-top: 20px;
-}
+/*Cards for the home page*/
 
-.global-recipes > li, 
-.global-shared-recipes {
-    background-color: #FF8B5C !important;
-    border-radius: 25px;
-    margin: 10px 0;
-}
-
-.collapsible-body {
-    background-color: #fff3e0 !important;
-    border-radius: 0 0 15px 15px;
-}
-
-.timing {
-    font-family: "Heebo", sans-serif;
-    text-align: right !important;
+.recipe-card {
+    margin: 10px 10px;
+    background-color: pink;
 }
 
 /*////////////////////////////// Login/Registration Page */
@@ -88,9 +78,9 @@ hr {
     background-size: cover;
     background-position: center center;
     position: absolute;
-    object-fit: cover;
+    object-fit: fill;
     width: 100%;
-    height: 90vh;
+    height: 80vh;
     opacity: 0.5;
 }
 
@@ -100,7 +90,7 @@ hr {
     background-position: center center;
     position: absolute;
     width: 100%;
-    height: 140vh;
+    height: 120vh;
     opacity: 0.5;
 }
 
@@ -127,17 +117,19 @@ hr {
 }
 
 /*////////////////////////////// Footer */
-footer {
+.footer {
+  height: 50px;
+  margin-top: -50px;
+}
+
+.page-footer {
     position: absolute;
     width: 100%;
+    margin-top: 120px;
 }
 
 .page-footer h5 {
     font-family: "Merriweather", sans-serif;
-}
-
-.quicklinks a {
-    font-family: "Heebo", sans-serif;
 }
 
 .quicklinks a, 
