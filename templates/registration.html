@@ -1,17 +1,31 @@
 {% extends "base.html" %}
 {% block structure %}
 
-<img src="{{ url_for('static', filename='img/login-bg.jpeg') }}" class="registration-bg-image">
+<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="registration-bg-image">
 
     {% block content %}
-    <div class="row">
+    <div class="row registration-form">
         <form class="col s12 m6 offset-m6" method="POST" action="{{ url_for('registration') }}">
-            <div class="card-panel login-form">
+            <div class="card-panel">
                 <h3 class="center-header">Register</h3>
+                
+                <section>
+                    <!--Flash message within under the title to inform the user what is the issue -->
+                    {% with messages = get_flashed_messages() %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div id="row flashes">
+                                    <h4 class="light-blue lighten-4 center-align" id="snackbar">{{ message }}</h4>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </section>
+
                 <!-- First Name placeholder -->
                 <div class="row input-entry">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user prefix light-blue-text text-darken-4"></i>
 						<input id="fname" name="fname" type="text" class="validate">
 						<label for="fname">First Name</label>
 					</div>
@@ -19,7 +33,7 @@
                 <!-- Surname placeholder -->
                 <div class="row input-entry">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user prefix light-blue-text text-darken-4"></i>
 						<input id="sname" name="sname" type="text" class="validate">
 						<label for="sname">Surname Name</label>
 					</div>
@@ -27,7 +41,7 @@
                 <!-- Email placeholder -->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-plus prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-at prefix light-blue-text text-darken-4"></i>
 						<input id="email" name="email" type="text" class="validate">
 						<label for="email">Email Address</label>
 					</div>
@@ -72,7 +86,6 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </form>
     </div>
