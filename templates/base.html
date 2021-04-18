@@ -18,11 +18,15 @@
     {% block styles %}
     {% endblock %}
     
-    <title>Task Manager</title>
+    <title>Home Cooking Manager</title>
+    <!-- This is for the favicon icon in the header -->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/img/utensils-solid.svg') }}" type="image/jpg" />
 </head>
+
 <body>
     <div class="main-body">
     <header>
+        <!-- The drop down option which would be used when the user have logged in and wants to visit their profile page-->
         <ul id="myprofile-dropdown" class="dropdown-content">
             <li><a href="{{ url_for('profile', username=session['user']) }}">My Profile</a></li>
             <li class="divider"></li>
@@ -30,7 +34,7 @@
             <li><a href="#!">Edit Password</a></li>
         </ul>
         <nav class="nav-extended text-shadow">
-            <!-- Main navigation navbar with the profile link connected to the session-->
+            <!-- Main navigation navbar with the profile link connected to the session -->
             <div class="nav-wrapper">
             <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
@@ -41,10 +45,13 @@
                 <li><a href="#">New Category</a></li>
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
+                <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>                
                 <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('registration') }}">Register</a></li>
+                <!-- The modal trigger used for the contact us-->
+                <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>
             {% endif %}
             </ul>
             </div>
@@ -62,32 +69,28 @@
                 <li><a href="{{ url_for('registration') }}">Register</a></li>
         </ul>
     </header>
-
-    <div class="backing"></div>
-
-    <section>
-        <!--Flash messages -->
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row notification-flash">
-                        <h4 class="light-blue lighten-4 center-align">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-    </section>
-
+    
     {% block structure %}
         <main class="container">
             {% block content %}
             {% endblock %}
         </main>
     {% endblock %}
+
+    <!-- Modal Structure -->
+    <div id="contact-us-modal" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Modal Header</h4>
+            <p>A bunch of text</p>
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+        </div>
+    </div>
     
     <!-- Footer with social links and Copyright label-->
-    <footer class="footer">
-        <div class="page-footer black-text orange lighten-5">
+    <footer>
+        <div class="page-footer black-text">
             <div class="row">
                 <div class="social-media col s12 center">
                     <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
