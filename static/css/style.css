@@ -1,12 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:100,200,300,400,500,600,700|Heebo:100,200,300,400,500,600,700');
 
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
-}
+/*////////////////////////////// Base File*/
 
-/*////////////////////////////// Navigation Bar*/
+/* Navigation bar */
 nav {
     background: #fefefa;
 }
@@ -33,13 +29,7 @@ nav ul a {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 } 
 
-/*////////////////////////////// Home Page Carousel*/
-.carousel {
-    border-radius: 0px 0px 40px 40px;
-    height: 90vh !important;
-}
-
-/*////////////////////////////// Header for all pages*/
+/* Header for all pages*/
 .center-header{
     font-family: "Merriweather", sans-serif;    
     text-align: center;
@@ -47,7 +37,15 @@ nav ul a {
     position: relative;
 }
 
-/*////////////////////////////// Home Page */
+/*////////////////////////////// Home Page*/
+
+/* carousel for the home page */
+.carousel {
+    border-radius: 0px 0px 40px 40px;
+    height: 90vh !important;
+}
+
+/* Description from the home page */
 .hp-recipe {
     border-radius: 25px;
 }
@@ -65,7 +63,12 @@ hr {
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
 
-/*Cards for the home page*/
+/* Cards for the home page */
+
+.shared-recipes {
+    position: relative;
+    padding-bottom: 90px;
+}
 
 .recipe-card {
     margin: 10px 10px;
@@ -73,14 +76,15 @@ hr {
 }
 
 /*////////////////////////////// Login/Registration Page */
-.login-bg-image {
+.login-bg-image,
+.profile-bg-image {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
     position: absolute;
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
-    height: 80vh;
+    height: 95vh;
     opacity: 0.5;
 }
 
@@ -89,22 +93,23 @@ hr {
     background-size: cover;
     background-position: center center;
     position: absolute;
+    object-fit: cover;
     width: 100%;
-    height: 120vh;
+    height: 135vh;
     opacity: 0.5;
 }
 
-.registration-form,
+.registration-form, 
 .login-form {
     position: relative;
     border-radius: 25px;
     margin: 20px;
-    padding: 16px;
+    padding: 16px 16px 80px;
     opacity: 1;
 }
 
 .input-field {
-    margin: 10px 0;
+    margin: 7px 0;
 }
 
 .card-panel .row {
@@ -116,16 +121,25 @@ hr {
     margin: 30px 0;
 }
 
+.profile-pass {
+    margin-bottom: 250px;
+}
+
 /*////////////////////////////// Footer */
-.footer {
-  height: 50px;
-  margin-top: -50px;
+footer {
+    height: 50px;
+    margin-top: -50px;
+    position: relative;
 }
 
 .page-footer {
-    position: absolute;
     width: 100%;
-    margin-top: 120px;
+    background-color: #fefefa;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px grey;
+    left: 0;
+    bottom: 0;
+    text-align: center;
 }
 
 .page-footer h5 {

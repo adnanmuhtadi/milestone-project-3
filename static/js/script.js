@@ -8,7 +8,7 @@ $(document).ready(function () {
     //for the drop down option when choosing the type of meal
     $('select').formSelect();
     $(".dropdown-trigger").dropdown();
-
+    $('.modal').modal();
 
     //Carousel function which would go round on a set timer
     setInterval(function () {
