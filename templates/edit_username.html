@@ -1,10 +1,14 @@
 {% extends "base.html" %}
-{% block content %}
+{% block structure %}
     
-<div class="row">
+    <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="profile-bg-image">
+
+    {% block content %}
+    <div class="row username-form">
         <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('edit_username', username=session['user']) }}">
-            <div class="card-panel login-form">
-                <h3 class="center-header">Edit Username</h3>
+            <div class="card-panel inside-form">
+                <h3 class="center-header">Update Username</h3>
                 <!-- Username placeholder-->
                 <div class="row">
 					<div class="input-field col s12">
@@ -31,5 +35,6 @@
             </div>
         </form>
     </div>
-    
+    {% endblock %}
+
 {% endblock %}

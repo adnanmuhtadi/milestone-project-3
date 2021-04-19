@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block structure %}
 
+<!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
 <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="registration-bg-image">
 
     {% block content %}
+    <!-- Beginning of the registration form-->
     <div class="row registration-form">
         <form class="col s12 m6 offset-m6" method="POST" action="{{ url_for('registration') }}">
-            <div class="card-panel">
+            <div class="card-panel inside-form">
                 <h3 class="center-header">Register</h3>
                 
                 <section>
@@ -78,6 +80,8 @@
                     <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow enter">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
+
+                    <!-- if the user already has an account can alternatively log in -->
                     <div class="acounts">
                         <div class="col s12">
                             <p class="center-align">If you already have an account, 

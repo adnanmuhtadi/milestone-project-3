@@ -1,11 +1,13 @@
 {% extends "base.html" %}
 {% block structure %}
 
+    <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
     <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="profile-bg-image">
     
     {% block content %}
     <h3 class="center-header">{{ fname }}'s Profile</h3>
-
+        
+    <!-- Beginning of the Profile options where user can change the username and password-->
     <div class="row">
         <div class="col s12 m8 offset-m2">
             <div class="card-panel">
@@ -15,11 +17,13 @@
                 </div>
             </div>
         </div>
+
+        <!-- Change password placeholder-->
         <div class="col s12 m8 offset-m2">
             <div class="card-panel profile-pass">
                 <div class="h3 center-align light-blue-text text-darken-4">
                     <a class="waves-effect waves-light btn-large" 
-                    href="{{ url_for('edit_username', username=session['user']) }}">Change Password</a>
+                    href="{{ url_for('edit_password', username=session['user']) }}">Change Password</a>
                 </div>
             </div>
         </div>

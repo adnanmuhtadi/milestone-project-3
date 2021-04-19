@@ -1,12 +1,14 @@
 {% extends "base.html" %}
 {% block structure %}
 
+<!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
 <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="login-bg-image">
 
     {% block content %}
+    <!-- Beginning of the login form-->
     <div class="row login-form">
         <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('login') }}">
-            <div class="card-panel">
+            <div class="card-panel inside-form">
                 <h3 class="center-header">Log In</h3>
 
                 <section>
@@ -22,7 +24,7 @@
                     {% endwith %}
                 </section>
 
-                <!-- Username placeholder-->
+                <!-- Username input field-->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
@@ -31,7 +33,7 @@
 						<label for="username">Username</label>
 					</div>
                 </div>
-                <!-- Passowrd placeholder -->
+                <!-- Passowrd input field -->
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
@@ -45,6 +47,7 @@
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
+                <!-- if the does not have an account, they can go and register here -->
                 <div class="row">
                     <div class="col s12">
                         <p class="center-align">

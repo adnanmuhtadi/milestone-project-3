@@ -7,7 +7,9 @@ $(document).ready(function () {
     $('.collapsible').collapsible();
     //for the drop down option when choosing the type of meal
     $('select').formSelect();
+    //dropdown for the menu bar
     $(".dropdown-trigger").dropdown();
+    //modal built for the contact form
     $('.modal').modal();
 
     //Carousel function which would go round on a set timer
