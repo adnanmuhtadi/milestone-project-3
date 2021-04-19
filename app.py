@@ -150,6 +150,25 @@ def edit_username(username):
     return redirect(url_for("login"))
 
 
+@ app.route("/edit_password/<username>", methods=["GET", "POST"])
+def edit_password(username):
+    if request.method == "POST":
+        submit = {
+            "new_password": request.form.get("password"),
+        }
+        mongo.db.user.update({"_id": ObjectId(username)}, submit)
+        flash("Task Successfully Updated")
+
+    # grab the session user's username from db
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("edit_password.html", username=username)
+
+    return redirect(url_for("login"))
+
+
 # This tells the application where and how to run.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),

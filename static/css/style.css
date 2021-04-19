@@ -100,12 +100,20 @@ hr {
 }
 
 .registration-form, 
-.login-form {
-    position: relative;
-    border-radius: 25px;
+.login-form,
+.password-form {
     margin: 20px;
     padding: 16px 16px 80px;
-    opacity: 1;
+}
+
+.username-form {
+    margin: 20px;
+    padding: 16px 16px 130px;
+}
+
+.inside-form {
+position: relative;
+    border-radius: 25px;
 }
 
 .input-field {
