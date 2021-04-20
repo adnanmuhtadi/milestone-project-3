@@ -6,6 +6,7 @@ $(document).ready(function () {
     //for the recipes 
     $('.collapsible').collapsible();
     //for the drop down option when choosing the type of meal
+    //also for the drop in the add_recipe.html
     $('select').formSelect();
     //dropdown for the menu bar
     $(".dropdown-trigger").dropdown();

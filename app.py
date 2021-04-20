@@ -123,8 +123,17 @@ def logout():
     return redirect(url_for("login"))
 
 
-@ app.route("/add_recipe")
+@ app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        recipe = {
+            "meal_name": request.form.get("meal_name"),
+            "recipe_name": request.form.get("recipe_name"),
+        }
+        mongo.db.recipes.insert_one(recipe)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
+
     # to pull the meal type names from the mongodb
     meals = mongo.db.meals.find().sort("meal_name", 1)
     # reloads user to add_recipe page
