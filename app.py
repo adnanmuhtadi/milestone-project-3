@@ -127,8 +127,14 @@ def logout():
 def add_recipe():
     if request.method == "POST":
         recipe = {
-            "meal_name": request.form.get("meal_name"),
             "recipe_name": request.form.get("recipe_name"),
+            "meal_name": request.form.get("meal_name"),
+            "url_link": request.form.get("url_link"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "num_servings": request.form.get("num_servings"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_steps": request.form.get("recipe_steps"),
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
