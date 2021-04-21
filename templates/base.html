@@ -32,6 +32,8 @@
             <li class="divider"></li>
             <li><a href="{{ url_for('edit_username', username=session['user']) }}">Edit Username</a></li>
             <li><a href="{{ url_for('edit_password', username=session['user']) }}">Edit Password</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         </ul>
         <nav class="nav-extended text-shadow">
             <!-- Main navigation navbar with the profile link connected to the session -->
@@ -46,7 +48,6 @@
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
                 <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>                
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
                 <li><a href="{{ url_for('registration') }}">Register</a></li>
