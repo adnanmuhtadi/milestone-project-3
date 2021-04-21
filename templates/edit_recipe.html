@@ -9,7 +9,7 @@
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-pencil-alt prefix"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
-                        type="text" class="validate" required>
+                        value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name*</label>
                 </div>
             </div>
@@ -17,9 +17,13 @@
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-folder-open prefix"></i>
                     <select id="meal_name" name="meal_name" class="validate" required>
-                        <option value="" disabled selected required>Choose Meal Type*</option>
+                        <option value="" disabled required>Choose Meal Type*</option>
                         {% for meal in meals %}
-                        <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                            {% if meal.meal_name == recipe.meal_name %}
+                                <option value="{{ meal.meal_name }}" selected>{{ meal.meal_name }}</option>
+                            {% else %}
+                                <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                            {% endif %}
                         {% endfor %}
                     </select>
                     <label for="meal_name">Meal Type</label>
@@ -28,14 +32,16 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="url_link" name="url_link" type="text" class="validate">
+                    <input id="url_link" name="url_link" 
+                    value="{{ recipe.url_link }}" type="text" class="validate">
                     <label for="url_link">URL Link</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="prep_time" name="prep_time" type="text" class="validate">
+                    <input id="prep_time" name="prep_time" 
+                    value="{{ recipe.prep_time }}" type="text" class="validate">
                     <label for="prep_time">Prep Time</label>
                     <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
                 </div>
@@ -43,7 +49,8 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="cooking_time" name="cooking_time" type="text" class="validate" required>
+                    <input id="cooking_time" name="cooking_time" 
+                        value="{{ recipe.cooking_time }}" type="text" class="validate" required>
                     <label for="cooking_time">Cooking Time*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
                 </div>
@@ -51,14 +58,17 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="num_servings" name="num_servings" type="text" class="validate">
+                    <input id="num_servings" name="num_servings" 
+                        value="{{ recipe.num_servings }}" type="text" class="validate">
                     <label for="num_servings">Number of Servings</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-align-left prefix"></i>
-                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required></textarea>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required>
+                        {{- recipe.recipe_ingredients -}}
+                    </textarea>
                     <label for="recipe_ingredients">Ingredients*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Add each ingredient on a new line</span>
                 </div>
@@ -66,7 +76,9 @@
             <div class="row">
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-align-left prefix"></i>
-                    <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required></textarea>
+                    <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required>
+                        {{- recipe.recipe_steps -}}
+                    </textarea>
                     <label for="recipe_steps">Steps*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
                 </div>
@@ -77,7 +89,11 @@
                         <i class="fas fa-align-left prefix"></i>
                         <label for="to_share">
                             To Share
-                            <input type="checkbox" id="to_share" name="to_share">
+                            {% if recipe.to_share == "on" %}
+                                <input type="checkbox" id="to_share" name="to_share" checked>
+                            {% else %}
+                                <input type="checkbox" id="to_share" name="to_share">
+                            {% endif %}
                             <span class="lever"></span>
                         </label>
                     </div>
@@ -85,8 +101,13 @@
             </div> 
             <div class="row">
                 <div class="col s12 center-align">
+                    <!--Cancel button-->
+                    <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">
+                        Cancel<i class="fas fa-times-circle right"></i>
+                    </a>
+                    <!--Submit button to edit the form-->
                     <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Recipe <i class="fas fa-plus-square-right"></i>
+                        Edit Recipe <i class="fas fa-edit right"></i>
                     </button>
                 </div>
             </div>               

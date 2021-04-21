@@ -126,6 +126,7 @@ def logout():
 @ app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
+        to_share = "on" if request.form.get("to_share") else "off"
         recipe = {
             "recipe_name": request.form.get("recipe_name"),
             "meal_name": request.form.get("meal_name"),
@@ -148,7 +149,22 @@ def add_recipe():
 
 @ app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectID(recipe_id)})
+    if request.method == "POST":
+        to_share = "on" if request.form.get("to_share") else "off"
+        edit = {
+            "recipe_name": request.form.get("recipe_name"),
+            "meal_name": request.form.get("meal_name"),
+            "url_link": request.form.get("url_link"),
+            "prep_time": request.form.get("prep_time"),
+            "cooking_time": request.form.get("cooking_time"),
+            "num_servings": request.form.get("num_servings"),
+            "recipe_ingredients": request.form.get("recipe_ingredients"),
+            "recipe_steps": request.form.get("recipe_steps"),
+        }
+        mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
+        flash("Recipe Successfully Updated")
+
+    recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # to pull the meal type names from the mongodb
     meals = mongo.db.meals.find().sort("meal_name", 1)
     # reloads user to add_recipe page
