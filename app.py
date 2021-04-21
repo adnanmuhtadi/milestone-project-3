@@ -146,6 +146,15 @@ def add_recipe():
     return render_template("add_recipe.html", meals=meals)
 
 
+@ app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
+def edit_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectID(recipe_id)})
+    # to pull the meal type names from the mongodb
+    meals = mongo.db.meals.find().sort("meal_name", 1)
+    # reloads user to add_recipe page
+    return render_template("edit_recipe.html", recipe=recipe, meals=meals)
+
+
 @ app.route("/edit_username/<username>", methods=["GET", "POST"])
 def edit_username(username):
     if request.method == "POST":
