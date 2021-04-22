@@ -30,20 +30,58 @@
     
     <div class="row shared-recipes">
         {% for recipe in recipes %}
-        <div class="recipe-card card col s3">
-            <div class="card-image waves-effect waves-block waves-light">
-                <!-- The variable that is created to display content from the DB "recipe" -->
-                <img class="activator" src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}">
+        {% if session.user == recipe.created_by %}
+            <div class="recipe-card card grey lighten-4 col s4">
+        {% else %}
+            <div class="recipe-card card grey lighten-1 col s4">
+        {% endif %}
+                <div class="card-content">
+                    <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}</strong></span>
+                    <div class="card-image waves-effect waves-block waves-light">
+                    <!-- The variable that is created to display content from the DB "recipe" -->
+                    <img class="activator" src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}">
+                </div>
+                <table>
+                    <tr class="new_row">
+                        <td class="table_header">Meal Type</td>
+                        <td>{{ recipe.meal_name }}</td>
+                    </tr>
+                    <tr class="new_row">
+                        <td class="table_header">Prep Time</td>
+                        <td>{{ recipe.prep_time }} min</td>
+                    </tr>
+                    <tr class="new_row">
+                        <td class="table_header">Cooking Time</td>
+                        <td>{{ recipe.cooking_time }} min</td>
+                    </tr>
+                    <tr class="new_row">
+                        <td class="table_header">Servings</td>
+                        <td>{{ recipe.num_servings }} min</td>
+                    </tr>
+                </table>
+                        {% if session.user|lower == recipe.created_by|lower %}
+                            <p><a href="#">View Your Full Recipe</a>
+                            <i class="fas fa-chevron-up right activator"></i></p>
+                        {% else %}
+                            <p><a href="#">View Full Recipe</a>
+                            <i class="fas fa-chevron-up right activator"></i></p>
+                        {% endif %}
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><strong>Ingredients</strong><i class="fas fa-chevron-down right"></i></span>
+                    <ul class="unordered-list list-items">
+                    {% for ingredient in recipe.recipe_ingredients %}
+                        <li class="ingredients-list">
+                    {{ ingredient }}
+                        </li>
+                    {% endfor %}
+                    </ul>
+                    {% if session.user|lower == recipe.created_by|lower %}
+                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Edit</a>
+                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Delete</a>
+                    {% endif %}
+                </div>
             </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-up right"></i></span>
-                <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-down right"></i></span>
-                <p>Cooking Time: {{ recipe.meal_name }}min</p>
-            </div>
-        </div>
         {% endfor %}
     </div>
 {% endblock %}

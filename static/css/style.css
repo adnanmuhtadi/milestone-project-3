@@ -37,6 +37,10 @@ nav ul a {
     position: relative;
 }
 
+.row {
+    margin-bottom: 0px;
+}
+
 /*////////////////////////////// Home Page*/
 
 /* carousel for the home page */
@@ -65,13 +69,40 @@ hr {
 
 /* Cards for the home page */
 
+.card-title {
+    font-family: "Merriweather", sans-serif;    
+    text-align: center;
+}
+
 .shared-recipes {
     position: relative;
 }
 
+.row .col.s4 {
+    width: 31%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+}
+
 .recipe-card {
-    margin: 10px 10px;
-    background-color: pink;
+    margin: 40px 20px 50px 20px;
+}
+
+.card {
+    height: 360px;
+}
+
+td, th {
+    padding: 3px 5px;
+}
+
+table {
+    font-family: "Heebo", sans-serif;;
+}
+
+.table_header {
+    font-weight: 700;
 }
 
 /*////////////////////////////// Login/Registration Page */
@@ -111,7 +142,7 @@ hr {
 }
 
 .inside-form {
-position: relative;
+    position: relative;
     border-radius: 25px;
 }
 
