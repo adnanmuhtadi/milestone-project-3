@@ -128,14 +128,14 @@ def add_recipe():
     if request.method == "POST":
         to_share = "on" if request.form.get("to_share") else "off"
         recipe = {
-            "recipe_name": request.form.get("recipe_name"),
+            "recipe_name": request.form.get("recipe_name").capitalize(),
             "meal_name": request.form.get("meal_name"),
             "url_link": request.form.get("url_link"),
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
             "num_servings": request.form.get("num_servings"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_steps": request.form.get("recipe_steps"),
+            "recipe_ingredients": request.form.get("recipe_ingredients").splitlines(),
+            "recipe_steps": request.form.get("recipe_steps").splitlines(),
             "created_by": session['user']
         }
         mongo.db.recipes.insert_one(recipe)
@@ -209,6 +209,13 @@ def edit_password(username):
         return render_template("edit_password.html", username=username)
 
     return redirect(url_for("login"))
+
+
+@app.route("/delete_recipe/<recipe_id>")
+def delete_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_recipes"))
 
 
 # This tells the application where and how to run.
