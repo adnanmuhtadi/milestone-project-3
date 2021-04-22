@@ -6,24 +6,28 @@
     <!-- Place holder for the search button -->
 
     <!-- The cards that are displayed fo the recipes which have been shared and is being called from the database -->
-    <div class="row shared-recipes">
+
+
+        <div class="row shared-recipes">
         {% for recipe in recipes %}
-        <div class="recipe-card card col s3">
-            <div class="card-image waves-effect waves-block waves-light">
-                <!-- The variable that is created to display content from the DB "recipe" -->
-                <img class="activator" src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}">
+        {% if session.user|lower == recipe.created_by|lower %}
+            <div class="recipe-card card col s4">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <!-- The variable that is created to display content from the DB "recipe" -->
+                    <img class="activator" src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-up right"></i></span>
+                    <p><a href="#">This is a link</a></p>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-down right"></i></span>
+                    <p>Cooking Time: {{ recipe.meal_name }}min</p>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Edit</a>
+                    <a href="" class="btn-small green accent-4">Delete</a>
+                </div>
             </div>
-            <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-up right"></i></span>
-                <p><a href="#">This is a link</a></p>
-            </div>
-            <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4"><strong>{{ recipe.recipe_name }}</strong><i class="fas fa-chevron-down right"></i></span>
-                <p>Cooking Time: {{ recipe.meal_name }}min</p>
-                <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small green accent-4">Edit</a>
-                <a href="" class="btn-small green accent-4">Delete</a>
-            </div>
-        </div>
+        {% endif %}
         {% endfor %}
     </div>
 {% endblock %}
