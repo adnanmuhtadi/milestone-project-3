@@ -41,6 +41,40 @@ nav ul a {
     margin-bottom: 0px;
 }
 
+.input-field .helper-text {
+    text-align: left;
+}
+
+/* Footer for all pages*/
+footer {
+    height: 50px;
+    margin-top: -50px;
+    position: relative;
+}
+
+.page-footer {
+    width: 100%;
+    background-color: #fefefa;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 5px grey;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+}
+
+.page-footer h5 {
+    font-family: "Merriweather", sans-serif;
+}
+
+.quicklinks a, 
+.fab{
+    color: #000000;
+}
+
+.social-media {
+    font-size: 30px;
+}
+
 /*////////////////////////////// Home Page*/
 
 /* carousel for the home page */
@@ -78,6 +112,11 @@ hr {
     position: relative;
 }
 
+.search-recipes {
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
+
 .row .col.s4 {
     width: 31%;
     margin-left: auto;
@@ -86,7 +125,7 @@ hr {
 }
 
 .recipe-card {
-    margin: 40px 20px 50px 20px;
+    margin: 20px 20px 20px 20px;
 }
 
 .card {
@@ -166,36 +205,6 @@ table {
 .btn-small {
     margin: 10px 10px 5px 10px;
     text-align: center;
-}
-
-/*////////////////////////////// Footer */
-footer {
-    height: 50px;
-    margin-top: -50px;
-    position: relative;
-}
-
-.page-footer {
-    width: 100%;
-    background-color: #fefefa;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-    box-shadow: 0 0 5px grey;
-    left: 0;
-    bottom: 0;
-    text-align: center;
-}
-
-.page-footer h5 {
-    font-family: "Merriweather", sans-serif;
-}
-
-.quicklinks a, 
-.fab{
-    color: #000000;
-}
-
-.social-media {
-    font-size: 30px;
 }
 
 @media only screen and (max-width: 1024px) {

@@ -39,12 +39,39 @@ def get_recipes():
     return render_template("home.html", recipes=recipes)
 
 
-@ app.route("/")
+"""
+Function to get the list of recepes from Mongo DB and display on my recipe page
+"""
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("home.html", recipes=recipes)
+
+
+"""
+Function to get the list of recepes from Mongo DB and display on my recipe page
+"""
+
+
 @ app.route("/get_my_recipes")
 # Function to get the list of recepes from Mongo DB and display them in your personal list of recipes
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
     return render_template("my_recipes.html", recipes=recipes)
+
+
+"""
+Function to get the user registered into Mongodb
+1 - To check if the user exists in the db
+2 - To display and error message if they already exist
+3.1 - Checks if the password and confirm password match
+3.2 - Added the rest of the form into the DB
+4 - set up the User Sessional
+5 - Error Message if the passwords dont match
+"""
 
 
 @ app.route("/registration", methods=["GET", "POST"])
@@ -70,11 +97,18 @@ def registration():
             }
             mongo.db.users.insert_one(registration)
 
+            # Setting up the User session and redirects the user to the profile page
             session["user"] = request.form.get("username").lower()
-            flash("Registration Successful!")
             return redirect(url_for("profile", username=session["user"]))
         flash("Password does not match!")
     return render_template("registration.html")
+
+
+"""
+Function to get the user logged in
+1. Checks if the Username is registered in the DB
+2. Checks if the username AND password is correct before logging in.
+"""
 
 
 @ app.route("/login", methods=["GET", "POST"])
@@ -97,10 +131,15 @@ def login():
 
         else:
             # username doesn't exist
-            flash("Incorrect Username and/or Password")
+            flash("Username can not be found")
             return redirect(url_for("login"))
 
     return render_template("login.html")
+
+
+"""
+Function to get the username set up and associated with the user session
+"""
 
 
 @ app.route("/profile/<username>", methods=["GET", "POST"])
@@ -115,12 +154,22 @@ def profile(username):
     return redirect(url_for("login"))
 
 
+"""
+Function to close the session can have an error appear to inform the user
+"""
+
+
 @ app.route("/logout")
 def logout():
     # remove user from session cookie
     flash("You have been logged out")
     session.pop("user")
     return redirect(url_for("login"))
+
+
+"""
+Function to get the list of recepes from Mongo DB and display in the home page
+"""
 
 
 @ app.route("/add_recipe", methods=["GET", "POST"])
@@ -140,7 +189,7 @@ def add_recipe():
         }
         mongo.db.recipes.insert_one(recipe)
         flash("Recipe Successfully Added")
-        return redirect(url_for("get_recipes"))
+        return redirect(url_for("get_my_recipes"))
 
     # to pull the meal type names from the mongodb
     meals = mongo.db.meals.find().sort("meal_name", 1)

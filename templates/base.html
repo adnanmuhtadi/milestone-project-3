@@ -41,6 +41,7 @@
             <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
             <ul class="right hide-on-med-and-down">
+            <!-- If the user is logged in, display the following links -->
             {% if session.user %}
                 <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></li>
@@ -71,6 +72,7 @@
         </ul>
     </header>
     
+    <!--two block stuctures to be in and out of the aligned div-->
     {% block structure %}
         <main class="container">
             {% block content %}
