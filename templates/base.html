@@ -35,7 +35,7 @@
             <li class="divider"></li>
             <li><a href="{{ url_for('logout') }}">Log Out</a></li>
         </ul>
-        <nav class="nav-extended text-shadow">
+        <nav class="navbar-fixed nav-extended text-shadow">
             <!-- Main navigation navbar with the profile link connected to the session -->
             <div class="nav-wrapper">
             <a href="{{ url_for('get_recipes') }}" class="brand-logo">Home Cooking</a>
@@ -92,7 +92,7 @@
     </div>
     
     <!-- Footer with social links and Copyright label-->
-    <div class="page-footer black-text">
+    <footer class="page-footer black-text">
         <div class="row">
             <div class="social-media col s12 center">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
@@ -105,7 +105,7 @@
                 <p>© 2021 Adnan Muhtadi</p>
             </div>
         </div>
-    </div>
+    </footer>
 
     <!-- jquery from code.jquery.com -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" 
