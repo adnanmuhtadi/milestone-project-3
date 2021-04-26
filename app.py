@@ -3,10 +3,11 @@ import os
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
-from flask_pymongo import PyMongo
+from flask_pymongo import PyMongo, DESCENDING, ASCENDING
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
+import math
 
 app = Flask(__name__)
 
@@ -36,7 +37,15 @@ Function to get the list of recepes from Mongo DB and display in the home page
 @app.route("/get_recipes")
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
-    return render_template("home.html", recipes=recipes)
+    amount_recipes = mongo.db.recipes.count()
+    recipes_pp = 7
+    current_recipe_page = int(request.args.get('current_recipe_page', 1))
+    amount_pages = range(1, int(
+        math.ceil(amount_recipes / recipes_pp)) + 1)
+    recipes = mongo.db.recipes.find().sort([('_id', ASCENDING)]).skip(
+        (current_recipe_page - 1)*recipes_pp).limit(recipes_pp)
+    return render_template(
+        "home.html", recipes=recipes, current_recipe_page=current_recipe_page, amount_pages=amount_pages, amount_recipes=amount_recipes)
 
 
 """
@@ -51,6 +60,13 @@ def search():
     return render_template("home.html", recipes=recipes)
 
 
+@app.route("/mysearch", methods=["GET", "POST"])
+def mysearch():
+    query = request.form.get("query")
+    recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
+    return render_template("my_recipes.html", recipes=recipes)
+
+
 """
 Function to get the list of recepes from Mongo DB and display on my recipe page
 """
@@ -60,7 +76,15 @@ Function to get the list of recepes from Mongo DB and display on my recipe page
 # Function to get the list of recepes from Mongo DB and display them in your personal list of recipes
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
-    return render_template("my_recipes.html", recipes=recipes)
+    amount_recipes = mongo.db.recipes.count()
+    recipes_pp = 7
+    current_recipe_page = int(request.args.get('current_recipe_page', 1))
+    amount_pages = range(1, int(
+        math.ceil(amount_recipes / recipes_pp)) + 1)
+    recipes = mongo.db.recipes.find().sort([('_id', ASCENDING)]).skip(
+        (current_recipe_page - 1)*recipes_pp).limit(recipes_pp)
+    return render_template(
+        "my_recipes.html", recipes=recipes, current_recipe_page=current_recipe_page, amount_pages=amount_pages, amount_recipes=amount_recipes)
 
 
 """
@@ -185,6 +209,7 @@ def add_recipe():
             "num_servings": request.form.get("num_servings"),
             "recipe_ingredients": request.form.get("recipe_ingredients").splitlines(),
             "recipe_steps": request.form.get("recipe_steps").splitlines(),
+            "to_share": request.form.get("to_share"),
             "created_by": session['user']
         }
         mongo.db.recipes.insert_one(recipe)
@@ -228,8 +253,8 @@ def edit_username(username):
         submit = {
             "new_username": request.form.get("username"),
         }
-        mongo.db.user.update({"_id": ObjectId(username)}, submit)
-        flash("Task Successfully Updated")
+        mongo.db.users.update({"_id": ObjectId(username)}, submit)
+        flash("username Successfully Updated")
 
     # grab the session user's username from db
     username = mongo.db.users.find_one(
