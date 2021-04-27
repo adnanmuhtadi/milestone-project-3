@@ -2,7 +2,7 @@
 {% block structure %}
 
 <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="login-bg-image">
+<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
     {% block content %}
     <!-- Beginning of the login form-->
@@ -27,7 +27,7 @@
                 <!-- Username input field-->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-cog prefix text-darken-4"></i>
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -36,14 +36,15 @@
                 <!-- Passowrd input field -->
                 <div class="row">
                     <div class="input-field col s12">
-						<i class="fas fa-user-lock prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-lock prefix text-darken-4"></i>
                         <input id="password" name="password" type="password" inlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
+                <!-- Login button -->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow enter">
+                    <button type="submit" class="col s12 btn-large orange accent-1 black-text text-shadow enter">
                         Log In <i class="fas fa-sign-in-alt"></i>
                     </button>
                 </div>
@@ -53,7 +54,6 @@
                         <p class="center-align">
                             New Here?
                             <a href="{{ url_for('registration') }}" class="light-blue-text text-darken-4">Register Account</a>
-
                         </p>
                     </div>
                 </div>
