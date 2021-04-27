@@ -2,14 +2,15 @@
 {% block structure %}
 
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="my-recipe-bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
     {% block content %}
 
 
     <h4 class="center-header">My Recipes</h4>
 
-    <!-- Place holder for the search button -->
+    <!-- Place holder for the search button where it will call up the query to do the search for 
+    recipe names and ingredient -->
     <div class="row card-panel grey lighten-5 search-my-recipes">
         <form action="{{ url_for('mysearch') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
@@ -29,88 +30,109 @@
             </div>
         </form>
     </div>
+        
+    <section>
+        <!--Flash message within under the title to inform the user what is the issue -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div id="row flashes">
+                        <h5 class="light-blue lighten-4 center-align">{{ message }}</h5>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
-    <!-- The cards that are displayed fo the recipes which have been shared and is being called from the database -->
-        <section>
-            <!--Flash message within under the title to inform the user what is the issue -->
-            {% with messages = get_flashed_messages() %}
-                {% if messages %}
-                    {% for message in messages %}
-                        <div id="row flashes">
-                            <h5 class="light-blue lighten-4 center-align">{{ message }}</h5>
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-        </section>
-
-        <ul class="row my-recipes">
-        {% for recipe in recipes %}
-        {% if session.user|lower == recipe.created_by|lower %}
-            <div class="my-recipe-card card hvr-glow grey lighten-3 col s3">
-                <div class="my-card-content">
+    <!-- dispalying all recipes that are associated with that specific user will be displayed in there recipes-->
+    <ul class="row my-recipes">
+    {% for recipe in recipes %}
+    {% if session.user|lower == recipe.created_by|lower %}
+        <div class="my-recipe-card card hvr-glow grey lighten-3 col s3">
+            <div class="my-card-content">
+                {% if recipe.is_it_veg %}
+                    <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
+                        <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg"></strong></span>
+                {% else %}
                     <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}</strong></span>
-                    <div class="card-image waves-effect waves-block waves-light">
-                    <!-- The variable that is created to display content from the DB "recipe" -->
-                    {% if recipe.url_link %}
-                        <img class="activator" src="{{ recipe.url_link }}">
-                    {% else %}
-                        <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}">
-                    {% endif %}
-                </div>
-                <table>
-                    <tr class="new_row">
-                        <td class="table_header">Meal Type</td>
-                        <td>{{ recipe.meal_name }}</td>
-                    </tr>
-                    <tr class="new_row">
-                        <td class="table_header">Prep Time</td>
-                        <td>{{ recipe.prep_time }} min</td>
-                    </tr>
-                    <tr class="new_row">
-                        <td class="table_header">Cooking Time</td>
-                        <td>{{ recipe.cooking_time }} min</td>
-                    </tr>
-                    <tr class="new_row">
-                        <td class="table_header">Servings</td>
-                        <td>{{ recipe.num_servings }}</td>
-                    </tr>
-                </table>
-                    <p><a href="#">View Your Full Recipe</a>
-                    <i class="fas fa-chevron-up right activator"></i></p>
-                </div>
-                <div class="card-reveal ">
-                    <span class="card-title grey-text text-darken-4"><strong>Ingredients</strong><i class="fas fa-chevron-down right"></i></span>
-                    <ul class="unordered-list list-items">
-                    {% for ingredient in recipe.recipe_ingredients %}
-                        <li class="ingredients-list">
-                    {{ ingredient }}
-                        </li>
-                    {% endfor %}
-                    </ul>
-                        <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-1 col s12 black-text"><i class="far fa-edit"></i> Edit</a>
-                        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-1 col s12 black-text"><i class="fas fa-trash"></i> Delete</a>
-                </div>
+                {% endif %}
+                <div class="my-recipe-card-image waves-effect waves-block waves-light">
+                <!-- The variable that is created to display content from the DB "recipe" 
+                this would check if there is an image linked to the recipe-->
+                {% if recipe.url_link %}
+                    <img class="activator" src="{{ recipe.url_link }}">
+                {% else %}
+                    <!--image recived from https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png-->
+                    <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}">
+                {% endif %}
             </div>
-        {% endif %}
-        {% endfor %}
-        <div class="row">
-            <div class="col s12 xl12">
-                <!--Pagination-->
-                <ul class="pagination text-shadow center-align">
-                    {% for page_number in amount_pages %}
-                    {% if page_number == current_recipe_page %}
-                    <li class="active blue-grey darken-1"><a>{{ page_number }}</a></li>
+            <table>
+                <tr class="new_row">
+                    <td class="table_header">Meal Type</td>
+                    <td>{{ recipe.meal_name }}</td>
+                </tr>
+                <tr class="new_row">
+                    <td class="table_header">Prep Time</td>
+                    <!-- to put a dash if there is no data for the field -->
+                    <td> {% if not recipe.prep_time %}
+                    -
                     {% else %}
-                    <li class="waves-effect">
-                        <a href="{{ url_for('get_my_recipes', current_recipe_page=page_number) }}">{{ page_number }}</a>
+                    {{ recipe.prep_time }} min
+                    {% endif %}</td>
+                </tr>
+                <tr class="new_row">
+                    <td class="table_header">Cooking Time</td>
+                    <td>{% if not recipe.cooking_time %}
+                    -
+                    {% else %}
+                    {{ recipe.cooking_time }} min
+                    {% endif %}</td>
+                </tr>
+                <tr class="new_row">
+                    <td class="table_header">Servings</td>
+                    <td>{% if not recipe.num_servings %}
+                    -
+                    {% else %}
+                    {{ recipe.num_servings }} min
+                    {% endif %}</td>
+                </tr>
+            </table>
+                <p><a href="#"> View Your Full Recipe</a>
+                <i class="fas fa-chevron-up right activator"></i></p>
+            </div>
+            <div class="card-reveal ">
+                <span class="card-title grey-text text-darken-4"><strong>Ingredients</strong><i class="fas fa-chevron-down right"></i></span>
+                <ul class="unordered-list list-items">
+                {% for ingredient in recipe.recipe_ingredients %}
+                    <li class="ingredients-list">
+                {{ ingredient }}
                     </li>
-                    {% endif %}
-                    {% endfor %}
+                {% endfor %}
                 </ul>
+                    <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-1 col s12 black-text"><i class="far fa-edit"></i> Edit</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-1 col s12 black-text"><i class="fas fa-trash"></i> Delete</a>
             </div>
         </div>
-        </ul>
+    {% endif %}
+    {% endfor %}
+    <div class="row">
+        <div class="col s12 xl12">
+            
+            <!--Pagination-->
+            <ul class="pagination text-shadow center-align">
+                {% for page_number in amount_pages %}
+                {% if page_number == current_recipe_page %}
+                <li class="active blue-grey darken-1"><a>{{ page_number }}</a></li>
+                {% else %}
+                <li class="waves-effect">
+                    <a href="{{ url_for('get_my_recipes', current_recipe_page=page_number) }}">{{ page_number }}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    </ul>
         
     {% endblock %}
     
