@@ -2,7 +2,7 @@
 {% block structure %}
 
 <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="registration-bg-image">
+<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
     {% block content %}
     <!-- Beginning of the registration form-->
@@ -77,11 +77,13 @@
                 </div>
                 <!-- register button placeholder-->
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large orange accent-1 black-text text-shadow enter">
+                    <!-- if the user already has an account can alternatively log in -->
+                    <button type="reset" class="col s5 btn-large red accent-1 black-text text-shadow enter">
+                        Clear <i class="fas fa-times-circle"></i>
+                    </button>
+                    <button type="submit" class="col s5 btn-large orange accent-1 black-text text-shadow enter">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
-
-                    <!-- if the user already has an account can alternatively log in -->
                     <div class="acounts">
                         <div class="col s12">
                             <p class="center-align">If you already have an account, 

@@ -2,17 +2,18 @@
 {% block structure %}
     
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="profile-bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
     {% block content %}
     <div class="row username-form">
+        <!-- POSTING method with an action to use the edit_username function and using the session 'user'-->
         <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('edit_username', username=session['user']) }}">
             <div class="card-panel inside-form">
                 <h3 class="center-header">Update Username</h3>
-                <!-- Username placeholder-->
+                <!--Current Username placeholder which is disabled so it can not be edited.-->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-cog prefix text-darken-4"></i>
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="{{ username }}" class="validate" disabled>
 						<label for="username">Username</label>
@@ -21,14 +22,14 @@
                 <!-- Enter New Username placeholder-->
                 <div class="row">
 					<div class="input-field col s12">
-						<i class="fas fa-user-cog prefix light-blue-text text-darken-4"></i>
+						<i class="fas fa-user-cog prefix text-darken-4"></i>
 						<input id="new_username" name="new_username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="new_username">Enter New Username!</label>
 					</div>
                 </div>
                 <div class="row">
-                    <button type="submit" class="col s12 btn-large light-blue darken-4 text-shadow enter">
+                    <button type="submit" class="col s12 btn-large orange accent-1 black-text enter">
                         Update Username<i class="fas fa-edit right"></i>
                     </button>
                 </div>
