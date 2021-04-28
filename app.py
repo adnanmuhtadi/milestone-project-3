@@ -234,8 +234,8 @@ def edit_recipe(recipe_id):
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
             "num_servings": request.form.get("num_servings"),
-            "recipe_ingredients": request.form.get("recipe_ingredients"),
-            "recipe_steps": request.form.get("recipe_steps"),
+            "recipe_ingredients": request.form.get("recipe_ingredients").splitlines(),
+            "recipe_steps": request.form.get("recipe_steps").splitlines(),
             "is_it_veg": request.form.get("is_it_veg"),
             "to_share": request.form.get("to_share"),
             "created_by": session['user']

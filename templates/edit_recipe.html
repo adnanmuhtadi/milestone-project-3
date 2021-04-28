@@ -67,7 +67,9 @@
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required>
-                        {{- recipe.recipe_ingredients -}}
+                        {%- for recipe_ingredients in recipe.recipe_ingredients -%}
+                        {{ recipe_ingredients + "\n" }} 
+                        {%- endfor -%}
                     </textarea>
                     <label for="recipe_ingredients">Ingredients*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Add each ingredient on a new line</span>
@@ -77,7 +79,9 @@
                 <div class="input-field col s8 offset-s2">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required>
-                        {{- recipe.recipe_steps -}}
+                        {%- for recipe_steps in recipe.recipe_steps -%}
+                        {{ recipe_steps + "\n" }} 
+                        {%- endfor -%}
                     </textarea>
                     <label for="recipe_steps">Steps*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
