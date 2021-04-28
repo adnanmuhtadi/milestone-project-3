@@ -50,6 +50,7 @@
     {% if session.user|lower == recipe.created_by|lower %}
         <div class="my-recipe-card card hvr-glow grey lighten-3 col s3">
             <div class="my-card-content">
+                <!-- if the recipe is considered vegetarian, then a toggle would be switched on and an image would appear next to the title-->
                 {% if recipe.is_it_veg %}
                     <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
                         <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg"></strong></span>
@@ -100,6 +101,7 @@
                 <p><a href="#"> View Your Full Recipe</a>
                 <i class="fas fa-chevron-up right activator"></i></p>
             </div>
+            <!--will display the ingrediants in the back of the content of the card -->
             <div class="card-reveal ">
                 <span class="card-title grey-text text-darken-4"><strong>Ingredients</strong><i class="fas fa-chevron-down right"></i></span>
                 <ul class="unordered-list list-items">

@@ -9,7 +9,7 @@
     {% block content %}
     <div class="row add-recipe-card card-panel">
         <!-- using the POST Method and calling on the functin 'add_recipe'-->
-        <div class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
             <!--Recipe Name placeholder (mandatory field)-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
@@ -32,6 +32,7 @@
                     <label for="meal_name">Meal Type</label>
                 </div>
             </div>
+            <!-- The url link to have the image added-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <i class="far fa-image prefix"></i>
@@ -39,14 +40,16 @@
                     <label for="url_link">URL Link</label>
                 </div>
             </div>
+            <!-- Place holder for Prep Time-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <i class="far fa-clock prefix"></i>
                     <input id="prep_time" name="prep_time" type="number" class="validate">
                     <label for="prep_time">Prep Time</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
+                    <span class="helper-text">In minutes</span>
                 </div>
             </div>
+            <!-- Place holder for cooking Time-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <i class="fas fa-clock prefix"></i>
@@ -55,6 +58,7 @@
                     <span class="helper-text">In minutes</span>
                 </div>
             </div>
+            <!-- Place holder for number of servings -->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <i class="fas fa-user-friends prefix"></i>
@@ -62,6 +66,7 @@
                     <label for="num_servings">Number of Servings</label>
                 </div>
             </div>
+            <!--Place holder for ingrediants-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <i class="fas fa-align-left prefix"></i>
@@ -78,6 +83,7 @@
                     <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
                 </div>
             </div>
+            <!-- Place holder for if it is vegetarian or not-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <div class="switch">
@@ -90,6 +96,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Place holder to check if it the user would like to share the recipe-->
             <div class="row">
                 <div class="input-field col s10 offset-s1">
                     <div class="switch">
@@ -113,7 +120,7 @@
                 <button type="submit" class="col s4 center-align btn-large orange accent-1 black-text text-shadow">
                     Add Recipe <i class="fas fa-plus-circle"></i>
                 </button>
-            </div>               
+            </form>               
         </form>
     </div>
     {% endblock %}
