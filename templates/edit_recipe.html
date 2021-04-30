@@ -1,21 +1,28 @@
 {% extends "base.html" %}
-{% block content %}
+{% block structure %}
+    
+    <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
-    <h3 class="light-blue-text text-darken-4 center-align">Edit Recipe</h3>
+    <h3 class="center-header">Edit Recipe</h3>
 
-    <div class="row card-panel grey lighten-5">
+    {% block content %}
+    <div class="row add-recipe-card card-panel grey lighten-5">
+        <!-- using the POST Method and calling on the functin 'edit_recipe'-->
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
+            <!--Placeholder recipe name (mandatory field)-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <i class="fas fa-pencil-alt prefix"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name*</label>
                 </div>
             </div>
+            <!-- Placeholder for meal name -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-folder-open prefix"></i>
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-utensils prefix"></i>
                     <select id="meal_name" name="meal_name" class="validate" required>
                         <option value="" disabled required>Choose Meal Type*</option>
                         {% for meal in meals %}
@@ -29,42 +36,47 @@
                     <label for="meal_name">Meal Type</label>
                 </div>
             </div>
+            <!-- The url link to have the image added-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-pencil-alt prefix"></i>
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-image prefix"></i>
                     <input id="url_link" name="url_link" 
                     value="{{ recipe.url_link }}" type="text" class="validate">
                     <label for="url_link">URL Link</label>
                 </div>
             </div>
+            <!-- Placeholder for prep time-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-pencil-alt prefix"></i>
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-clock prefix"></i>
                     <input id="prep_time" name="prep_time" 
                     value="{{ recipe.prep_time }}" type="text" class="validate">
                     <label for="prep_time">Prep Time</label>
                     <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
                 </div>
             </div>
+            <!-- Placeholder for cooking time-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-pencil-alt prefix"></i>
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-clock prefix"></i>
                     <input id="cooking_time" name="cooking_time" 
                         value="{{ recipe.cooking_time }}" type="text" class="validate" required>
                     <label for="cooking_time">Cooking Time*</label>
                     <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
                 </div>
             </div>
+            <!-- Placeholder for number of servings -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
-                    <i class="fas fa-pencil-alt prefix"></i>
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-user-friends prefix"></i>
                     <input id="num_servings" name="num_servings" 
                         value="{{ recipe.num_servings }}" type="text" class="validate">
                     <label for="num_servings">Number of Servings</label>
                 </div>
             </div>
+            <!--Placeholder for ingredients and it will break the list out into a new line -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required>
                         {%- for recipe_ingredients in recipe.recipe_ingredients -%}
@@ -75,8 +87,9 @@
                     <span class="helper-text" data-error="wrong" data-success="right">Add each ingredient on a new line</span>
                 </div>
             </div>
+            <!--Placeholder for steps and it will break the list out into a new line -->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required>
                         {%- for recipe_steps in recipe.recipe_steps -%}
@@ -87,10 +100,24 @@
                     <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
                 </div>
             </div>
+            <!-- Placeholder for if is it vegetarian or not-->
             <div class="row">
-                <div class="input-field col s8 offset-s2">
+                <div class="input-field col s10 offset-s1">
                     <div class="switch">
-                        <i class="fas fa-align-left prefix"></i>
+                        <i class="fas fa-carrot prefix"></i>
+                        <label for="is_it_veg">
+                            Is this recipe vegetarian? 
+                            <input type="checkbox" id="is_it_veg" name="is_it_veg">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Placeholder to edit share recipe-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <div class="switch">
+                        <i class="fas fa-share-square prefix"></i>
                         <label for="to_share">
                             To Share
                             {% if recipe.to_share == "on" %}
@@ -105,17 +132,21 @@
             </div> 
             <div class="row">
                 <div class="col s12 center-align">
-                    <!--Cancel button-->
-                    <a href="{{ url_for('get_recipes') }}" class="btn-large red text-shadow">
-                        Cancel<i class="fas fa-times-circle right"></i>
-                    </a>
-                    <!--Submit button to edit the form-->
-                    <button type="submit" class="btn-large light-blue darken-1 text-shadow">
-                        Edit Recipe <i class="fas fa-edit right"></i>
-                    </button>
+                    <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
+                <button class="col s4 btn-large grey accent-1 black-text text-shadow" 
+                value="Go back!" onclick="history.back()">
+                    <i class="fas fa-arrow-circle-left"></i> Go Back
+                </button>
+                <button type="reset" class="col s4 offset-s1 btn-large red accent-1 black-text text-shadow">
+                    Clear <i class="fas fa-times-circle"></i>
+                </button>
+                <button type="submit" class="col s4 center-align btn-large orange accent-1 black-text text-shadow">
+                    Edit Recipe <i class="fas fa-plus-circle"></i>
+                </button>
                 </div>
             </div>               
         </form>
     </div>
-
+    {% endblock %}
+    
 {% endblock %}

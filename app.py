@@ -242,6 +242,7 @@ def edit_recipe(recipe_id):
         }
         mongo.db.recipes.update({"_id": ObjectId(recipe_id)}, edit)
         flash("Recipe Successfully Updated")
+        return redirect(url_for("get_my_recipes"))
 
     recipe = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
     # to pull the meal type names from the mongodb
