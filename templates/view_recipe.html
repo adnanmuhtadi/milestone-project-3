@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% block structure %}
+    
+    <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+
+    <h3 class="center-header">Add New Recipe</h3>
+
+    {% block content %}
+    <div class="row add-recipe-card card-panel">
+        <!-- using the POST Method and calling on the functin 'add_recipe'-->
+        <form class="col s12" method="POST" action="{{ url_for('add_recipe') }}">
+            <!--Placeholder recipe name (mandatory field)-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-pencil-alt prefix"></i>
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                        type="text" class="validate" required>
+                    <label for="recipe_name">Recipe Name*</label>
+                </div>
+            </div>
+            <!-- Placeholder for meal name -->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-utensils prefix"></i>
+                    <select id="meal_name" name="meal_name" class="validate" required>
+                        <option value="" disabled selected required>Choose Meal Type*</option>
+                        {% for meal in meals %}
+                        <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="meal_name">Meal Type</label>
+                </div>
+            </div>
+            <!-- The url link to have the image added-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="far fa-image prefix"></i>
+                    <input id="url_link" name="url_link" type="text" class="validate">
+                    <label for="url_link">URL Link</label>
+                </div>
+            </div>
+            <!-- Placeholder for prep time-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="far fa-clock prefix"></i>
+                    <input id="prep_time" name="prep_time" type="number" class="validate">
+                    <label for="prep_time">Prep Time</label>
+                    <span class="helper-text">In minutes</span>
+                </div>
+            </div>
+            <!-- Placeholder for cooking time-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-clock prefix"></i>
+                    <input id="cooking_time" name="cooking_time" type="number" class="validate">
+                    <label for="cooking_time">Cooking Time</label>
+                    <span class="helper-text">In minutes</span>
+                </div>
+            </div>
+            <!-- Placeholder for number of servings -->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-user-friends prefix"></i>
+                    <input id="num_servings" name="num_servings" type="number" class="validate">
+                    <label for="num_servings">Number of Servings</label>
+                </div>
+            </div>
+            <!--Placeholder for ingrediants-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-align-left prefix"></i>
+                    <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_ingredients">Ingredients*</label>
+                    <span class="helper-text">Add each ingredient on a new line</span>
+                </div>
+            </div>
+            <!--Placeholder for steps-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <i class="fas fa-align-left prefix"></i>
+                    <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required></textarea>
+                    <label for="recipe_steps">Steps*</label>
+                    <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
+                </div>
+            </div>
+            <!-- Placeholder for if it is vegetarian or not-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <div class="switch">
+                        <i class="fas fa-carrot prefix"></i>
+                        <label for="is_it_veg">
+                            Is this recipe vegetarian? 
+                            <input type="checkbox" id="is_it_veg" name="is_it_veg">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- Placeholder to check if it the user would like to share the recipe-->
+            <div class="row">
+                <div class="input-field col s10 offset-s1">
+                    <div class="switch">
+                        <i class="fas fa-share-square prefix"></i>
+                        <label for="to_share">
+                            To Share
+                            <input type="checkbox" id="to_share" name="to_share">
+                            <span class="lever"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>  
+            <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
+                <button class="col s4 btn-large grey accent-1 black-text text-shadow" 
+                value="Go back!" onclick="history.back()">
+                    <i class="fas fa-arrow-circle-left"></i> Go Back
+                </button>
+                <button type="reset" class="col s4 offset-s1 btn-large red accent-1 black-text text-shadow">
+                    Clear <i class="fas fa-times-circle"></i>
+                </button>
+                <button type="submit" class="col s4 center-align btn-large orange accent-1 black-text text-shadow">
+                    Add Recipe <i class="fas fa-plus-circle"></i>
+                </button>
+            </form>               
+        </form>
+    </div>
+    {% endblock %}
+
+{% endblock %}
