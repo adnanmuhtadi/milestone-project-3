@@ -10,7 +10,7 @@
 
     <!-- Main content for the section -->
     <h3 class="center-header">Home Recipes</h3>
-    <div class="row">
+    <div class="row des-section">
         <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col s4">
         <p class="description col s8"><strong>Are you about to leave home to either be independent or go to university?</br>
             Have you ever had a time when you had to store a specific recipe?</br>
@@ -54,9 +54,9 @@
             {% for recipe in recipes %}
             {% if recipe.to_share == "on" %}            
                 {% if session.user == recipe.created_by %}
-                    <div class="recipe-card card hvr-grow-shadow orange lighten-5 col s4">
+                    <div class="shared-recipe-card card hvr-grow-shadow orange lighten-5 col s4">
                 {% else %}
-                    <div class="recipe-card card hvr-glow grey lighten-3 col s4">
+                    <div class="shared-recipe-card card hvr-glow grey lighten-3 col s4">
                 {% endif %}
                     
                         <div class="card-content">
