@@ -40,7 +40,7 @@ nav ul a {
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 } 
 
-/* Header for all pages*/
+/* Header */
 .center-header{
     font-family: "Merriweather", sans-serif;    
     text-align: center;
@@ -48,15 +48,11 @@ nav ul a {
     position: relative;
 }
 
-.row {
-    margin-bottom: 0px;
-}
-
 .input-field .helper-text {
     text-align: left;
 }
 
-/* Footer for all pages*/
+/* Footer */
 footer {
     left: 0;
     bottom: 0;
@@ -92,6 +88,13 @@ footer {
 
 /*////////////////////////////// Home Page*/
 
+hr {
+    margin: 60px 0;
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
 /* carousel for the home page */
 .carousel {
     border-radius: 0px 0px 40px 40px;
@@ -99,7 +102,8 @@ footer {
 }
 
 /* Description from the home page */
-.hp-recipe {
+.des-section .hp-recipe {
+    margin: 0;
     border-radius: 25px;
 }
 
@@ -109,14 +113,12 @@ footer {
     font-size: 16px;
 }
 
-hr {
-    margin: 60px 0;
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
-}
-
 /* Cards for the home page */
+
+.search-recipes {
+    border-radius: 25px;
+    margin-bottom: 30px;
+}
 
 .card-title {
     font-family: "Merriweather", sans-serif;    
@@ -127,14 +129,9 @@ hr {
     position: relative;
 }
 
-.search-recipes {
-    border-radius: 25px;
-    margin-bottom: 30px;
-}
-
 .card .card-image img{
-    width: 300px;
-    height: 280px;
+    width: 250px;
+    height: 230px;
 }
 
 .row .col.s4 {
@@ -144,7 +141,7 @@ hr {
     right: auto;
 }
 
-.recipe-card {
+.shared-recipe-card {
     margin: 20px 20px 20px 20px;
 }
 
@@ -164,31 +161,8 @@ table {
     font-weight: 700;
 }
 
-/*////////////////////////////// Login/Registration Page */
-.login-bg-image,
-.profile-bg-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 95vh;
-    opacity: 0.5;
-}
-
-.registration-bg-image {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    position: absolute;
-    object-fit: cover;
-    width: 100%;
-    height: 147vh;
-    opacity: 0.5;
-}
-
-.my-recipe-bg-image {
+/*////////////////////////////// Login/Registration/Edit Username/Edit Password Page */
+.bg-image {
     background-repeat: no-repeat;
     background-size: fixed;
     background-position: center center;
@@ -197,7 +171,7 @@ table {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100%%;
+    height: 150vh;
     opacity: 0.5;
 }
 
@@ -228,17 +202,18 @@ table {
     border-radius: 2.5em;
 }
 
-.enter {
-    margin: 30px 0;
+.button-set .col.s5 {
+    margin-left: 50px;
 }
+
+.enter {
+    margin: 35px 0 25px;
+}
+
+/*////////////////////////////// My Profile Page */
 
 .profile-pass {
     margin-bottom: 250px;
-}
-
-.btn-small {
-    margin: 10px 10px 5px 10px;
-    text-align: center;
 }
 
 /*////////////////////////////// My Recipe Page */
@@ -250,9 +225,10 @@ table {
     width: 900px;
 }
 
-.card-title {
-    font-family: "Merriweather", sans-serif;    
-    text-align: center;
+.veg {
+    width: 17px;
+    margin-left: 20px;
+    position: absolute;
 }
 
 .my-recipes {
@@ -277,16 +253,28 @@ table {
     text-align: center;
 }
 
-td, th {
-    padding: 3px 5px;
+.card .my-recipe-card-image img{
+    width: 300px;
+    height: 280px;
 }
 
-table {
-    font-family: "Heebo", sans-serif;;
+.btn-small {
+    margin: 10px 10px 5px 10px;
+    text-align: center;
 }
 
-.table_header {
-    font-weight: 700;
+.add-recipe-card {
+    background-color: #fefefa;
+    position: relative;
+    margin: auto;
+    width: 60%;
+}
+
+.button-set .col.s4 {
+    width: 31%;
+    margin: 60px 0 18px 18px;
+    left: auto;
+    right: auto;
 }
 
 @media only screen and (max-width: 1024px) {
