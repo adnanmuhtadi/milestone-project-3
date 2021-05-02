@@ -253,9 +253,8 @@ def edit_recipe(recipe_id):
 
 @app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
 def view_recipe(recipe_id):
-    recipes = mongo.db.recipes.find()
     all_recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("view_recipe.html", all_recipe_info=all_recipe_info, recipes=recipes)
+    return render_template("view_recipe.html", all_recipe_info=all_recipe_info)
 
 
 @ app.route("/edit_username/<username>", methods=["GET", "POST"])
@@ -301,6 +300,13 @@ def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
     flash("Task Successfully Deleted")
     return redirect(url_for("get_recipes"))
+
+
+@app.route("/delete_my_recipe/<recipe_id>")
+def delete_my_recipe(recipe_id):
+    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    flash("Task Successfully Deleted")
+    return redirect(url_for("get_my_recipes"))
 
 
 # This tells the application where and how to run.
