@@ -109,10 +109,10 @@
                         </table>
                         <!-- if the user is logged in, they would have a different text available for them in the share site-->
                             {% if session.user|lower == recipe.created_by|lower %}
-                                <p><a href="#">View Your Full Recipe</a>
+                                <p><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Your Full Recipe</a>
                                 <i class="fas fa-chevron-up right activator"></i></p>
                             {% else %}
-                                <p><a href="#">View Full Recipe</a>
+                                <p><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Full Recipe</a>
                                 <i class="fas fa-chevron-up right activator"></i></p>
                             {% endif %}
                         </div>

@@ -251,6 +251,13 @@ def edit_recipe(recipe_id):
     return render_template("edit_recipe.html", recipe=recipe, meals=meals)
 
 
+@app.route("/view_recipe/<recipe_id>", methods=["GET", "POST"])
+def view_recipe(recipe_id):
+    recipes = mongo.db.recipes.find()
+    all_recipe_info = mongo.db.recipes.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("view_recipe.html", all_recipe_info=all_recipe_info, recipes=recipes)
+
+
 @ app.route("/edit_username/<username>", methods=["GET", "POST"])
 def edit_username(username):
     if request.method == "POST":
