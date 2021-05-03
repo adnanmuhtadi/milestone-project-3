@@ -62,12 +62,20 @@
         <ul class="sidenav" id="mobile-demo">
             <li><h4 class="centre-align orange accent-1 black-text text-darken-4">Home Cooking</h4></li>
                 <li><a href="{{ url_for('get_recipes') }}">Home</a></li>
-                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                <li><a href="{{ url_for('add_recipe') }}">New Recipe</a></li>
-                <li><a href="#">New Category</a></li>
-                <li><a href="{{ url_for('logout') }}">Log Out</a></li>
-                <li><a href="{{ url_for('login') }}">Log In</a></li>
-                <li><a href="{{ url_for('registration') }}">Register</a></li>
+                <!-- If the user is logged in, display the following links -->
+                {% if session.user %}
+                    <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
+                    <li><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></li>
+                    <li><a href="#">New Category</a></li>
+                    <!-- Dropdown Trigger -->
+                    <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
+                    <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>                
+                {% else %}
+                    <li><a href="{{ url_for('login') }}">Log In</a></li>
+                    <li><a href="{{ url_for('registration') }}">Register</a></li>
+                    <!-- The modal trigger used for the contact us-->
+                    <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>
+                {% endif %}
         </ul>
     </header>
     
