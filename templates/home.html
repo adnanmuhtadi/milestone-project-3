@@ -11,13 +11,14 @@
     <!-- Main content for the section -->
     <h3 class="center-header">Home Recipes</h3>
     <div class="row des-section">
-        <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col s4">
-        <p class="description col s8"><strong>Are you about to leave home to either be independent or go to university?</br>
+        <p class="description col l8 s12"><strong>Are you about to leave home to either be independent or go to university?</br>
             Have you ever had a time when you had to store a specific recipe?</br>
             Have you ever lost a recipe that you wrote down and you can't find it?</strong></br></br>   
             As there is nothing like home-cooked, mums style cooking, Your problems have been answered.
             A place for you to add your recipes, A place for you to share them with the rest of the world. 
         A place for you to even search depending on what specific ingredient you want to use.</p>
+                <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col l4 s12">
+
     </div>
 
     <hr>
@@ -29,20 +30,22 @@
     <div class="row card-panel grey lighten-5 search-recipes">
         <form action="{{ url_for('search') }}" method="post" class="col s12">
             <div class="row valign-wrapper center-align">
-                <div class="input-field col s12 m8">
+                <div class="input-field col s12">
                     <i class="fas fa-search prefix light-blue-text text-darken-4"></i>
                     <input type="text" name="query" id="query" minlength="2" class="validate" required>
                     <label for="query">Search Recipe </label>
                     <span class="helper-text">Search by name of recipe or by ingredient</span>
                 </div>
-                <div class="col s12 m4">
-                    <a href="{{ url_for('get_recipes') }}" class="grey lighten-1 btn black-text">
-                        <i class="fas fa-backspace"></i> Reset</a>
-                    <button type="submit" class="orange accent-1 btn black-text">
-                        <i class="fas fa-search left"></i> Search
-                    </button>
-                </div>
             </div>
+            <div class="row">
+                    <div class="col s12 offset-s2 m6 offset-m4">
+                        <a href="{{ url_for('get_recipes') }}" class="grey lighten-1 btn black-text">
+                            <i class="fas fa-backspace"></i> Reset</a>
+                        <button type="submit" class="orange accent-1 btn black-text">
+                            <i class="fas fa-search left"></i> Search
+                        </button>
+                    </div>
+                </div>
         </form>
     </div>
 
@@ -54,9 +57,9 @@
             {% for recipe in recipes %}
             {% if recipe.to_share == "on" %}            
                 {% if session.user == recipe.created_by %}
-                    <div class="shared-recipe-card card hvr-grow-shadow orange lighten-5 col s4">
+                    <div class="shared-recipe-card card hvr-grow-shadow orange lighten-5 col s12 m4 ">
                 {% else %}
-                    <div class="shared-recipe-card card hvr-glow grey lighten-3 col s4">
+                    <div class="shared-recipe-card card hvr-glow grey lighten-3 col s12 m4">
                 {% endif %}
                     
                         <div class="card-content">
