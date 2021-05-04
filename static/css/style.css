@@ -284,6 +284,14 @@ table {
     right: auto;
 }
 
+.button-set .col{
+    margin: 20px 0;
+}
+
+.button-set .col.middle-button {
+    margin: 20px 15px;
+}
+
 /*////////////////////////////// View recipe page */
 
 .view-recipe-card {
@@ -413,6 +421,10 @@ ul.dashed > li:before {
         height: 150px;
     }
 
+    .button-set .col{
+        margin: 20px 0;
+        font-size: 13px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -474,6 +486,15 @@ ul.dashed > li:before {
         width: 30%;
     }
 
+    /*////////////////////////////// Edit recipe page */
+    .add-recipe-card {
+        margin: auto;
+        width: 80%;
+    }
+
+    .button-set .col.middle-button {
+        margin: 20px 10px;
+    }
 }
 
 @media only screen and (max-width: 425px) {
@@ -532,6 +553,20 @@ ul.dashed > li:before {
 
     .my-recipes {
         margin: 0 50px;
+    }
+
+    .button-set .col.middle-button {
+        margin: 20px 0;
+    }
+
+    /*////////////////////////////// Edit recipe page */
+    .add-recipe-card {
+        margin: auto;
+        width: 80%;
+    }
+
+    .add-recipe-card .col {
+        padding: 0;
     }
 }
 
@@ -593,5 +628,10 @@ ul.dashed > li:before {
     .search-my-recipes .btn {
         padding: 0;
         font-size: 10px;
+    }
+
+    .switch label .lever {
+        margin-left: 40px;
+        margin: 0 0 0 15px;
     }
 }

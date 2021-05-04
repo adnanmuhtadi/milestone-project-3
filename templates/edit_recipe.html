@@ -12,7 +12,7 @@
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
             <!--Placeholder recipe name (mandatory field)-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-pencil-alt prefix"></i>
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
@@ -21,7 +21,7 @@
             </div>
             <!-- Placeholder for meal name -->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-utensils prefix"></i>
                     <select id="meal_name" name="meal_name" class="validate" required>
                         <option value="" disabled required>Choose Meal Type*</option>
@@ -38,7 +38,7 @@
             </div>
             <!-- The url link to have the image added-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-image prefix"></i>
                     <input id="url_link" name="url_link" 
                     value="{{ recipe.url_link }}" type="text" class="validate">
@@ -47,7 +47,7 @@
             </div>
             <!-- Placeholder for prep time-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-clock prefix"></i>
                     <input id="prep_time" name="prep_time" 
                     value="{{ recipe.prep_time }}" type="text" class="validate">
@@ -57,7 +57,7 @@
             </div>
             <!-- Placeholder for cooking time-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-clock prefix"></i>
                     <input id="cooking_time" name="cooking_time" 
                         value="{{ recipe.cooking_time }}" type="text" class="validate" required>
@@ -67,7 +67,7 @@
             </div>
             <!-- Placeholder for number of servings -->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-user-friends prefix"></i>
                     <input id="num_servings" name="num_servings" 
                         value="{{ recipe.num_servings }}" type="text" class="validate">
@@ -76,7 +76,7 @@
             </div>
             <!--Placeholder for ingredients and it will break the list out into a new line -->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_ingredients" name="recipe_ingredients" class="materialize-textarea validate" required>
                         {%- for recipe_ingredients in recipe.recipe_ingredients -%}
@@ -89,7 +89,7 @@
             </div>
             <!--Placeholder for steps and it will break the list out into a new line -->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required>
                         {%- for recipe_steps in recipe.recipe_steps -%}
@@ -102,11 +102,11 @@
             </div>
             <!-- Placeholder for if is it vegetarian or not-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <div class="switch">
                         <i class="fas fa-carrot prefix"></i>
                         <label for="is_it_veg">
-                            Is this recipe vegetarian? 
+                            Vegetarian? 
                             <input type="checkbox" id="is_it_veg" name="is_it_veg">
                             <span class="lever"></span>
                         </label>
@@ -115,7 +115,7 @@
             </div>
             <!-- Placeholder to edit share recipe-->
             <div class="row">
-                <div class="input-field col s10 offset-s1">
+                <div class="input-field col m10 offset-m1 s12">
                     <div class="switch">
                         <i class="fas fa-share-square prefix"></i>
                         <label for="to_share">
@@ -133,15 +133,15 @@
             <div class="row button-set">
                 <div class="col s12 center-align">
                     <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
-                <button class="col s4 btn-large grey accent-1 black-text text-shadow" 
+                <button class="col l4 m4 s12 btn-large grey accent-1 black-text text-shadow" 
                 value="Go back!" onclick="history.back()">
                     <i class="fas fa-arrow-circle-left"></i> Go Back
                 </button>
-                <button type="reset" class="col s4 offset-s1 btn-large red accent-1 black-text text-shadow">
+                <button type="reset" class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow center-button">
                     Clear <i class="fas fa-times-circle"></i>
                 </button>
-                <button type="submit" class="col s4 center-align btn-large orange accent-1 black-text text-shadow">
-                    Edit Recipe <i class="fas fa-plus-circle"></i>
+                <button type="submit" class="col l4 m4 s12 center-align btn-large orange accent-1 black-text text-shadow">
+                     Save Changes <i class="fas fa-save"></i>
                 </button>
                 </div>
             </div>               
