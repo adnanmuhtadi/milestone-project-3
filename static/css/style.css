@@ -46,10 +46,16 @@ nav ul a {
     text-align: center;
     text-decoration: underline;
     position: relative;
+    font-size: 50px;
 }
 
 .input-field .helper-text {
+    font-family: "Heebo", sans-serif;
     text-align: left;
+}
+
+p {
+    font-family: "Heebo", sans-serif;
 }
 
 /* Footer */
@@ -130,11 +136,12 @@ hr {
 }
 
 .card .card-image img{
-    width: 250px;
+    width: 240px;
     height: 230px;
+    border-radius: 50%;
 }
 
-.row .col.s4 {
+.row .col.m4 {
     width: 31%;
     margin-left: auto;
     left: auto;
@@ -222,7 +229,7 @@ table {
     border-radius: 25px;
     margin: 30px auto;
     position: relative;
-    width: 900px;
+    width: 950px;
 }
 
 .veg {
@@ -236,7 +243,7 @@ table {
     position: relative;
 }
 
-.row .col.s3 {
+.row .col.s4 {
     width: 31%;
     margin-left: auto;
     left: auto;
@@ -277,23 +284,207 @@ table {
     right: auto;
 }
 
+/*////////////////////////////// View recipe page */
+
+.view-recipe-card {
+    background-color: #fefefa;
+    position: relative;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.view-center-header {
+    margin: 10px 0 40px;
+    font-family: "Merriweather", sans-serif;    
+    text-align: center;
+    text-decoration: underline;
+    text-transform: capitalize;
+    position: relative;
+}
+
+.view_recipe_image {
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+}
+
+.view_recipe_info_table {
+    margin: 60px 0;
+}
+
+.view_recipe_info_table tr,
+.view_recipe_info_table td {
+    padding: 10px;
+    font-size: 20px;
+}
+
+ul.dashed {
+  list-style-type: none;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+ul.dashed > li {
+  text-indent: -5px;
+}
+ul.dashed > li:before {
+  content: "-";
+  text-indent: -5px;
+}
+
 @media only screen and (max-width: 1024px) {
+
+    /*////////////////////////////// Base File*/
+
+    /* Navbar */
+
+    nav ul a {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+    /* Footer */
     .quicklinks li {
         font-size:13px;
     }
 
     .social-media {
-    font-size: 25px;
+        font-size: 25px;
     }
+
+    /*////////////////////////////// Home Page*/
+    .description {
+        font-size: 14px;
+    }
+
+    /* Cards for the home page */
+
+    .search-recipes {
+        padding: 0 0 20px;
+    }
+
+    .search
+
+    .card-content strong{
+        font-size: 20px;
+    }
+
+    .card .card-image img{
+        width: 170px;
+        height: 150px;
+    }
+
+    .row .col.m4 {
+        width: 30%;
+    }
+
+    .card .card-content {
+        padding: 10px;
+        border-radius: 0 0 2px 2px;
+    }   
+
+    .shared-recipe-card {
+        margin: 30px 20px 20px 20px;
+    }
+
+    /*////////////////////////////// Login/Registration/Edit Username/Edit Password Page */
+    .bg-image {
+        height: 130vh;
+    }
+
+    .button-set .col.s5 {
+        margin-left: 30px;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .my-recipes {
+        margin: 0 0 0 70px;
+    }
+    
+    .search-my-recipes {
+        width: 850px;
+    }
+
+    .row .col.s4 {
+        width: 30%;
+    }
+
+    .card .my-recipe-card-image img {
+        width: 170px;
+        height: 150px;
+    }
+
 }
 
 @media only screen and (max-width: 768px) {
-    
+
+    /*////////////////////////////// Base File*/
+
+    .center-header{
+        font-size: 25px;
+    }
+
+    /*////////////////////////////// Home Page*/
+
+    /* carousel for the home page */
+    .carousel {
+        border-radius: 0px 0px 40px 40px;
+        height: 60vh !important;
+    }
+
+    /* Cards for the home page */
+    .card-content strong{
+        font-size: 18px;
+    }
+
+    .card .card-image img{
+        width: 150px;
+        height: 130px;
+    }
+
+    .search-recipes .btn {
+        padding: 0 5px;
+        font-size: 12px;
+    }
+
+    .bg-image {
+        height: 100vh;
+    }
+
+    /*////////////////////////////// Registration/login Page*/
+
+    .card-panel .row {
+        margin: 0;
+        border-radius: 1em;
+    }
+
+    .row .col.reg {
+        width: 40%;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .search-my-recipes {
+        width: 700px;
+    }
+
+    .my-recipes {
+        margin: 0 0 0 70px;
+    }
+
+    .row .col.s4 {
+        width: 30%;
+    }
+
 }
 
-@media only screen and (max-width: 426px) {
+@media only screen and (max-width: 425px) {
+
+    /*////////////////////////////// Home Page */
     nav .brand-logo {
         font-size: 25px;
+    }
+
+     .bg-image {
+        height: 100vh;
     }
 
     .footer-title {
@@ -303,16 +494,104 @@ table {
     .shortcuts {
         display: none;
     }
+
+    /* carousel for the home page */
+    .carousel {
+        height: 50vh !important;
+    }
+
+    /* shared cards */
+    .row .col.m4 {
+        width: 100%;
+    }
+
+    .card .card-image img{
+        width: 340px;
+        height: 330px;
+    }
+
+    /* buttons for the registration page */
+    .button-set{
+        margin: 0;
+    }
+
+    .button-set .col.s5 {
+        margin-left: 5px;
+        width: 45%;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .search-my-recipes {
+        width: 400px;
+    }
+
+    .search-my-recipes .btn {
+        padding: 0 5px;
+        font-size: 12px;
+    }
+
+    .my-recipes {
+        margin: 0 50px;
+    }
 }
 
-@media only screen and (max-width: 376px) {
+@media only screen and (max-width: 375px) {
+
     nav .brand-logo {
         padding: 0;
         font-size: 20px;
     }
 
+    /* shared cards */
+    .card .card-image img{
+        width: 290px;
+        height: 280px;
+    }
+
+    /* buttons for the registration page */
+    .button-set .col.s5 {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .enter{
+        margin: 10px 0;
+    }
+
     .footer-title,
     .copyright {
         font-size: 15px;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .search-my-recipes {
+        width: 350px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+
+    /* shared cards */
+    .card .card-image img{
+        width: 250px;
+        height: 240px;
+    }
+
+    .registration-form{
+        font-size: ;
+    }
+
+    .card-panel .row .input-field {
+        font-weight: 200;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .search-my-recipes {
+        width: 300px;
+    }
+
+    .search-my-recipes .btn {
+        padding: 0;
+        font-size: 10px;
     }
 }
