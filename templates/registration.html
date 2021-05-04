@@ -7,9 +7,9 @@
     {% block content %}
     <!-- Beginning of the registration form-->
     <div class="row registration-form">
-        <form class="col s12 m6 offset-m6" method="POST" action="{{ url_for('registration') }}">
+        <form class="col s12 m7 offset-m5 l7 offset-l5" method="POST" action="{{ url_for('registration') }}">
             <div class="card-panel inside-form">
-                <h3 class="center-header">Register</h3>
+                <div class="center-header">Register</div>
                 
                 <section>
                     <!--Flash message within under the title to inform the user what is the issue -->
@@ -78,10 +78,10 @@
                 <!-- register button placeholder-->
                 <div class="row button-set">
                     <!-- if the user already has an account can alternatively log in -->
-                    <button type="reset" class="col s5 btn-large red accent-1 black-text text-shadow enter">
+                    <button type="reset" class="col s5 m5 btn-large red accent-1 black-text text-shadow enter">
                         Clear <i class="fas fa-times-circle"></i>
                     </button>
-                    <button type="submit" class="col s5 btn-large orange accent-1 black-text text-shadow enter">
+                    <button type="submit" class="col s5 m5 btn-large orange accent-1 black-text text-shadow enter reg">
                         Register <i class="fas fa-sign-in-alt"></i>
                     </button>
                     <div class="acounts">
