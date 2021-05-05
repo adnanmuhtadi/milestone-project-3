@@ -14,7 +14,7 @@
         integrity="sha512-csw0Ma4oXCAgd/d4nTcpoEoz4nYvvnk21a8VA2h2dzhPAvjbUIK6V3si7/g/HehwdunqqW18RwCJKpD7rL67Xg==" crossorigin="anonymous" type="text/css"/>
     <!-- Custom script-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init("user_9UPvI1Hs4JHGtyozwple6");
@@ -110,14 +110,14 @@
                 <div class="row">
                     <div class="row">
                         <div class="input-field col s12">
-                        <input name="fullname" id="from_fullname" type="text" class="validate">
-                        <label for="fullname">First Name</label>
+                        <input name="from_fullname" id="from_fullname" type="text" class="validate">
+                        <label for="from_fullname">First Name</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                        <input name="useremail" id="from_useremail" type="text" class="validate">
-                        <label for="useremail">Email Address</label>
+                        <input name="from_useremail" id="from_useremail" type="text" class="validate">
+                        <label for="from_useremail">Email Address</label>
                         </div>
                     </div>
                     <div class="row">
