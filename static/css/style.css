@@ -129,6 +129,7 @@ hr {
 .card-title {
     font-family: "Merriweather", sans-serif;    
     text-align: center;
+    text-transform: capitalize;
 }
 
 .shared-recipes {
@@ -316,8 +317,14 @@ table {
     border-radius: 25px;
 }
 
+.row .recipe-table {
+    position: absolute;
+}
+
 .view_recipe_info_table {
     margin: 60px 0;
+    position: relative;
+    display: block;
 }
 
 .view_recipe_info_table tr,
@@ -326,17 +333,22 @@ table {
     font-size: 20px;
 }
 
-ul.dashed {
-  list-style-type: none;
-  font-size: 20px;
-  text-transform: capitalize;
+.row .col.view {
+    padding: 0;
 }
-ul.dashed > li {
-  text-indent: -5px;
+
+.list-ingredients,
+.cooking-recipe {
+    margin-bottom: .5em;
+    margin-left: 2em;
+    font-size: 16px;
+    text-transform: capitalize;
 }
-ul.dashed > li:before {
-  content: "-";
-  text-indent: -5px;
+
+.list-ingredients::before,
+.cooking-recipe::before {
+    width: 1em;
+    margin-left: -1em;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -425,6 +437,28 @@ ul.dashed > li:before {
         margin: 20px 0;
         font-size: 13px;
     }
+
+    /*////////////////////////////// View recipe page */
+
+    .view-center-header {
+    margin: 10px 0 10px;
+    }
+
+    .view_recipe_image {
+        margin-top: 30px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .view_recipe_info_table {
+        margin: 40px 0;
+    }
+
+    .view_recipe_info_table tr,
+    .view_recipe_info_table td {
+        padding: 10px;
+        font-size: 17px;
+    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -495,7 +529,52 @@ ul.dashed > li:before {
     .button-set .col.middle-button {
         margin: 20px 10px;
     }
-}
+
+    /*////////////////////////////// View recipe page */
+
+    .view-center-header {
+    margin: 10px 0 10px;
+    }
+
+    .view_recipe_image {
+        margin-top: 30px;
+        width: 300px;
+        height: 300px;
+    }
+
+    .view_recipe_info_table {
+        margin: 40px 0;
+    }
+
+    .view_recipe_info_table tr,
+    .view_recipe_info_table td {
+        padding: 10px;
+        font-size: 17px;
+    }
+
+    .row .col.offset-m5 {
+        margin-left: 75px;
+    }
+
+    .row .recipe-table {
+        position: relative;
+    }
+
+    .view_recipe_image {
+        width: 400px;
+        height: 400px;
+    }
+
+    .row .col.recipe-table {
+        padding-left: 100px;        
+        width: 100%;
+    }
+
+    .collapsible-body {
+        padding: 20px 0;
+    }
+
+}    
 
 @media only screen and (max-width: 425px) {
 
@@ -568,6 +647,30 @@ ul.dashed > li:before {
     .add-recipe-card .col {
         padding: 0;
     }
+
+    /*////////////////////////////// View recipe page */
+
+    .view-center-header {
+        font-size: 30px;
+    }
+
+    .row .col.offset-m5 {
+        margin-left: 0;
+    }
+
+    .view_recipe_image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .row .col.recipe-table {
+        padding-left: 0;        
+        width: 100%;
+    }
+
+    .row .col ol {
+        padding: 0;
+    }
 }
 
 @media only screen and (max-width: 375px) {
@@ -602,6 +705,15 @@ ul.dashed > li:before {
     .search-my-recipes {
         width: 350px;
     }
+
+    .view_recipe_info_table tr,
+    .view_recipe_info_table td {
+        font-size: 14px;
+    }
+
+    .collapsible h5 {
+        font-size: 15px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -633,5 +745,23 @@ ul.dashed > li:before {
     .switch label .lever {
         margin-left: 40px;
         margin: 0 0 0 15px;
+    }
+
+    /*////////////////////////////// My Recipe Page */
+    .view-center-header {
+        font-size: 20px;
+    }
+    
+    .search-my-recipes {
+        width: 350px;
+    }
+
+    .view_recipe_info_table tr,
+    .view_recipe_info_table td {
+        font-size: 12px;
+    }
+
+    .collapsible h5 {
+        font-size: 13px;
     }
 }
