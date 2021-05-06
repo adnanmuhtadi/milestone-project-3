@@ -14,17 +14,17 @@
     <div class="row">
         {% for meal in meals %}
         <div class="col s12 m3">
-            <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
+            <div class="card grey lighten-3 black-text">
+                <div class="card-content">
                     <span class="card-title">{{ meal.meal_name }}</span>
                 </div>
                 <div class="card-action">
-                    <div class="row button-set">
+                    <div class="row button-set center">
                         <!-- if the user already has an account can alternatively log in -->
-                        <a href="{{ url_for('delete_meal')meal._id=meal._id }}" class="btn red accent-1 black-text text-shadow enter">
+                        <a href="{{ url_for('delete_meal', meal_id=meal._id) }}" class="btn red accent-1 black-text text-shadow enter">
                             Delete <i class="fas fa-times-circle"></i>
                         </a>
-                        <button type="submit" class="btn orange accent-1 black-text text-shadow enter reg">
+                        <button type="submit" class="btn orange accent-1 black-text text-shadow enter ">
                             Edit <i class="fas fa-sign-in-alt"></i>
                         </button>
                     </div>

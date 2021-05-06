@@ -304,14 +304,14 @@ def edit_password(username):
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Task Successfully Deleted")
+    flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
 
 
 @app.route("/delete_my_recipe/<recipe_id>")
 def delete_my_recipe(recipe_id):
     mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
-    flash("Task Successfully Deleted")
+    flash("Recipe Successfully Deleted")
     return redirect(url_for("get_my_recipes"))
 
 
@@ -319,6 +319,13 @@ def delete_my_recipe(recipe_id):
 def get_meals():
     meals = list(mongo.db.meals.find().sort("meal_name", 1))
     return render_template("meals.html", meals=meals)
+
+
+@app.route("/delete_meal/<meal_id>")
+def delete_meal(meal_id):
+    mongo.db.meals.remove({"_id": ObjectId(meal_id)})
+    flash("Meal Successfully Deleted")
+    return redirect(url_for("get_meals"))
 
 
 # This tells the application where and how to run.
