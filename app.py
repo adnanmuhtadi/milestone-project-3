@@ -315,6 +315,12 @@ def delete_my_recipe(recipe_id):
     return redirect(url_for("get_my_recipes"))
 
 
+@app.route("/get_meals")
+def get_meals():
+    meals = list(mongo.db.meals.find().sort("meal_name", 1))
+    return render_template("meals.html", meals=meals)
+
+
 # This tells the application where and how to run.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
