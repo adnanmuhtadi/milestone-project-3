@@ -686,6 +686,10 @@ table {
         font-size: 20px;
     }
 
+    .modal .modal-footer{
+        height: 100px;
+    }
+
     /* shared cards */
     .card .card-image img{
         width: 290px;
