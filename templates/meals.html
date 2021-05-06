@@ -44,9 +44,9 @@
                         <a href="{{ url_for('delete_meal', meal_id=meal._id) }}" class="btn red accent-1 black-text text-shadow enter">
                             Delete <i class="fas fa-times-circle"></i>
                         </a>
-                        <button type="submit" class="btn orange accent-1 black-text text-shadow enter ">
+                        <a href="{{ url_for('edit_meal', meal_id=meal._id) }}" type="submit" class="btn orange accent-1 black-text text-shadow enter ">
                             Edit <i class="fas fa-sign-in-alt"></i>
-                        </button>
+                        </a>
                     </div>
                 </div>
             </div>

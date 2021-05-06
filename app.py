@@ -343,6 +343,20 @@ def add_meal():
     return render_template("add_meal.html")
 
 
+@app.route("/edit_meal/<meal_id>", methods=["GET", "POST"])
+def edit_meal(meal_id):
+    if request.method == "POST":
+        submit = {
+            "meal_name": request.form.get("meal_name")
+        }
+        mongo.db.meals.update({"_id": ObjectId(meal_id)}, submit)
+        flash("meal Successfully Updated")
+        return redirect(url_for("get_meals"))
+
+    meal = mongo.db.meals.find_one({"_id": ObjectId(meal_id)})
+    return render_template("edit_meal.html", meal=meal)
+
+
 @app.route("/delete_meal/<meal_id>")
 def delete_meal(meal_id):
     mongo.db.meals.remove({"_id": ObjectId(meal_id)})
