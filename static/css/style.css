@@ -233,6 +233,12 @@ table {
     width: 950px;
 }
 
+.error-message, 
+.result-message {
+    font-family: "Heebo", sans-serif;
+    position: relative;
+}
+
 .veg {
     width: 17px;
     margin-left: 20px;
@@ -597,7 +603,7 @@ table {
 
     /* carousel for the home page */
     .carousel {
-        height: 50vh !important;
+        height: 60vh !important;
     }
 
     /* shared cards */
@@ -753,7 +759,7 @@ table {
     }
     
     .search-my-recipes {
-        width: 350px;
+        width: 320px;
     }
 
     .view_recipe_info_table tr,

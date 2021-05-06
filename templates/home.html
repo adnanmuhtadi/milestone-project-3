@@ -49,6 +49,17 @@
         </form>
     </div>
 
+    <!-- Error message would appear if the search count comes back as 0 -->
+    {% if search_results == 0 %}
+    <div class="row card-panel error-message grey lighten-5 center">
+        <h4>No Results Found</h4>
+        <a href="{{ url_for('get_recipes') }}">
+            <p>Clear Search</p></a>
+    {% else %}
+        <h4 class="row result-message center">{{ result_message }}</h4>
+    {% endif %}
+    </div>
+
     <!-- The cards that are displayed fo the recipes which have been shared and is being called from the database,
     It will first check if the recipe has been shared by the user, 
     once the user logs and visits the shared recipes, if the user sees their recipe on the shared site, it will 
@@ -138,7 +149,7 @@
                     <ul class="pagination text-shadow center-align">
                         {% for page_number in amount_pages %}
                         {% if page_number == current_recipe_page %}
-                        <li class="active blue-grey darken-1"><a>{{ page_number }}</a></li>
+                        <li class="active grey darken-3 black-text"><a>{{ page_number }}</a></li>
                         {% else %}
                         <li class="waves-effect">
                             <a href="{{ url_for('get_recipes', current_recipe_page=page_number) }}">{{ page_number }}</a>

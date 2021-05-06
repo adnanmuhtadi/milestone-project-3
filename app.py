@@ -57,14 +57,20 @@ Function to get the list of recepes from Mongo DB and display on my recipe page
 def search():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("home.html", recipes=recipes)
+    search_results = mongo.db.recipes.find(
+        {'$text': {'$search': query}}).count()
+    result_message = f"Search Results"
+    return render_template("home.html", recipes=recipes, search_results=search_results, result_message=result_message)
 
 
 @app.route("/mysearch", methods=["GET", "POST"])
 def mysearch():
     query = request.form.get("query")
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
-    return render_template("my_recipes.html", recipes=recipes)
+    search_results = mongo.db.recipes.find(
+        {'$text': {'$search': query}}).count()
+    result_message = f"Search Results ({search_results})"
+    return render_template("my_recipes.html", recipes=recipes, search_results=search_results, result_message=result_message)
 
 
 """

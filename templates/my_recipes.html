@@ -32,7 +32,18 @@
             </div>
         </form>
     </div>
-        
+
+    <!-- Error message would appear if the search count comes back as 0 -->
+    {% if search_results == 0 %}
+    <div class="row card-panel error-message grey lighten-5 center">
+        <h4>No Results Found</h4>
+        <a href="{{ url_for('get_my_recipes') }}">
+            <p>Clear Search</p></a>
+    {% else %}
+        <h4 class="row result-message center">{{ result_message }}</h4>
+    {% endif %}
+    </div>
+
     <section>
         <!--Flash message within under the title to inform the user what is the issue -->
         {% with messages = get_flashed_messages() %}
@@ -127,7 +138,7 @@
             <ul class="pagination text-shadow center-align">
                 {% for page_number in amount_pages %}
                 {% if page_number == current_recipe_page %}
-                <li class="active blue-grey darken-1"><a>{{ page_number }}</a></li>
+                <li class="active grey darken-3 black-text"><a>{{ page_number }}</a></li>
                 {% else %}
                 <li class="waves-effect">
                     <a href="{{ url_for('get_my_recipes', current_recipe_page=page_number) }}">{{ page_number }}</a>
