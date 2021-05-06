@@ -321,6 +321,28 @@ def get_meals():
     return render_template("meals.html", meals=meals)
 
 
+@app.route("/add_meal", methods=["GET", "POST"])
+def add_meal():
+    if request.method == "POST":
+        # checking if username already exists in the db
+        meal_exisiting = mongo.db.meals.find_one(
+            {"meal_name": request.form.get("meal_name")})
+
+        # producing error message if user exists
+        if meal_exisiting:
+            flash("Meal type already exists")
+            return redirect(url_for("add_meal"))
+
+        meal = {
+            "meal_name": request.form.get("meal_name")
+        }
+        mongo.db.meals.insert_one(meal)
+        flash("New Category Added")
+        return redirect(url_for("get_meals"))
+
+    return render_template("add_meal.html")
+
+
 @app.route("/delete_meal/<meal_id>")
 def delete_meal(meal_id):
     mongo.db.meals.remove({"_id": ObjectId(meal_id)})

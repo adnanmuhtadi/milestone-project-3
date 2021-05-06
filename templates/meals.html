@@ -10,6 +10,26 @@
     <h3 class="center-header">Manage Meal Types</h3>
 
     {% block content %} 
+    <div class="row add-meal-card">
+        <div class="col s12 center-align">
+            <a href="{{ url_for('add_meal') }}" class="btn-large grey lighten-1 black-text text-shadow">
+                Add Meal <i class="fas fa-plus-square right"></i>
+            </a>
+        </div>
+    </div>
+
+    <section>
+        <!--Flash message within under the title to inform the user what is the issue -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div id="row flashes">
+                        <h4 class="light-blue lighten-4 center-align" id="snackbar">{{ message }}</h4>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </section>
 
     <div class="row">
         {% for meal in meals %}

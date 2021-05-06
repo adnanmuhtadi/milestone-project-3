@@ -51,7 +51,7 @@
                 <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
                 <li><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></li>
                 {% if session.user|lower == "admin"|lower %}
-                    <li><a href="{{ url_for('get_meals') }}">Meal Type</a></li>
+                    <li><a href="{{ url_for('get_meals') }}">Manage Meal Type</a></li>
                 {% endif %}
                 <!-- Dropdown Trigger -->
                 <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
@@ -84,7 +84,7 @@
                     <li><a href="{{ url_for('get_my_recipes') }}">My Recipes</a></li>
                     <li><a href="{{ url_for('add_recipe') }}">Add New Recipe</a></li>
                     {% if session.user|lower == "admin"|lower %}
-                        <li><a href="{{ url_for('get_meals') }}">Meal Type</a></li>
+                        <li><a href="{{ url_for('get_meals') }}">Manage Meal Type</a></li>
                     {% endif %}
                     <!-- Dropdown Trigger -->
                     <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown2">My Profile<i class="fas fa-caret-down right"></i></a></li>
