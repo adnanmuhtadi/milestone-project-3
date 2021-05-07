@@ -263,23 +263,48 @@ def view_recipe(recipe_id):
     return render_template("view_recipe.html", all_recipe_info=all_recipe_info)
 
 
+"""
+Function to allow the logged in user to change the username(using username as the parameter) 
+It will also update the recipes 'created by' field to the new username
+"""
+
+
 @ app.route("/edit_username/<username>", methods=["GET", "POST"])
 def edit_username(username):
     if request.method == "POST":
-        submit = {
-            "new_username": request.form.get("username"),
-        }
-        mongo.db.users.update({"_id": ObjectId(username)}, submit)
-        flash("username Successfully Updated")
+        # Variables to find the current user session username
+        # To change the created by to the new username
+        # To find the recipes from the current user
+        current_user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        created_by_change = {"created_by": request.form.get("new_username")}
+        created_by_check = mongo.db.recipes.find({'created_by': current_user})
 
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        if created_by_check:
+            mongo.db.recipes.update_many(
+                {"created_by": username},
+                {"$set": created_by_change})
 
-    if session["user"]:
-        return render_template("edit_username.html", username=username)
+        username_change = {"username": request.form.get("new_username")}
+        check_username = mongo.db.users.find_one(
+            {'username': request.form.get('new_username')})
 
-    return redirect(url_for("login"))
+        if check_username:
+            flash('This username is already taken,\
+                Please enter a new different username')
+            return redirect(url_for(
+                'username_change', username=session["user"]))
+        else:
+            mongo.db.users.update_one(
+                {"username": username}, {"$set": username_change})
+
+        flash("You have now been logged out, \
+              as the username has been changed.\
+              Please use your new new username to login.")
+        session.pop("user")
+        return redirect(url_for("login"))
+
+    return render_template("edit_username.html", username=session["user"])
 
 
 @ app.route("/edit_password/<username>", methods=["GET", "POST"])

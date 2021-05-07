@@ -7,7 +7,7 @@
     {% block content %}
     <div class="row username-form">
         <!-- POSTING method with an action to use the edit_username function and using the session 'user'-->
-        <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('edit_username', username=session['user']) }}">
+        <form class="col s12 m5 offset-m7" method="POST" action="{{ url_for('edit_username', username=session.user) }}">
             <div class="card-panel inside-form">
                 <h3 class="center-header">Update Username</h3>
                 <!--Current Username placeholder which is disabled so it can not be edited.-->
@@ -23,8 +23,8 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
-						<input id="new_username" name="new_username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+						<input id="new_username" name="new_username" type="text" minlength="3"
+                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate longtext" required>
 						<label for="new_username">Enter New Username!</label>
 					</div>
                 </div>

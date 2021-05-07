@@ -744,6 +744,7 @@ table {
 
     .card-panel .row .input-field {
         font-weight: 200;
+        padding: 0;
     }
 
     /*////////////////////////////// My Recipe Page */
@@ -777,5 +778,9 @@ table {
 
     .collapsible h5 {
         font-size: 13px;
+    }
+
+    .enter {
+        font-size: 11px;
     }
 }
