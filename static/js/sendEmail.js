@@ -6,7 +6,7 @@
 //Creating a variable to associate the button
 let btn = document.getElementById('send-modal-button');
 
-//This section of code listens to the events happening within the contact form and change
+//This section of the code listens to the events happening within the contact form and change
 //the text inside the button from 'Send' to 'Sending...'
 document.getElementById('contactForm')
     .addEventListener('submit', function (event) {

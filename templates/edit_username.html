@@ -14,8 +14,7 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
-						<input id="username" name="username" type="text" minlength="5"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" value="{{ username }}" class="validate" disabled>
+						<input id="username" name="username" type="text" value="{{ username }}" class="validate" disabled>
 						<label for="username">Username</label>
 					</div>
                 </div>
@@ -23,9 +22,11 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
-						<input id="new_username" name="new_username" type="text" minlength="3"
-                            maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate longtext" required>
-						<label for="new_username">Enter New Username!</label>
+                        <!-- Field requirements is for it to be min of 5 characters and any character is permited 
+                        as well as it is a mandatory field-->
+						<input id="new_username" name="new_username" type="text" minlength="5" 
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate longtext" required>
+						<label for="new_username">Enter New Username!*</label>
 					</div>
                 </div>
                 <div class="row">

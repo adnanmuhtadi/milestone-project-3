@@ -8,12 +8,14 @@
 
     {% block content %}
     <div class="row add-recipe-card card-panel">
-        <!-- using the POST Method and calling on the functin 'edit_meal'-->
+        <!-- using the POST Method and calling on the functin 'edit_meal' with the id of the meal-->
         <form class="col s12" method="POST" action="{{ url_for('edit_meal', meal_id=meal._id) }}">
             <!--Placeholder recipe name (mandatory field)-->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-pencil-alt prefix"></i>
+                    <!-- Field requirements for it to have a min of 3 and a max of 25 characters and the value of
+                    the field is being pulled for the database-->
                     <input id="meal_name" name="meal_name" minlength="3" maxlength="25" 
                         type="text" value="{{ meal.meal_name }}" class="validate" required>
                     <label for="meal_name">Meal Name*</label>
@@ -21,31 +23,33 @@
             </div> 
 
             <section>
-                <!--Flash message within under the title to inform the user what is the issue -->
+                <!-- Flash message to delivery the said message from the app.py file -->
                 {% with messages = get_flashed_messages() %}
                     {% if messages %}
                         {% for message in messages %}
                             <div id="row flashes">
-                                <h4 class="light-blue lighten-4 center-align" id="snackbar">{{ message }}</h4>
+                                <h4 class="red lighten-4 center-align" id="snackbar">{{ message }}</h4>
                             </div>
                         {% endfor %}
                     {% endif %}
                 {% endwith %}
             </section>
-            <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
+
             <div class="row button-set"> 
+                <!-- To create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
                 <button class="col l4 m4 s12 btn-large grey accent-1 black-text text-shadow" 
                 value="Go back!" onclick="history.back()">
                     <i class="fas fa-arrow-circle-left"></i> Go Back
                 </button>
+                <!-- Clear the form button -->
                 <button type="reset" class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow">
                     Clear <i class="fas fa-times-circle"></i>
                 </button>
+                <!-- Submit the form button -->
                 <button type="submit" class="col l4 m4 s12 center-align btn-large orange accent-1 black-text text-shadow">
-                    Save Changes <i class="fas fa-save right"></i>
+                    Update Meal Type <i class="fas fa-plus-circle"></i>
                 </button>
             </div>
-            </form>               
         </form>
     </div>
     {% endblock %}

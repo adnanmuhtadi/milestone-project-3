@@ -17,12 +17,11 @@
             As there is nothing like home-cooked, mums style cooking, Your problems have been answered.
             A place for you to add your recipes, A place for you to share them with the rest of the world. 
         A place for you to even search depending on what specific ingredient you want to use.</p>
+            <!-- Image place holder -->
                 <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col l4 s12">
 
     </div>
-
     <hr>
-
     <h4 class="center-header">Shared Recipes</h4>
 
     <!-- Place holder for the search button where it will call up the query to do the search for 
@@ -61,9 +60,9 @@
     </div>
 
     <!-- The cards that are displayed fo the recipes which have been shared and is being called from the database,
-    It will first check if the recipe has been shared by the user, 
-    once the user logs and visits the shared recipes, if the user sees their recipe on the shared site, it will 
-    be a displayed a different colour. -->
+    It will first check if the recipe has been shared by the general public, 
+    once the user logs in and visits the shared recipes, if the recipe belongs to the userm it will 
+    be displayed in a different colour. -->
         <div class="row shared-recipes">
             {% for recipe in recipes %}
             {% if recipe.to_share == "on" %}            
@@ -72,7 +71,7 @@
                 {% else %}
                     <div class="shared-recipe-card card hvr-glow grey lighten-3 col s12 m4">
                 {% endif %}
-                    
+                        <!-- If the recipe is vegetarian, the vegetarian symbol would appear by the recipe name -->
                         <div class="card-content">
                             {% if recipe.is_it_veg %}
                                 <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
@@ -81,8 +80,8 @@
                                 <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}</strong></span>
                             {% endif %}
                             <div class="card-image waves-effect waves-block waves-light">
-                            <!-- The variable that is created to display content from the DB "recipe" 
-                            this would check if there is an image linked to the recipe-->
+                            <!-- The variable that is created to display content from the database table "recipe".
+                            This would check if there is an image linked to the recipe-->
                             {% if recipe.url_link %}
                                 <img class="activator" src="{{ recipe.url_link }}">
                             {% else %}
@@ -90,39 +89,40 @@
                                 <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}">
                             {% endif %}                        
                         </div>
-                        <table>
-                            <tr class="new_row">
-                                <td class="table_header">Meal Type</td>
-                                <td>{{ recipe.meal_name }}</td>
-                            </tr>
-                            <tr class="new_row">
-                                <td class="table_header">Prep Time</td>
-                                <!-- to put a dash if there is no data for the field -->
-                                <td> {% if not recipe.prep_time %}
-                                <p>-</p>
-                                {% else %}
-                                <p>{{ recipe.prep_time }} min</p>
-                                {% endif %}</td>
-                            </tr>
-                            <tr class="new_row">
-                                <td class="table_header">Cooking Time</td>
-                                <td>{% if not recipe.cooking_time %}
-                                <p>-</p>
-                                {% else %}
-                                <p>{{ recipe.cooking_time }} min</p>
-                                {% endif %}</td>
-                            </tr>
-                            <tr class="new_row">
-                                <td class="table_header">Servings</td>
-                                <td>{% if not recipe.num_servings %}
-                                <p>-</p>
-                                {% else %}
-                                <p>{{ recipe.num_servings }} min</p>
-                                {% endif %}</td>
-                            </tr>
-                        </table>
-                                <p><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Full Recipe</a>
-                                <i class="fas fa-chevron-up right activator"></i></p>
+                            <table>
+                                <tr class="new_row">
+                                    <td class="table_header">Meal Type</td>
+                                    <td>{{ recipe.meal_name }}</td>
+                                </tr>
+                                <tr class="new_row">
+                                    <td class="table_header">Prep Time</td>
+                                    <!-- if statment to check if there is content in there other wise till put a dash in its space -->
+                                    <td> {% if not recipe.prep_time %}
+                                    <p>-</p>
+                                    {% else %}
+                                    <p>{{ recipe.prep_time }} min</p>
+                                    {% endif %}</td>
+                                </tr>
+                                <tr class="new_row">
+                                    <td class="table_header">Cooking Time</td>
+                                    <td>{% if not recipe.cooking_time %}
+                                    <p>-</p>
+                                    {% else %}
+                                    <p>{{ recipe.cooking_time }} min</p>
+                                    {% endif %}</td>
+                                </tr>
+                                <tr class="new_row">
+                                    <td class="table_header">Servings</td>
+                                    <td>{% if not recipe.num_servings %}
+                                    <p>-</p>
+                                    {% else %}
+                                    <p>{{ recipe.num_servings }} min</p>
+                                    {% endif %}</td>
+                                </tr>
+                            </table>
+                            <!-- Takes user to the specific recipe -->
+                            <p><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}">View Full Recipe</a>
+                            <i class="fas fa-chevron-up right activator"></i></p>
                         </div>
                         <div class="card-reveal ">
                             <span class="card-title grey-text text-darken-4"><strong>Ingredients</strong><i class="fas fa-chevron-down right"></i></span>
@@ -133,7 +133,7 @@
                                 </li>
                             {% endfor %}
                             </ul>
-                            <!--if user is logged in edit and delete is buttons are available for them-->
+                            <!--if user is logged in, edit and delete buttons that enables the owner of the recipes to do as they please with the said recipe -->
                             {% if session.user|lower == recipe.created_by|lower %}
                                 <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn-small orange accent-1 col s12 black-text"><i class="far fa-edit"></i> Edit</a>
                                 <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn-small red accent-1 col s12 black-text"><i class="fas fa-trash"></i> Delete</a>
@@ -145,7 +145,7 @@
 
             <div class="row">
                 <div class="col s12 xl12">
-                    <!--Pagination-->
+                    <!--Pagination i utlitised https://www.youtube.com/watch?v=PSWf2TjTGNY for assistance however it has been edited to my preference.-->
                     <ul class="pagination text-shadow center-align">
                         {% for page_number in amount_pages %}
                         {% if page_number == current_recipe_page %}

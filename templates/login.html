@@ -5,29 +5,30 @@
 <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
     {% block content %}
-    <!-- Beginning of the login form-->
+    <!-- Login form-->
     <div class="row login-form">
         <form class="col s12 m7 offset-m5 l6 offset-l6 " method="POST" action="{{ url_for('login') }}">
             <div class="card-panel inside-form">
                 <h3 class="center-header">Log In</h3>
 
                 <section>
-                    <!--Flash message within under the title to inform the user what is the issue -->
+                    <!-- Flash message within under the title to inform the user what is the issue -->
                     {% with messages = get_flashed_messages() %}
                         {% if messages %}
                             {% for message in messages %}
                                 <div id="row flashes">
-                                    <h5 class="light-blue lighten-4 center-align">{{ message }}</h5>
+                                    <h5 class="red lighten-4 center-align">{{ message }}</h5>
                                 </div>
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
                 </section>
 
-                <!-- Username input field-->
+                <!-- Username input field -->
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
+                        <!-- Field requirements set to a min of 5 and max of 15 open characters while the field being required -->
 						<input id="username" name="username" type="text" minlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
@@ -37,6 +38,7 @@
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-user-lock prefix text-darken-4"></i>
+                        <!-- Field requirements set to a min of 5 and max of 15 open characters while the field being required -->
                         <input id="password" name="password" type="password" inlength="5"
                             maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>

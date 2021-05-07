@@ -8,12 +8,13 @@
 
     {% block content %}
     <div class="row add-recipe-card card-panel grey lighten-5">
-        <!-- using the POST Method and calling on the functin 'edit_recipe'-->
+        <!-- Using the POST Method and calling on the functin 'edit_recipe' with id for the recipe being targeted-->
         <form class="col s12" method="POST" action="{{ url_for('edit_recipe', recipe_id=recipe._id) }}">
-            <!--Placeholder recipe name (mandatory field)-->
+            <!-- Placeholder recipe name (mandatory field)-->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-pencil-alt prefix"></i>
+                    <!-- Field requirements of min 5 and max of 50 characters while it is a mandatory field -->
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name*</label>
@@ -23,8 +24,10 @@
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-utensils prefix"></i>
+                    <!-- Field requirements of it being a mandatory field,
+                    If statement to check if there is a name already associated to it or not.-->
                     <select id="meal_name" name="meal_name" class="validate" required>
-                        <option value="" disabled required>Choose Meal Type*</option>
+                        <option value="" required >Choose Meal Type*</option>
                         {% for meal in meals %}
                             {% if meal.meal_name == recipe.meal_name %}
                                 <option value="{{ meal.meal_name }}" selected>{{ meal.meal_name }}</option>
@@ -50,9 +53,9 @@
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-clock prefix"></i>
                     <input id="prep_time" name="prep_time" 
-                    value="{{ recipe.prep_time }}" type="text" class="validate">
+                    value="{{ recipe.prep_time }}" type="number" class="validate">
                     <label for="prep_time">Prep Time</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
+                    <span class="helper-text">In minutes</span>
                 </div>
             </div>
             <!-- Placeholder for cooking time-->
@@ -60,9 +63,9 @@
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-clock prefix"></i>
                     <input id="cooking_time" name="cooking_time" 
-                        value="{{ recipe.cooking_time }}" type="text" class="validate" required>
+                        value="{{ recipe.cooking_time }}" type="number" class="validate" required>
                     <label for="cooking_time">Cooking Time*</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">In minutes</span>
+                    <span class="helper-text">In minutes</span>
                 </div>
             </div>
             <!-- Placeholder for number of servings -->
@@ -70,11 +73,11 @@
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-user-friends prefix"></i>
                     <input id="num_servings" name="num_servings" 
-                        value="{{ recipe.num_servings }}" type="text" class="validate">
+                        value="{{ recipe.num_servings }}" type="number" class="validate">
                     <label for="num_servings">Number of Servings</label>
                 </div>
             </div>
-            <!--Placeholder for ingredients and it will break the list out into a new line -->
+            <!--Placeholder for ingredients and a for loop to look through the dictionary and display it with a new line -->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -84,10 +87,10 @@
                         {%- endfor -%}
                     </textarea>
                     <label for="recipe_ingredients">Ingredients*</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Add each ingredient on a new line</span>
+                    <span class="helper-text">Add each ingredient on a new line</span>
                 </div>
             </div>
-            <!--Placeholder for steps and it will break the list out into a new line -->
+            <!--Placeholder for steps and a for loop to look through the dictionary and display it with a new line -->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -97,7 +100,7 @@
                         {%- endfor -%}
                     </textarea>
                     <label for="recipe_steps">Steps*</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
+                    <span class="helper-text">Add each step on a new line</span>
                 </div>
             </div>
             <!-- Placeholder for if is it vegetarian or not-->
@@ -130,21 +133,21 @@
                     </div>
                 </div>
             </div> 
-            <div class="row button-set">
-                <div class="col s12 center-align">
-                    <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
+            <div class="row button-set"> 
+                <!-- To create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
                 <button class="col l4 m4 s12 btn-large grey accent-1 black-text text-shadow" 
                 value="Go back!" onclick="history.back()">
                     <i class="fas fa-arrow-circle-left"></i> Go Back
                 </button>
-                <button type="reset" class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow center-button">
+                <!-- Clear the form button -->
+                <button type="reset" class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow">
                     Clear <i class="fas fa-times-circle"></i>
                 </button>
+                <!-- Submit the form button -->
                 <button type="submit" class="col l4 m4 s12 center-align btn-large orange accent-1 black-text text-shadow">
-                     Save Changes <i class="fas fa-save"></i>
+                    Update Recipe <i class="fas fa-plus-circle"></i>
                 </button>
-                </div>
-            </div>               
+            </div>             
         </form>
     </div>
     {% endblock %}

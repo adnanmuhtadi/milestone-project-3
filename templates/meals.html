@@ -1,9 +1,6 @@
 {% extends "base.html" %}
 {% block structure %}
 
-<!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-<img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
-
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
     <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
 
@@ -24,7 +21,7 @@
             {% if messages %}
                 {% for message in messages %}
                     <div id="row flashes">
-                        <h4 class="light-blue lighten-4 center-align" id="snackbar">{{ message }}</h4>
+                        <h4 class="red lighten-4 center-align" id="snackbar">{{ message }}</h4>
                     </div>
                 {% endfor %}
             {% endif %}
@@ -53,7 +50,6 @@
         </div>
         {% endfor %}
     </div>
-         
 
     {% endblock %}
 {% endblock %}

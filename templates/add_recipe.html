@@ -14,7 +14,8 @@
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-pencil-alt prefix"></i>
-                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
+                    <!-- input requirement of min length of 5 characters and max length of 30 with the field being mandatory-->
+                    <input id="recipe_name" name="recipe_name" minlength="5" maxlength="30" 
                         type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name*</label>
                 </div>
@@ -25,6 +26,7 @@
                     <i class="fas fa-utensils prefix"></i>
                     <select id="meal_name" name="meal_name" class="validate" required>
                         <option value="" disabled selected required>Choose Meal Type*</option>
+                        <!-- a for loop to go through the meal name types with the field being mandatory-->
                         {% for meal in meals %}
                         <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
                         {% endfor %}
@@ -40,7 +42,7 @@
                     <label for="url_link">URL Link</label>
                 </div>
             </div>
-            <!-- Placeholder for prep time-->
+            <!-- Placeholder for prep time with a helper text to assist the user -->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="far fa-clock prefix"></i>
@@ -49,7 +51,7 @@
                     <span class="helper-text">In minutes</span>
                 </div>
             </div>
-            <!-- Placeholder for cooking time-->
+            <!-- Placeholder for cooking time with a helper text to assist the user -->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-clock prefix"></i>
@@ -66,7 +68,7 @@
                     <label for="num_servings">Number of Servings</label>
                 </div>
             </div>
-            <!--Placeholder for ingrediants-->
+            <!--Placeholder for ingrediants with the field being mandatory and a helper text to assist the user-->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
@@ -75,13 +77,13 @@
                     <span class="helper-text">Add each ingredient on a new line</span>
                 </div>
             </div>
-            <!--Placeholder for steps-->
+            <!--Placeholder for steps with the field being mandatory and a helper text to assist the user-->
             <div class="row">
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-align-left prefix"></i>
                     <textarea id="recipe_steps" name="recipe_steps" class="materialize-textarea validate" required></textarea>
                     <label for="recipe_steps">Steps*</label>
-                    <span class="helper-text" data-error="wrong" data-success="right">Add each step on a new line</span>
+                    <span class="helper-text">Add each step on a new line</span>
                 </div>
             </div>
             <!-- Placeholder for if it is vegetarian or not-->
@@ -110,20 +112,21 @@
                     </div>
                 </div>
             </div>  
-            <!-- to create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
             <div class="row button-set"> 
+                <!-- To create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
                 <button class="col l4 m4 s12 btn-large grey accent-1 black-text text-shadow" 
                 value="Go back!" onclick="history.back()">
                     <i class="fas fa-arrow-circle-left"></i> Go Back
                 </button>
+                <!-- Clear the form button -->
                 <button type="reset" class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow">
                     Clear <i class="fas fa-times-circle"></i>
                 </button>
+                <!-- Submit the form button -->
                 <button type="submit" class="col l4 m4 s12 center-align btn-large orange accent-1 black-text text-shadow">
                     Add Recipe <i class="fas fa-plus-circle"></i>
                 </button>
             </div>
-            </form>               
         </form>
     </div>
     {% endblock %}
