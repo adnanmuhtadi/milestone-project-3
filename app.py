@@ -143,6 +143,10 @@ Function to get the user logged in
 
 @ app.route("/login", methods=["GET", "POST"])
 def login():
+    if 'user' in session:
+        flash('You are already logged in')
+        return redirect(url_for('profile', username=session["user"]))
+
     if request.method == "POST":
         # check if username exists in db
         user_exisiting = mongo.db.users.find_one(
@@ -153,7 +157,7 @@ def login():
             if check_password_hash(
                     user_exisiting["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for("get_my_recipes"))
             else:
                 # invalid password match
                 flash("Incorrect Username and/or Password")
@@ -278,7 +282,8 @@ def edit_username(username):
         current_user = mongo.db.users.find_one(
             {"username": session["user"]})["username"]
         created_by_change = {"created_by": request.form.get("new_username")}
-        created_by_check = mongo.db.recipes.find({'created_by': current_user})
+        created_by_check = mongo.db.recipes.find(
+            {'created_by': current_user})
 
         if created_by_check:
             mongo.db.recipes.update_many(
@@ -300,30 +305,47 @@ def edit_username(username):
 
         flash("You have now been logged out, \
               as the username has been changed.\
-              Please use your new new username to login.")
+              Please use your new username to login.")
         session.pop("user")
         return redirect(url_for("login"))
 
     return render_template("edit_username.html", username=session["user"])
 
 
-@ app.route("/edit_password/<username>", methods=["GET", "POST"])
+@app.route("/edit_password/<username>", methods=["GET", "POST"])
 def edit_password(username):
     if request.method == "POST":
-        submit = {
-            "new_password": request.form.get("password"),
-        }
-        mongo.db.user.update({"_id": ObjectId(username)}, submit)
-        flash("Task Successfully Updated")
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
+        current_password = request.form.get('current_password')
+        new_password = request.form.get('new_password')
+        confirm_new_password = request.form.get("confirm_new_password")
 
-    # grab the session user's username from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        if check_password_hash(mongo.db.users.find_one(
+                {'username': username})['password'], current_password):
 
-    if session["user"]:
-        return render_template("edit_password.html", username=username)
+            if new_password == confirm_new_password:
+                mongo.db.users.update_one(
+                    {"username": username},
+                    {"$set": {'password': generate_password_hash(
+                        new_password)}})
 
-    return redirect(url_for("login"))
+                flash(
+                    "You have been logged out, remember to use new password.")
+                session.pop("user")
+                return redirect(url_for("login"))
+
+            else:
+
+                flash("Your new and confirm password do not match,\
+                    Please try again")
+                return redirect(url_for("edit_password", username=session["user"]))
+        else:
+            flash('Your Current password is incorrect,\
+                Please try again')
+            return redirect(url_for('edit_password', username=session["user"]))
+
+    return render_template("edit_password.html", username=session["user"])
 
 
 @app.route("/delete_recipe/<recipe_id>")
@@ -392,6 +414,11 @@ def delete_meal(meal_id):
 @app.errorhandler(404)
 def no_error_404(error):
     return render_template('error_404.html'), 404
+
+
+@app.errorhandler(500)
+def internal_server_error_404(error):
+    return render_template('error_500.html'), 500
 
 
 # This tells the application where and how to run.

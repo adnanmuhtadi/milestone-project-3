@@ -4,10 +4,12 @@
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
     <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
     <div class="row card-panel add-recipe-card">
-        <h3 class="center-header">Error 404!</h3>
+        <h3 class="center-header">Error 500!</h3>
     {% block content %}
-        <h4 class="error-message">Page Not Found<br/>
-        Please click 'Go Back' to go to the previous page</h4>
+        <h4 class="error-message">Internal Server Error<br/>
+            Your request has not been able to completed as there was an internal sever error.<br/>
+            Please click back and try again later.
+        </h4>
     
         <!-- Back button to go back to the previous page -->
         <button class="col l5 offset-l4 m5 offset-m4 s12 btn-large grey accent-1 black-text text-shadow center" 
