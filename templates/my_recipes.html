@@ -22,6 +22,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- buttons to reset the search and to submit with the search. -->
                 <div class="col s9 offset-s3 xs12 m6 offset-m4">
                     <a href="{{ url_for('get_my_recipes') }}" class="grey lighten-1 btn black-text">
                         <i class="fas fa-backspace"></i> Reset</a>
@@ -33,7 +34,7 @@
         </form>
     </div>
 
-    <!-- Error message would appear if the search count comes back as 0 -->
+    <!-- Error message would appear if the search count comes back with no results -->
     {% if search_results == 0 %}
     <div class="row card-panel error-message grey lighten-5 center">
         <h4>No Results Found</h4>
@@ -57,13 +58,14 @@
         {% endwith %}
     </section>
 
-    <!-- dispalying all recipes that are associated with that specific user will be displayed in there recipes-->
+    <!-- Dispalying all recipes that are associated with that specific user will be displayed in there recipes-->
     <ul class="row my-recipes">
     {% for recipe in recipes %}
+    <!-- Recipes will only show which is related to the User and its session -->
     {% if session.user|lower == recipe.created_by|lower %}
         <div class="my-recipe-card card hvr-glow grey lighten-3 col s12 m4">
             <div class="my-card-content">
-                <!-- if the recipe is considered vegetarian, then a toggle would be switched on and an image would appear next to the title-->
+                <!-- If the recipe is considered vegetarian, then a toggle would be switched on and an image would appear next to the title-->
                 {% if recipe.is_it_veg %}
                     <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
                         <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg"></strong></span>
@@ -87,7 +89,7 @@
                 </tr>
                 <tr class="new_row">
                     <td class="table_header">Prep Time</td>
-                    <!-- to put a dash if there is no data for the field -->
+                    <!-- An if statement to put a dash if there is no data for the field -->
                     <td> {% if not recipe.prep_time %}
                     -
                     {% else %}
@@ -111,6 +113,7 @@
                     {% endif %}</td>
                 </tr>
             </table>
+            <!-- When the user selects the that specific recipe, it will only open the recipe which is related to that ID-->
                 <p><a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}"> View Your Full Recipe</a>
                 <i class="fas fa-chevron-up right activator"></i></p>
             </div>
@@ -133,8 +136,7 @@
     
     <div class="row">
         <div class="col s12 xl12">
-            
-            <!--Pagination-->
+            <!--Pagination i utlitised https://www.youtube.com/watch?v=PSWf2TjTGNY for assistance however it has been edited to my preference.-->
             <ul class="pagination text-shadow center-align">
                 {% for page_number in amount_pages %}
                 {% if page_number == current_recipe_page %}

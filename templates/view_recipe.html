@@ -28,7 +28,8 @@
                     </tr>
                     <tr class="new_row">
                         <td class="table_header">Prep Time</td>
-                        <!-- to put a dash if there is no data for the field -->
+                        <!-- Placeholder for prep time -->
+                        <!-- if statment to check if there is content in there other wise till put a dash in its space -->
                         <td> {% if not all_recipe_info.prep_time %}
                         -
                         {% else %}
@@ -37,6 +38,8 @@
                     </tr>
                     <tr class="new_row">
                         <td class="table_header">Cooking Time</td>
+                        <!-- Placeholder for cooking time -->
+                        <!-- if statment to check if there is content in there other wise till put a dash in its space -->
                         <td>{% if not all_recipe_info.cooking_time %}
                         -
                         {% else %}
@@ -45,6 +48,8 @@
                     </tr>
                     <tr class="new_row">
                         <td class="table_header">Servings</td>
+                        <!-- Placeholder for number of servings -->
+                        <!-- if statment to check if there is content in there other wise till put a dash in its space -->
                         <td>{% if not all_recipe_info.num_servings %}
                         -
                         {% else %}
@@ -53,6 +58,7 @@
                     </tr>
                     <tr>
                         <td class="table_header">Created By</td>
+                        <!-- Placeholder to show if it has been shared or not -->
                         <td>{% if all_recipe_info.to_share == "on" %}
                         Shared
                         {% else %}
@@ -61,6 +67,7 @@
                     </tr>
                     <tr>
                         <td class="table_header">Created By</td>
+                        <!-- Placeholder to display the username of the created recipe -->
                         <td>@{{ all_recipe_info.created_by }}</td>
                     </tr>
                 </table>
@@ -78,6 +85,7 @@
                             <div class="row">
                                 <div class="ingre-list col s12">
                                     <ol>
+                                        <!-- An ordered list to display the list of ingredients-->
                                         {% for ingredient in all_recipe_info.recipe_ingredients %}
                                         <li class="list-ingredients">
                                             {{ ingredient }}
@@ -102,6 +110,7 @@
                             <div class="row">
                                 <div class="col s12">
                                     <ol>
+                                        <!-- An ordered list to display the steps for the recipe. -->
                                         {% for steps in all_recipe_info.recipe_steps %}
                                         <li class="cooking-recipe">
                                             {{ steps }}

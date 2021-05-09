@@ -7,6 +7,7 @@
     <h3 class="center-header">Manage Meal Types</h3>
 
     {% block content %} 
+    <!-- A button which activate the add_meal function to add a new meal type -->
     <div class="row add-meal-card">
         <div class="col s12 center-align">
             <a href="{{ url_for('add_meal') }}" class="btn-large grey lighten-1 black-text text-shadow">
@@ -16,7 +17,7 @@
     </div>
 
     <section>
-        <!--Flash message within under the title to inform the user what is the issue -->
+        <!-- Flash message to delivery the said message from the app.py file -->
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
@@ -28,6 +29,7 @@
         {% endwith %}
     </section>
 
+    <!--Card that will display the name of the meal type with the options to delete or edit the meal type -->
     <div class="row">
         {% for meal in meals %}
         <div class="col s12 m3">
@@ -37,10 +39,11 @@
                 </div>
                 <div class="card-action">
                     <div class="row button-set center">
-                        <!-- if the user already has an account can alternatively log in -->
+                        <!-- Buttons which would active a delete function and an edit function -->
                         <a href="{{ url_for('delete_meal', meal_id=meal._id) }}" class="btn red accent-1 black-text text-shadow enter">
                             Delete <i class="fas fa-times-circle"></i>
                         </a>
+                        <!-- Edit button -->
                         <a href="{{ url_for('edit_meal', meal_id=meal._id) }}" type="submit" class="btn orange accent-1 black-text text-shadow enter ">
                             Edit <i class="fas fa-sign-in-alt"></i>
                         </a>
