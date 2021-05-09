@@ -361,6 +361,12 @@ table {
     position: relative;
 }
 
+/*////////////////////////////// Error Pages */
+.error-message{
+    font-family: "Heebo", sans-serif;
+    text-align: center;
+}
+
 @media only screen and (max-width: 1024px) {
 
     /*////////////////////////////// Base File*/
@@ -476,7 +482,7 @@ table {
     /*////////////////////////////// Base File*/
 
     .center-header{
-        font-size: 25px;
+        font-size: 35px;
     }
 
     /*////////////////////////////// Home Page*/
@@ -680,6 +686,10 @@ table {
 
     .row .col ol {
         padding: 0;
+    }
+
+    .error-message {
+        font-size: 20px;
     }
 }
 

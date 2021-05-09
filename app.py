@@ -389,6 +389,11 @@ def delete_meal(meal_id):
     return redirect(url_for("get_meals"))
 
 
+@app.errorhandler(404)
+def no_error_404(error):
+    return render_template('error_404.html'), 404
+
+
 # This tells the application where and how to run.
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
