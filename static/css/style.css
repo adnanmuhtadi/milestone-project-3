@@ -172,7 +172,6 @@ table {
 /*////////////////////////////// Login/Registration/Edit Username/Edit Password Page */
 .bg-image {
     background-repeat: no-repeat;
-    background-size: fixed;
     background-position: center center;
     position: fixed;
     z-index: auto;
