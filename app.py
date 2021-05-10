@@ -1,5 +1,6 @@
-from werkzeug.security import generate_password_hash, check_password_hash
 import os
+import math
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask import (
     Flask, flash, render_template,
     redirect, request, session, url_for)
@@ -7,7 +8,6 @@ from flask_pymongo import PyMongo, DESCENDING, ASCENDING
 from bson.objectid import ObjectId
 if os.path.exists("env.py"):
     import env
-import math
 
 app = Flask(__name__)
 
@@ -21,7 +21,8 @@ app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
 """
-Setting up an instance of PyMongo and adding the app into the constructor method
+Setting up an instance of PyMongo and adding
+the app into the constructor method
 """
 
 
@@ -45,7 +46,8 @@ def get_recipes():
     recipes = mongo.db.recipes.find().sort([('_id', ASCENDING)]).skip(
         (current_recipe_page - 1)*recipes_pp).limit(recipes_pp)
     return render_template(
-        "home.html", recipes=recipes, current_recipe_page=current_recipe_page, amount_pages=amount_pages, amount_recipes=amount_recipes)
+        "home.html", recipes=recipes, current_recipe_page=current_recipe_page,
+        amount_pages=amount_pages, amount_recipes=amount_recipes)
 
 
 """
@@ -60,7 +62,9 @@ def search():
     search_results = mongo.db.recipes.find(
         {'$text': {'$search': query}}).count()
     result_message = f"Search Results"
-    return render_template("home.html", recipes=recipes, search_results=search_results, result_message=result_message)
+    return render_template(
+        "home.html", recipes=recipes, search_results=search_results,
+        result_message=result_message)
 
 
 @app.route("/mysearch", methods=["GET", "POST"])
@@ -70,7 +74,9 @@ def mysearch():
     search_results = mongo.db.recipes.find(
         {'$text': {'$search': query}}).count()
     result_message = f"Search Results ({search_results})"
-    return render_template("my_recipes.html", recipes=recipes, search_results=search_results, result_message=result_message)
+    return render_template(
+        "my_recipes.html", recipes=recipes,
+        search_results=search_results, result_message=result_message)
 
 
 """
@@ -79,7 +85,8 @@ Function to get the list of recepes from Mongo DB and display on my recipe page
 
 
 @ app.route("/get_my_recipes")
-# Function to get the list of recepes from Mongo DB and display them in your personal list of recipes
+# Function to get the list of recepes from Mongo DB and display
+# them in your personal list of recipes
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
     amount_recipes = mongo.db.recipes.count()
@@ -90,7 +97,9 @@ def get_my_recipes():
     recipes = mongo.db.recipes.find().sort([('_id', ASCENDING)]).skip(
         (current_recipe_page - 1)*recipes_pp).limit(recipes_pp)
     return render_template(
-        "my_recipes.html", recipes=recipes, current_recipe_page=current_recipe_page, amount_pages=amount_pages, amount_recipes=amount_recipes)
+        "my_recipes.html", recipes=recipes,
+        current_recipe_page=current_recipe_page,
+        amount_pages=amount_pages, amount_recipes=amount_recipes)
 
 
 """
@@ -123,11 +132,13 @@ def registration():
                 "sname": request.form.get("sname").capitalize(),
                 "email": request.form.get("email").lower(),
                 "username": request.form.get("username").lower(),
-                "password": generate_password_hash(request.form.get("password")),
+                "password": generate_password_hash(
+                    request.form.get("password")),
             }
             mongo.db.users.insert_one(registration)
 
-            # Setting up the User session and redirects the user to the profile page
+            # Setting up the User session and redirects the user
+            # to the profile page
             session["user"] = request.form.get("username").lower()
             return redirect(url_for("profile", username=session["user"]))
         flash("Password does not match!")
@@ -217,7 +228,8 @@ def add_recipe():
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
             "num_servings": request.form.get("num_servings"),
-            "recipe_ingredients": request.form.get("recipe_ingredients").splitlines(),
+            "recipe_ingredients": request.form.get(
+                "recipe_ingredients").splitlines(),
             "recipe_steps": request.form.get("recipe_steps").splitlines(),
             "is_it_veg": request.form.get("is_it_veg"),
             "to_share": request.form.get("to_share"),
@@ -244,7 +256,8 @@ def edit_recipe(recipe_id):
             "prep_time": request.form.get("prep_time"),
             "cooking_time": request.form.get("cooking_time"),
             "num_servings": request.form.get("num_servings"),
-            "recipe_ingredients": request.form.get("recipe_ingredients").splitlines(),
+            "recipe_ingredients": request.form.get(
+                "recipe_ingredients").splitlines(),
             "recipe_steps": request.form.get("recipe_steps").splitlines(),
             "is_it_veg": request.form.get("is_it_veg"),
             "to_share": request.form.get("to_share"),
@@ -268,7 +281,8 @@ def view_recipe(recipe_id):
 
 
 """
-Function to allow the logged in user to change the username(using username as the parameter) 
+Function to allow the logged in user to change the username
+(using username as the parameter)
 It will also update the recipes 'created by' field to the new username
 """
 
@@ -339,7 +353,8 @@ def edit_password(username):
 
                 flash("Your new and confirm password do not match,\
                     Please try again")
-                return redirect(url_for("edit_password", username=session["user"]))
+                return redirect(url_for("edit_password",
+                                        username=session["user"]))
         else:
             flash('Your Current password is incorrect,\
                 Please try again')

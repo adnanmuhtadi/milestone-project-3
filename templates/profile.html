@@ -2,7 +2,7 @@
 {% block structure %}
 
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image" alt="background-image">
     
     {% block content %}
     <h3 class="center-header">{{ fname }}'s Profile</h3>
@@ -12,7 +12,7 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div id="row flashes">
+                    <div class="row flashes">
                         <h5 class="red lighten-4 center-align">{{ message }}</h5>
                     </div>
                 {% endfor %}

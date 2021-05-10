@@ -12,7 +12,7 @@ This site would be utilizing Python which was taught from the Code Institute as 
 I will be using various technologies as well such as HTML5, CSS3, JQuery and Materialize. 
 This project will be responsive and accessible to different size browsers and devices.
 
-<h2 align="center"><img src="#">
+<h2 align="center"><img src="documentation/images/responsive-homepage.png">
 
 ## User Experience (UX)
 
@@ -49,7 +49,7 @@ with the recipes being added by the users. Validation would also be in this part
 to edit and share the specific recipe.
 
 The navigation bar and footer would be built within the base file and the content for the rest of the site would be built within 
-their specific .html files. Within the footer, there would be social media links which would connect the user to the sites alternative 
+their specific .html files. Within the footer, there would be social media links that would connect the user to the sites alternative 
 social platforms.
 
 ## User Stories
@@ -85,12 +85,14 @@ homemade recipes online
     -   The images that were used are based on the content of what it is portraying. Displaying ingredients, finished 
     meals and kitchen crockery without diverting them for the task they need to complete. 
 
-*   ### Wireframes
+-   ### Wireframes
 
     #### Home Page
     - Home Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-web-browser.png)
     - Home Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.png)    
     - Home Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-mobile.png)
+
+    I altered my design because representing the recipes looked better in cards than have accordian drop downs.
 
     #### Login Page
     - Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-web-browser.png)
@@ -132,6 +134,8 @@ homemade recipes online
     Master Wireframe
     - Master Wireframe - [View](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/homemade-recipes.bmpr)
     
+More pages were created but were not accounted for in the beginning brief. I did however maintain the colour scheme and format throughout the site.
+
 ## Features
 
 The features that will be utilised in this project will be as follows:
@@ -191,6 +195,9 @@ The features that will be utilised in this project will be as follows:
 
 - A confirm delete modal when the user deletes a recipe.
 - For the admin user to be able to edit and delete recipes created by all users.
+- When a user registers, an email verification to be sent to the user.
+- To give the option for the user to click on forgotten password and n email to be sent them to be able to reset it for them.
+- Specific filters on the 'My Recipe Page' so they can view just their favourite recipes, or if they want to have a drop-down to select their cuisine they want to see etc.
 
 ## Technologies Used
 
@@ -260,32 +267,26 @@ In this section, I would be testing the User Stories taken from the User Experie
 
 ### Validation
 
-On code completion, i ensured my code was validated with no snytax errors. I used [W3C Markup Validator](https://validator.w3.org/) for HTML5, [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) for CSS3 to ensure my code is W3C Compliant. I used [JSHint](https://jshint.com/) to helps to detect errors and potential problems in your JavaScript code.
+On code completion, i ensured my code was validated with no snytax errors. I used [W3C Markup Validator](https://validator.w3.org/) for HTML5, [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) for CSS3 to ensure my code is W3C Compliant. I used [JSHint](https://jshint.com/) to helps to detect errors and potential problems in your JavaScript code. I used (PEP8 Online)[http://pep8online.com/] to check if my code is PEP8 compliment.
 
 #### Results
 
-Type | Page | Initial Errors | Resolved Errors | Error Notes
------------- | ------------ | ------------- | ------------- | -------------
-HTML | add_meal.html| [Initial Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/with-errors/Showing%20results%20for%20uploaded%20file%20add_meal.html%20-%20Nu%20Html%20Checker.pdf) | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/Showing%20results%20for%20uploaded%20file%20add_meal.html%20-%20Nu%20Html%20Checker.pdf) | Alternative text was not provided for the image
-HTML | add_recipe.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | base.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | edit_meal.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | edit_password.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | edit_recipe.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | edit_username.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | error_404.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | error_500.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | home.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | login.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | meals.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | my_recipes.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | profile.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | registration.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-HTML | registration.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
-CSS | style.css| [Initial Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/with-errors/style%20-%20W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).pdf) | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/style%20-%20W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).pdf) | Wrong properties associated to classes.
-JS | script.js | No Errors Found | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/script.pdf) | JSHint is using an old version of ES
-JS | sendEmail.js | No Errors Found | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/sendemail.js.pdf) | JSHint is using an old version of ES
+##### HTML
 
+- Validating all the HTML files, the only standard HTML error I received that I did not add the "alt" attribute to the img element.
+- On all HTML files, errors for the syntax is still there. Problem is that it doesn't read the Jinja2 library.
+
+##### CSS
+
+- Document was all pass once I fixed 2 classes either they were blank and had no styles associated with them and I put the wrong properties in the wrong class.
+
+##### JS
+
+- Everthing was passwed apart from one warning sign which is as expected as JSHint is using an old version of ES
+
+##### Python
+
+- Only needing to fix the line too long error, the python file passed without any further issues.
 
 ### Further Testing
 
@@ -299,11 +300,11 @@ JS | sendEmail.js | No Errors Found | [Resolved Errors](https://github.com/adnan
 
 #### Browser and Responsive Testing
 
-
+All tests which have been mentioned in the link above has been tested on the following browsers: Chrome, Edge and Firefox. All features and functions worked as expected, including the addition of UX designs (excpet for the known issues mentioned below). The site was also tested on different size devices which consisted of a laptop 13 inch, a tablet as well as a mobile phone.
 
 ### Known Issues
 
-
+- The space between the carousel and the header is to big when changing the device size. 
 
 ## Deployment
 
@@ -375,5 +376,8 @@ Carousel:
 - [Vegetarian logo](https://upload.wikimedia.org/wikipedia/commons/e/ee/Vegetarian-mark.svg)
     - Used to identify if a recipe is vegetarian or not.
 
+- [Responsive Header](http://ami.responsivedesign.is/#)
+    - The header image for the readme file which shows the homepage of the site in different screen sizes.
+    
 ### Acknowledgements
 

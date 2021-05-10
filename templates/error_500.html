@@ -2,7 +2,7 @@
 {% block structure %}
     
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image" alt="background-image">
     <div class="row card-panel add-recipe-card">
         <h3 class="center-header">Error 500!</h3>
     {% block content %}

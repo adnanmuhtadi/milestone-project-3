@@ -2,7 +2,7 @@
 {% block structure %}
 
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image" alt="background-image">
 
     {% block content %}
 
@@ -12,10 +12,10 @@
 
             <div class="view-recipe-img col m7 offset-m5 s12 center-align">
                 {% if all_recipe_info.url_link %}
-                    <img class="view_recipe_image" src="{{ all_recipe_info.url_link }}">
+                    <img class="view_recipe_image" src="{{ all_recipe_info.url_link }}" alt="recipe-image">
                 {% else %}
                     <!--image recived from https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png-->
-                    <img class="view_recipe_image" src="{{ url_for('static', filename='img/no-image.png') }}">
+                    <img class="view_recipe_image" src="{{ url_for('static', filename='img/no-image.png') }}" alt="no-image-available">
                 {% endif %}
             </div>
 

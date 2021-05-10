@@ -15,17 +15,15 @@
     <!-- Custom script-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css">
     <!-- CDN for the email js -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!-- script associate the user_id to emailjs function-->
-    <script type="text/javascript">
+    <script>
         (function() {
             emailjs.init("user_9UPvI1Hs4JHGtyozwple6");
         })();
     </script>
-    
     {% block styles %}
     {% endblock %}
-    
     <title>Home Cooking</title>
     <!-- This is for the favicon icon in the header -->
     <link rel="shortcut icon" href="{{ url_for('static', filename='/img/utensils-solid.svg') }}" type="image/jpg" />
@@ -57,7 +55,7 @@
                     <li><a href="{{ url_for('get_meals') }}">Manage Meal Type</a></li>
                 {% endif %}
                 <!-- Dropdown Trigger -->
-                <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
+                <li><a class="dropdown-trigger" href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown">My Profile<i class="fas fa-caret-down right"></i></a></li>
                 <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>                
             {% else %}
                 <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -91,7 +89,7 @@
                         <li><a href="{{ url_for('get_meals') }}">Manage Meal Type</a></li>
                     {% endif %}
                     <!-- Dropdown Trigger -->
-                    <li><a class="dropdown-trigger" a href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown2">My Profile<i class="fas fa-caret-down right"></i></a></li>
+                    <li><a class="dropdown-trigger" href="{{ url_for('profile', username=session['user']) }}" data-target="myprofile-dropdown2">My Profile<i class="fas fa-caret-down right"></i></a></li>
                     <li><a class="modal-trigger" href="#contact-us-modal">Contact Us</a></li>                
                 {% else %}
                     <li><a href="{{ url_for('login') }}">Log In</a></li>
@@ -118,29 +116,29 @@
                 <div class="row">
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Full name field with a requirement of min length 5 and a patten of all characters as well as being required -->
-                            <input name="from_fullname" id="from_fullname" type="text" minlength="5" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <!-- Full name field with a requirement of min length 5 -->
+                            <input name="from_fullname" id="from_fullname" type="text" minlength="5" class="validate" required>
                             <label for="from_fullname">Full Name*</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- User email field with a requirement of min length 5 and a patten of all characters as well as being required -->
-                            <input name="from_useremail" id="from_useremail" type="text" minlength="5" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <!-- User email field with a requirement of min length 5  -->
+                            <input name="from_useremail" id="from_useremail" type="text" minlength="5" class="validate" required>
                             <label for="from_useremail">Email Address*</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Message subject field with a requirement of min length 5 and a patten of all characters as well as being required -->
-                            <input name="message_subject" id="message_subject" type="text" minlength="5" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                            <!-- Message subject field with a requirement of min length 5  -->
+                            <input name="message_subject" id="message_subject" type="text" minlength="5" class="validate" required>
                             <label for="message_subject">Message Subject*</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Message area field with a requirement of of all characters as well as being required -->
-                            <textarea name="message_summary" id="message_summary" type="text" pattern="^[a-zA-Z0-9]{5,15}$" class="materialize-textarea" required></textarea>
+                            <!-- Message area field with a requirement of of all characters -->
+                            <textarea name="message_summary" id="message_summary" class="materialize-textarea" required></textarea>
                             <label for="message_summary">Textarea*</label>
                         </div>
                     </div>

@@ -2,7 +2,7 @@
 {% block structure %}
 
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image" alt="background-image">
 
     {% block content %}
 
@@ -50,7 +50,7 @@
         {% with messages = get_flashed_messages() %}
             {% if messages %}
                 {% for message in messages %}
-                    <div id="row flashes">
+                    <div class="row flashes">
                         <h5 class="red lighten-4 center-align">{{ message }}</h5>
                     </div>
                 {% endfor %}
@@ -68,7 +68,7 @@
                 <!-- If the recipe is considered vegetarian, then a toggle would be switched on and an image would appear next to the title-->
                 {% if recipe.is_it_veg %}
                     <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
-                        <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg"></strong></span>
+                        <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg" alt="veg"></strong></span>
                 {% else %}
                     <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}</strong></span>
                 {% endif %}
@@ -76,10 +76,10 @@
                 <!-- The variable that is created to display content from the DB "recipe" 
                 this would check if there is an image linked to the recipe-->
                 {% if recipe.url_link %}
-                    <img class="activator" src="{{ recipe.url_link }}">
+                    <img class="activator" src="{{ recipe.url_link }}" alt="recipe-image">
                 {% else %}
                     <!--image recived from https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png-->
-                    <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}">
+                    <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}" alt="no-image-available">
                 {% endif %}
             </div>
             <table>

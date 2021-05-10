@@ -3,22 +3,22 @@
 
     <!-- Carousel which would go through 3 images -->
     <div class="carousel carousel-slider" data-indicators ="true">
-        <a href="#one!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img1.jpeg') }}"></a>
-        <a href="#two!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img2.jpeg') }}"></a>
-        <a href="#three!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img3.jpeg') }}"></a>
+        <a href="#one!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img1.jpeg') }}" alt="carousel-image-1"></a>
+        <a href="#two!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img2.jpeg') }}" alt="carousel-image-2"></a>
+        <a href="#three!" class="carousel-item"><img src="{{ url_for('static', filename='img/carousel-img3.jpeg') }}" alt="carousel-image-3"></a>
     </div>
 
     <!-- Main content for the section -->
     <h3 class="center-header">Home Recipes</h3>
     <div class="row des-section">
-        <p class="description col l8 s12"><strong>Are you about to leave home to either be independent or go to university?</br>
-            Have you ever had a time when you had to store a specific recipe?</br>
-            Have you ever lost a recipe that you wrote down and you can't find it?</strong></br></br>   
+        <p class="description col l8 s12"><strong>Are you about to leave home to either be independent or go to university?<br>
+            Have you ever had a time when you had to store a specific recipe?<br>
+            Have you ever lost a recipe that you wrote down and you can't find it?</strong><br><br>   
             As there is nothing like home-cooked, mums style cooking, Your problems have been answered.
             A place for you to add your recipes, A place for you to share them with the rest of the world. 
         A place for you to even search depending on what specific ingredient you want to use.</p>
             <!-- Image place holder -->
-                <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col l4 s12">
+                <img src="{{ url_for('static', filename='img/hp-recipe.jpeg') }}" class="hp-recipe col l4 s12" alt="side-homepage-image">
 
     </div>
     <hr>
@@ -75,7 +75,7 @@
                         <div class="card-content">
                             {% if recipe.is_it_veg %}
                                 <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}
-                                    <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg"></strong></span>
+                                    <img src="{{ url_for('static', filename='img/vegetarian-mark.svg') }}" class="veg" alt="veg"></strong></span>
                             {% else %}
                                 <span class="card-title grey-text text-darken-4 s12"><strong>{{ recipe.recipe_name }}</strong></span>
                             {% endif %}
@@ -83,10 +83,10 @@
                             <!-- The variable that is created to display content from the database table "recipe".
                             This would check if there is an image linked to the recipe-->
                             {% if recipe.url_link %}
-                                <img class="activator" src="{{ recipe.url_link }}">
+                                <img class="activator" src="{{ recipe.url_link }}" alt="recipe-image">
                             {% else %}
                             <!--image recived from https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/600px-No_image_available.svg.png-->
-                                <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}">
+                                <img class="activator" src="{{ url_for('static', filename='img/no-image.png') }}" alt="no-image-available">
                             {% endif %}                        
                         </div>
                             <table>
@@ -160,5 +160,6 @@
                 </div>
             </div>
         </div>
+    </div>
     
 {% endblock %}

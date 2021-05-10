@@ -2,7 +2,7 @@
 {% block structure %}
     
     <!-- Static image for the background taken from https://unsplash.com/photos/08bOYnH_r_E-->  
-    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image">
+    <img src="{{ url_for('static', filename='img/bg.jpg') }}" class="bg-image" alt="background-image">
 
     <h3 class="center-header">Add New Recipe</h3>
 
@@ -25,8 +25,8 @@
                 <div class="input-field col m10 offset-m1 s12">
                     <i class="fas fa-utensils prefix"></i>
                     <select id="meal_name" name="meal_name" class="validate" required>
-                        <option value="" disabled selected required>Choose Meal Type*</option>
-                        <!-- a for loop to go through the meal name types with the field being mandatory-->
+                        <option value="" disabled selected >Choose Meal Type</option>
+                        <!-- a for loop to go through the meal name types -->
                         {% for meal in meals %}
                         <option value="{{ meal.meal_name }}">{{ meal.meal_name }}</option>
                         {% endfor %}
