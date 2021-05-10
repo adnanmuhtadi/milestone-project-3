@@ -57,23 +57,22 @@ social platforms.
 The intended type of users for which this site would be focused towards are individuals who would like to store their 
 homemade recipes online
 
-1. As a user, I want to be able to register to the website so I can have an account.
-1. As a user, I want to be able to login to the website so I start creating recipes.
+1. As a user, I want to be able to register to the website so I can have my own profile.
 1. As a user, I want an error message to appear if I typed my username/password incorrectly so I can attempt again with the correct username/password.
-1. As a user, I want to be able to create and save a recipe and categories so I can start building a list of meals.
-1. As a user, I want to be able to add my recipes to pre-created and newly-created categories.
-1. As a user, I want to be able to update the saved recipe so I can change what has been saved.
-1. As a user,  I want to be able to delete a saved recipe so I can remove it from the list of saved recipes.
-1. As a user, I want to share my recipes with users who have not logged in so I can share my favourite recipes with other site visitors.
+1. As a registered user, I want to be able to edit my username and/or password so I can update my profile.
+1. As a registered user, I want to be able to create and save a recipe so I view it whenever I want.
+1. As a user, I want to be able to edit my recipes so I can amend them if I made a mistake.
+1. As a registered user, I want to be able to share my recipe so I can allow other non registered users to see my meal
+1. As a registered user,  I want to be able to delete a saved recipe so I can remove it from the list of saved recipes.
+1. As a user, I want to be able to tell the difference between which recipes have been created by me vs recipes created by other users so I can know which ones I have shared.
 1. As a user, I want to be to send an email to the site admin so I can contact them if I have any issues.
-1. As a user, I want to be able to logout from the website so I can go on other websites.
+1. As a user, I want to be able to log out from the website so I can go on other websites.
+1. As a user, I want to see an error page if I enter the wrong extension page within the URL so I know I am in the wrong location. 
 
 ## Design
 
 -   #### Colour Scheme
-    -   The colour scheme I will be working with is mainly white but with a touch of greasy of-white/cream colour 
-    to portray cooking and grease as well as it is most commonly used for baking. The text colour will be black to keep 
-    the text easy to read (Will be using WebAIM to check the contrast of the colour scheme).
+    -   The colour scheme I will be working with is mainly white but with a touch of off-white/yellow colour to portray cooking and the light of food. The text colour will be black to keep the text easy to read (Will be using WebAIM to check the contrast of the colour scheme).
 
 -   #### Typography
     -   I have chosen to use [Merriweather](https://fonts.google.com/specimen/Merriweather) and [Heebo](https://fonts.google.com/specimen/Heebo) 
@@ -108,6 +107,8 @@ homemade recipes online
     - Home Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.png)    
     - Home Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.png)
 
+    I altered my design because representing the recipes looked better in cards than have accordian drop downs.
+
     #### New Meal Page
     - New Meal Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-web-browser.png)
     - New Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-tablet.png)    
@@ -135,11 +136,61 @@ homemade recipes online
 
 The features that will be utilised in this project will be as follows:
 
-
-
 ### Existing Features
 
+#### Site Features
 
+- Responsive on devices sized 1024px, 768px, 425px, 375px and 320px.
+- Allows the user to know the navigated hyperlinks, by having a hoover over feature within the hyperlinks.
+- Navigation bar and footer pulled from the base file throughout all pages.
+
+#### Home Page
+
+- Shared recipes to be displayed at the bottom of the page.
+- Only the registered owner of a recipe would be able to edit/delete a shared recipe.
+
+#### Registration / Login
+
+- Use to be added to the database when the user is registered.
+- If passwords don't match within the registration page, an error message would appear.
+- If the username or password don't match on the login page, an error message would and the user would not be able to log in.
+
+#### Profile / Edit Username / Edit Password
+
+- Once logged in, be directed to the the user recipe page.
+- Once username or password has been changed, to be logged out and to log back in.
+- When the password doesn't match on the change password page, the user would be unable to change the password.
+
+#### My Recipe Page
+
+- Search functionality to be able to search by the name of the recipe and/or by an ingredient.
+- Reset button which resets the search and displays all recipes the user has created.
+- If the recipe is labelled as Vegiterian, a V image would appear by the recipe name.
+- User has the option to delete or edit the a recipe when selected.
+- Page will display up to 6 recipes before a new page is created (Pagination)
+
+#### Edit Page
+
+- To recall the information related to that specific recipe.
+
+#### Admin User / Meal Page
+
+- Only admin user would be able to have the option to create, edit and delete a meal type.
+
+#### Contact Modal
+
+- A popup modal which would appear in the middle of the page.
+- A confirmation alert box appears in the top of the screen when the message has successfully sent.
+
+#### Error Pages
+
+- If the page does not exist, a 404 error page would appear.
+- The error 500 page will load when there is an internal server error.
+
+### Features Left to Implement
+
+- A confirm delete modal when the user deletes a recipe.
+- For the admin user to be able to edit and delete recipes created by all users.
 
 ## Technologies Used
 
@@ -165,6 +216,8 @@ The features that will be utilised in this project will be as follows:
     - Responsive front-end framework to assist with the responsiveness and styling of the website.
 1. [JQuery Core 3.6.0:](https://code.jquery.com/)
     - JQuery library was implemented to use features within Materialize
+1. [EmailJS]()
+    - Using emailJS service to send emails from the contact modal
 
 #### Library
 1. [Google Fonts:](https://fonts.google.com/)
@@ -201,14 +254,37 @@ The features that will be utilised in this project will be as follows:
 
 ## Testing
 
+Testing was taken place during my build of the site. I was utilising Visual Studio Code  'Live Preview' to visually see what my website looks like with every change that is made. I was also utilising Chrome Dev Tools to assist with changes when code was not working as planned. Within Chrome Dev Tools, I was also utilising the responsive views to see the development for the responsive sizes. To test the JS that I was using, I would be using Chrome Dev Tools and choosing Console to make sure everything was running smoothly.
 
+In this section, I would be testing the User Stories taken from the User Experience Section (UX), testing the functionality and usability, testing the responsive views as well as browser testing
 
 ### Validation
 
-
+On code completion, i ensured my code was validated with no snytax errors. I used [W3C Markup Validator](https://validator.w3.org/) for HTML5, [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) for CSS3 to ensure my code is W3C Compliant. I used [JSHint](https://jshint.com/) to helps to detect errors and potential problems in your JavaScript code.
 
 #### Results
 
+Type | Page | Initial Errors | Resolved Errors | Error Notes
+------------ | ------------ | ------------- | ------------- | -------------
+HTML | add_meal.html| [Initial Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/with-errors/Showing%20results%20for%20uploaded%20file%20add_meal.html%20-%20Nu%20Html%20Checker.pdf) | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/Showing%20results%20for%20uploaded%20file%20add_meal.html%20-%20Nu%20Html%20Checker.pdf) | Alternative text was not provided for the image
+HTML | add_recipe.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | base.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | edit_meal.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | edit_password.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | edit_recipe.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | edit_username.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | error_404.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | error_500.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | home.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | login.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | meals.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | my_recipes.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | profile.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | registration.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+HTML | registration.html| [Initial Errors]() | [Resolved Errors]() | Wrong properties associated to classes.
+CSS | style.css| [Initial Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/with-errors/style%20-%20W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).pdf) | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/style%20-%20W3C%20CSS%20Validator%20results%20for%20TextArea%20(CSS%20level%203%20%2B%20SVG).pdf) | Wrong properties associated to classes.
+JS | script.js | No Errors Found | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/script.pdf) | JSHint is using an old version of ES
+JS | sendEmail.js | No Errors Found | [Resolved Errors](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/validation/without-errors/sendemail.js.pdf) | JSHint is using an old version of ES
 
 
 ### Further Testing
@@ -270,13 +346,17 @@ repository and clone my files through this method.
 
 ### Content
 
-
+The content which i have used for most of my recipes are from the gym that i got to [Any Time Fitness Connect](https://connect.anytimefitness.co.uk/wellbeing/nutrition/recipes/)
 
 ### Code
 
 Utilising the code that was used taught from the Code Instute Lessons consisted of (HTML5, CCS3, JavaScript and Python), i also utilised other sources which assisted me in the developing the specific areas.
  
-
+- [Hoover Effects](https://ianlunn.github.io/Hover/)
+    - Effects when hovering over buttons
+- [Back button functionality](https://www.computerhope.com/issues/ch000317.htm)
+- [Contact Modal](https://www.emailjs.com/)
+    - Using emailJS service to send emails from the contact form
 
 ### Media
 
@@ -286,9 +366,14 @@ Carousel:
 - [Image 1](https://unsplash.com/photos/EzH46XCDQRY)
 - [Image 2](https://unsplash.com/photos/3D43SBDDkAc)
 - [Image 3](https://unsplash.com/photos/KPDbRyFOTnE)
-Backgrounds:
-- [Registration Page](https://unsplash.com/photos/NT3qP7WbmzE)
-- [Log In Page](https://unsplash.com/photos/lmFJOx7hPc4)
+
+- [Background Image](https://unsplash.com/photos/08bOYnH_r_E)
+
+- [Colour Options](https://materializecss.com/color.html)
+    - Used from Materialize to set colour scheme across the site.
+
+- [Vegetarian logo](https://upload.wikimedia.org/wikipedia/commons/e/ee/Vegetarian-mark.svg)
+    - Used to identify if a recipe is vegetarian or not.
 
 ### Acknowledgements
 
