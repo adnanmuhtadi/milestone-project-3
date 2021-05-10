@@ -292,7 +292,7 @@ On code completion, i ensured my code was validated with no snytax errors. I use
 
 #### User Stories Testing from User Experience (UX) Section - [View Results](#)
 
-
+When carrying out the User Stories Testing, I placed my self as the user being provided instructions on how to achieve the goals that were identified. The intended type of users which this website is targeted for are individuals who looking for and/or looking to store recipes. I displayed screenshots with the results of each finding to provide evidence of the stories being achieved successfully.
 
 #### Functionality and Usability Testing - [View Results](#)
 
@@ -307,6 +307,8 @@ All tests which have been mentioned in the link above has been tested on the fol
 - The space between the carousel and the header is to big when changing the device size. 
 
 ## Deployment
+
+### Making a Deployment
 
 The project was deployed to Heroku and connected to GitHub pages using the following method:
 1. To direct Heroku which application and dependencies are required to run the app being developed, 
@@ -342,6 +344,10 @@ repository and clone my files through this method.
 1. Once clicked, it would automatically open the application and request where for it to be saved.
 
 <img src="documentation/images/making-a-clone.png">
+
+#### Database Set
+
+
 
 ## Credits
 
@@ -381,3 +387,6 @@ Carousel:
     
 ### Acknowledgements
 
+I want to thank my mentor Aaron Sinnott who guided me in the right direction and for his support. This project has allowed me to experience the powers of Python, MongoDB and much more. It has enabled the developer/me to code in a much easier and kicker way without duplicating efforts.
+
+I also want to thank the Code Institure tutorials especially the Task Manager project for helping me to build and achieve this project. The project was developed around a personal problem of mine and that was a method in storing recipes that my mum would give me. This also became a problem for my sister which enhanced the concept of the site. We needed a way to store and edit, share and delete recipes. 
