@@ -298,13 +298,13 @@ On code completion, i ensured my code was validated with no snytax errors. I use
 
 ### Further Testing
 
-#### User Stories Testing from User Experience (UX) Section - [View Results](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/testing-md-docs/testing-md-docs.md)
+#### User Stories Testing from User Experience (UX) Section - [View Results](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/testing-md-docs/user-testing-ux.md)
 
 When carrying out the User Stories Testing, I placed my self as the user being provided instructions on how to achieve the goals that were identified. The intended type of users which this website is targeted for are individuals who looking for and/or looking to store recipes. I displayed screenshots with the results of each finding to provide evidence of the stories being achieved successfully.
 
-#### Functionality and Usability Testing - [View Results](#)
+#### Functionality and Usability Testing - [View Results](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/testing-md-docs/features-function-testing.md)
 
-
+Testing all my functions and features within the site and ensuring that it is usable across different browsers and devices. I laid the results out in a table with each section defining the feature/function, a description of what I am testing as well as if it passes or fails.
 
 #### Browser and Responsive Testing
 
