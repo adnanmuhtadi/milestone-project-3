@@ -104,10 +104,10 @@ homemade recipes online
     - Register Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-tablet.png)    
     - Register Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-mobile.png)
 
-    #### Home Login Page
-    - Home Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.png)
-    - Home Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.png)    
-    - Home Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.png)
+    #### My Recipe Page
+    - My Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.png)
+    - My Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.png)    
+    - My Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.pdf) | [View Image](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.png)
 
     I altered my design because representing the recipes looked better in cards than have accordian drop downs.
 
@@ -135,6 +135,12 @@ homemade recipes online
     - Master Wireframe - [View](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/homemade-recipes.bmpr)
     
 More pages were created but were not accounted for in the beginning brief. I did however maintain the colour scheme and format throughout the site.
+
+#### Database Mapping
+
+The database was designed using an online tool called [DB Diagram](https://dbdiagram.io/). The tables where mapped depending on the field requirements.
+
+Database Design - [Mapping](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/database/database-mapping.pdf)
 
 ## Features
 
@@ -215,6 +221,8 @@ The features that will be utilised in this project will be as follows:
 ### Databases, Frameworks, Libraries, Programs and Templates Used
 
 #### Databases
+1. [DB Diagram](https://dbdiagram.io/)
+    - Online tool to design the database.
 1. [Mongodb:](https://www.mongodb.com/)
     - Database which stores the data to be recalled onto the website.
 
@@ -290,7 +298,7 @@ On code completion, i ensured my code was validated with no snytax errors. I use
 
 ### Further Testing
 
-#### User Stories Testing from User Experience (UX) Section - [View Results](#)
+#### User Stories Testing from User Experience (UX) Section - [View Results](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/testing-md-docs/testing-md-docs.md)
 
 When carrying out the User Stories Testing, I placed my self as the user being provided instructions on how to achieve the goals that were identified. The intended type of users which this website is targeted for are individuals who looking for and/or looking to store recipes. I displayed screenshots with the results of each finding to provide evidence of the stories being achieved successfully.
 
@@ -344,10 +352,6 @@ repository and clone my files through this method.
 1. Once clicked, it would automatically open the application and request where for it to be saved.
 
 <img src="documentation/images/making-a-clone.png">
-
-#### Database Set
-
-
 
 ## Credits
 
