@@ -204,6 +204,7 @@ The features that will be utilised in this project will be as follows:
 - When a user registers, an email verification to be sent to the user.
 - To give the option for the user to click on forgotten password and n email to be sent them to be able to reset it for them.
 - Specific filters on the 'My Recipe Page' so they can view just their favourite recipes, or if they want to have a drop-down to select their cuisine they want to see etc.
+- A profile page where the user can view and edit any and all personal information.
 
 ## Technologies Used
 

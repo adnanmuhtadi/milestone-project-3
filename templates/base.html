@@ -116,9 +116,10 @@
                 <div class="row">
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Full name field with a requirement of min length 5 -->
-                            <input name="from_fullname" id="from_fullname" type="text" minlength="5" class="validate" required>
+                            <!-- Full name field with a requirement of min length 3 -->
+                            <input name="from_fullname" id="from_fullname" type="text" minlength="3" class="validate" required>
                             <label for="from_fullname">Full Name*</label>
+                            <span class="helper-text" data-error="Input invalid, min length of 3 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">
@@ -126,6 +127,7 @@
                             <!-- User email field with a requirement of min length 5  -->
                             <input name="from_useremail" id="from_useremail" type="text" minlength="5" class="validate" required>
                             <label for="from_useremail">Email Address*</label>
+                            <span class="helper-text" data-error="Input invalid, min length of 5 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">
@@ -133,13 +135,15 @@
                             <!-- Message subject field with a requirement of min length 5  -->
                             <input name="message_subject" id="message_subject" type="text" minlength="5" class="validate" required>
                             <label for="message_subject">Message Subject*</label>
+                            <span class="helper-text" data-error="Input invalid, min length of 5 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Message area field with a requirement of of all characters -->
+                            <!-- Message area field with a requirement of all characters -->
                             <textarea name="message_summary" id="message_summary" class="materialize-textarea" required></textarea>
-                            <label for="message_summary">Textarea*</label>
+                            <label for="message_summary">Message*</label>
+                            <span class="helper-text" data-error="Field cannot be blank" data-success=""></span>
                         </div>
                     </div>
                 </div>
@@ -163,10 +167,10 @@
         <div class="row">
             <div class="social-media col s12 center">
                 <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-youtube"></i>                                
+                <a href="https://twitter.com/home?lang=en-gb"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.pinterest.co.uk/"><i class="fab fa-pinterest"></i></a>
+                <a href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>                                
             </div> 
             <div class="copyright col s12 center">
                 <p>© 2021 Adnan Muhtadi</p>
