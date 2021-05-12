@@ -101,7 +101,14 @@ Update Recipe | A flash message to inform user the recipe has been updated | :he
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
-Recipe Details | 
+Recipe Details | All information being pulled from the DB | :heavy_check_mark: |
+Recipe Image | Imaging being pull from an external URL | :heavy_check_mark: |
+Recipe Image | If no image URL has been provided, then an alternative image will be uploaded in its place. | :heavy_check_mark: |
+Ingredients Accordin | Display list of ingredients in an ordered list | :heavy_check_mark: |
+Steps Accordin | Display a list of steps in an ordered list | :heavy_check_mark: |
+Go Back button | To go back to the previous page | :heavy_check_mark: |
+Delete button | Remove current recipe | :heavy_check_mark: |
+Edit button | Get redirected to that recipe edit page | :heavy_check_mark: |
 
 ## My Recipe Page
 
@@ -195,6 +202,13 @@ Go Back button | Takes user to the previous page | :heavy_check_mark: |
 Clear button | Clear the form |  | :x:
 Update Meal button | Updates the Meal Type | :heavy_check_mark: |
 Update Meal button | Redirects user back to the Manage Meal Type | :heavy_check_mark: |
+
+## Error Page
+
+Feature/Function | Description | Pass | Fail
+------------ | ------------- | ------------- | -------------
+Error 404 | Change the end of the URL, a new page for the 404 error appear | :heavy_check_mark: |
+Error 500 | When an internal server occurs, a new page for the 500 error appear | :heavy_check_mark: |
 
 
 [Return to main README.md](https://github.com/adnanmuhtadi/milestone-project-3)

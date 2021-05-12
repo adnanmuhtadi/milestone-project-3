@@ -140,6 +140,7 @@ hr {
     width: 210px;
     height: 200px;
     border-radius: 50%;
+    object-fit: cover;
 }
 
 .row .col.m4 {
@@ -240,7 +241,6 @@ table {
 
 .veg {
     width: 17px;
-    margin-left: 20px;
     position: absolute;
 }
 
@@ -269,6 +269,8 @@ table {
 .card .my-recipe-card-image img{
     width: 300px;
     height: 280px;
+    display: inline;
+    object-fit: cover;
 }
 
 .btn-small {
@@ -320,6 +322,7 @@ table {
     width: 400px;
     height: 400px;
     border-radius: 25px;
+    object-fit: cover;
 }
 
 .row .recipe-table {

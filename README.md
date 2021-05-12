@@ -153,6 +153,7 @@ The features that will be utilised in this project will be as follows:
 - Responsive on devices sized 1024px, 768px, 425px, 375px and 320px.
 - Allows the user to know the navigated hyperlinks, by having a hoover over feature within the hyperlinks.
 - Navigation bar and footer pulled from the base file throughout all pages.
+- Different navigation bar option depend on the type of user accesses the site.
 
 #### Home Page
 
@@ -202,7 +203,7 @@ The features that will be utilised in this project will be as follows:
 - A confirm delete modal when the user deletes a recipe.
 - For the admin user to be able to edit and delete recipes created by all users.
 - When a user registers, an email verification to be sent to the user.
-- To give the option for the user to click on forgotten password and n email to be sent them to be able to reset it for them.
+- To give the option for the user to click on forgotten password and an email to be sent them to be able to reset it for them.
 - Specific filters on the 'My Recipe Page' so they can view just their favourite recipes, or if they want to have a drop-down to select their cuisine they want to see etc.
 - A profile page where the user can view and edit any and all personal information.
 
@@ -314,6 +315,7 @@ All tests which have been mentioned in the link above has been tested on the fol
 ### Known Issues
 
 - The space between the carousel and the header is to big when changing the device size. 
+- 
 
 ## Deployment
 
