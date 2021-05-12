@@ -315,7 +315,7 @@ All tests which have been mentioned in the link above has been tested on the fol
 ### Known Issues
 
 - The space between the carousel and the header is to big when changing the device size. 
-- 
+- The alignement of the cards vs the hearder not perfectly in middle, where as even the buttons within the cards are not perfect aligned in the middle.
 
 ## Deployment
 
