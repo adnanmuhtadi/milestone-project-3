@@ -161,7 +161,17 @@ homemade recipes online
     - Edit Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-meal-tablet.pdf)  
     - Edit Meal Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-meal-mobile.pdf)
 
-    Master Wireframe
+    #### Error 404 Page
+    - Error 404 Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error404-web-browser.pdf)
+    - Error 404 Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error404-tablet.pdf)  
+    - Error 404 Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error404-mobile.pdf)
+    
+    #### Error 500 Page
+    - Error 500 Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error500-web-browser.pdf)
+    - Error 500 Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error500-tablet.pdf)  
+    - Error 500 Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/error500-mobile.pdf)
+
+    #### Master Wireframe
     - Master Wireframe - [View](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/homemade-recipes.bmpr)
     
 #### Database Mapping

@@ -133,7 +133,7 @@ hr {
 }
 
 .shared-recipes {
-    height: 75vh;
+    height: 70vh;
     position: relative;
 }
 
@@ -146,6 +146,7 @@ hr {
     height: 200px;
     border-radius: 50%;
     object-fit: cover;
+    margin: auto;
 }
 
 .row .col.m4 {
@@ -263,7 +264,7 @@ table {
 
 .my-recipe-card {
     margin: 20px;
-    height: 87vh;
+    height: 82vh;
 }
 
 .card .my-card-content {
@@ -405,7 +406,9 @@ table {
         padding: 0 0 20px;
     }
 
-    .search
+    .shared-recipes {
+        height: 75vh;
+    }
 
     .card-content strong{
         font-size: 20px;
@@ -416,6 +419,10 @@ table {
         height: 150px;
     }
 
+    .card .card-title {
+        font-size: 20px;
+    }
+    
     .row .col.m4 {
         width: 30%;
     }
@@ -427,6 +434,10 @@ table {
 
     .shared-recipe-card {
         margin: 30px 20px 20px 20px;
+    }
+
+    .my-recipe-card {
+        height: 70vh;
     }
 
     /*////////////////////////////// Login/Registration/Edit Username/Edit Password Page */
@@ -461,6 +472,7 @@ table {
         font-size: 13px;
     }
 
+    
     /*////////////////////////////// View recipe page */
 
     .view-center-header {
@@ -541,6 +553,10 @@ table {
 
     .row .col.s4 {
         width: 30%;
+    }
+
+    .card .card-title {
+        font-size: 15px;
     }
 
     /*////////////////////////////// Edit recipe page */
@@ -630,6 +646,10 @@ table {
         width: 100%;
     }
 
+    .shared-recipes {
+        height: 105vh;
+    }
+
     .card .card-image img{
         width: 340px;
         height: 330px;
@@ -663,6 +683,10 @@ table {
 
     .button-set .col.middle-button {
         margin: 20px 0;
+    }
+
+    .card .card-title {
+        font-size: 23px;
     }
 
     /*////////////////////////////// Edit recipe page */
@@ -721,6 +745,10 @@ table {
         height: 280px;
     }
 
+    .shared-recipes {
+    height: 93vh;
+    }
+
     /* buttons for the registration page */
     .button-set .col.s5 {
         margin-left: 0;
@@ -749,6 +777,10 @@ table {
     .collapsible h5 {
         font-size: 15px;
     }
+
+    .card .card-title {
+        font-size: 17px;
+    }
 }
 
 @media only screen and (max-width: 320px) {
@@ -764,6 +796,10 @@ table {
     .card-panel .row .input-field {
         font-weight: 200;
         padding: 0;
+    }
+
+    .shared-recipes {
+    height: 85vh;
     }
 
     /*////////////////////////////// My Recipe Page */

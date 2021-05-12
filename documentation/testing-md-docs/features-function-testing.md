@@ -39,7 +39,7 @@ Close Modal | When outside of the modal is clicked, modal would close | :heavy_c
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
-carousel | Images to rotate every 3 seconds | :heavy_check_mark: |
+Carousel | Images to rotate every 3 seconds | :heavy_check_mark: |
 Search | Search by recipe name | :heavy_check_mark: |
 Search | Search by ingredients | :heavy_check_mark: |
 Search | Search for a recipe and no results appear, error message to appear | :heavy_check_mark: |
@@ -54,6 +54,7 @@ Recipes | When it exceeds 3 recipes, pagination would provide the recipes on ano
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Form | To be able to enter information on the form | :heavy_check_mark: |
 Username | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Username | If username already exists, a flash message would appear to submit
@@ -69,6 +70,7 @@ Password/Confirm password | If confirm password and current password do not matc
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Username | If username does not exist in the database, a flash error message would appear | :heavy_check_mark: |
 Username | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Password | If the password is wrong, a flash error message would appear | :heavy_check_mark: |
@@ -79,6 +81,7 @@ Username/Password | If username and password is correct, user to be directed to 
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Form | To be able to fill out the form | :heavy_check_mark: |
 Recipe Name | If field missed, a helper text appears under the field | :heavy_check_mark: |
 Recipe Name | Cannot enter less than 5 characters | :heavy_check_mark: |
@@ -101,6 +104,7 @@ Add recipe | A flash message to confirm the creation of the recipe | :heavy_chec
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Form | All information to be displayed in their appropriate fields | :heavy_check_mark: |
 Form 'Recipe Name' | Cannot enter less 5 and/or more than 25 characters | :heavy_check_mark: |
 Form | To be able to amend the form from any field | :heavy_check_mark: |
@@ -126,6 +130,7 @@ Edit button | Get redirected to that recipe edit page | :heavy_check_mark: |
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Recipe | To be able to see 6 recipes on a page | :heavy_check_mark: |
 Recipe | Pagination once it exceeds 6 recipes | :heavy_check_mark: |
 Recipe | Missing information within the recipe would be displayed with a '-' | :heavy_check_mark: |
@@ -143,6 +148,7 @@ vegetarian logo | If recipe is considered vegetarian, to have a 'V' image next t
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 User first name | Welcome the user first name when entering the page | :heavy_check_mark: |
 Edit username | once button 'Edit Username', to be directed to said page | :heavy_check_mark: |
 Edit password | once button 'Edit Password', to be directed to said page | :heavy_check_mark: |
@@ -151,6 +157,7 @@ Edit password | once button 'Edit Password', to be directed to said page | :heav
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Current username | User current username displayed on page | :heavy_check_mark: |
 New Username | If less than 5  or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
 Created-by | Created by field on all recipes | :heavy_check_mark: |
@@ -161,6 +168,7 @@ Username Update | When updating username to be logged out and redirected to the 
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Current password | Required to enter current password to proceed | :heavy_check_mark: |
 Current password | If missed, a help error message would appear | :heavy_check_mark: |
 Current password | If less than 5 or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
@@ -190,6 +198,7 @@ Navigation bar | To view all the navigation options available | :heavy_check_mar
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Meal Types | View all meal types available in card view | :heavy_check_mark: |
 Add Meal button | Direct admin user to add_meal.html to add meal type | :heavy_check_mark: |
 Delete button | Delete the meal type | :heavy_check_mark: |
@@ -200,6 +209,7 @@ Edit button | Direct admin user to edit_mel.html | :heavy_check_mark: |
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Form | Available to input within the form | :heavy_check_mark: |
 Form | Cannot add less than 3 characters | :heavy_check_mark: |
 Form | Cannot add more than 50 characters | :heavy_check_mark: |
@@ -212,6 +222,7 @@ Add Meal button | Add the meal type to the database which becomes visible in the
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
+Page Access | If user not logged in, the user would get redirected to the login page with a flash message | :heavy_check_mark: |
 Form | The name of the meal type to be visible on the form | :heavy_check_mark: |
 Go Back button | Takes user to the previous page | :heavy_check_mark: |
 Clear button | Clear the form |  | :x:
