@@ -116,26 +116,26 @@
                 <div class="row">
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Full name field with a requirement of min length 3 -->
-                            <input name="from_fullname" id="from_fullname" type="text" minlength="3" class="validate" required>
+                            <!-- Full name field with a requirement of min length of 3 to 50 length-->
+                            <input name="from_fullname" id="from_fullname" type="text" minlength="3" maxlength="50" class="validate" required>
                             <label for="from_fullname">Full Name*</label>
-                            <span class="helper-text" data-error="Input invalid, min length of 3 Characters" data-success=""></span>
+                            <span class="helper-text" data-error="Input invalid, min length of 3 to 50 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- User email field with a requirement of min length 5  -->
-                            <input name="from_useremail" id="from_useremail" type="text" minlength="5" class="validate" required>
+                            <!-- User email field with a requirement of min length of 5 to 25 characters  -->
+                            <input name="from_useremail" id="from_useremail" type="text" minlength="5" maxlength="50" class="validate" required>
                             <label for="from_useremail">Email Address*</label>
-                            <span class="helper-text" data-error="Input invalid, min length of 5 Characters" data-success=""></span>
+                            <span class="helper-text" data-error="Input invalid, min length of 5 to 50 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col l10 offset-l1 s12">
-                            <!-- Message subject field with a requirement of min length 5  -->
-                            <input name="message_subject" id="message_subject" type="text" minlength="5" class="validate" required>
+                            <!-- Message subject field with a requirement of min length of 5 to 25 characters -->
+                            <input name="message_subject" id="message_subject" type="text" minlength="5" maxlength="50" class="validate" required>
                             <label for="message_subject">Message Subject*</label>
-                            <span class="helper-text" data-error="Input invalid, min length of 5 Characters" data-success=""></span>
+                            <span class="helper-text" data-error="Input invalid, min length of 5 to 50 Characters" data-success=""></span>
                         </div>
                     </div>
                     <div class="row">

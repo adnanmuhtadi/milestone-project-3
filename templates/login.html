@@ -28,8 +28,8 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
-                        <!-- Field requirements set to a min of 5 open characters while the field being required -->
-						<input id="username" name="username" type="text" minlength="5"
+                        <!-- Field requirements set to a min of 5 open and max of 25 characters while the field being required -->
+						<input id="username" name="username" type="text" minlength="5" maxlength="25"
                             pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
 						<label for="username">Username</label>
                         <span class="helper-text" data-error="Username is required"></span>
@@ -39,8 +39,8 @@
                 <div class="row">
                     <div class="input-field col s12">
 						<i class="fas fa-user-lock prefix text-darken-4"></i>
-                        <!-- Field requirements set to a min of 5 open characters while the field being required -->
-                        <input id="password" name="password" type="password" minlength="5"
+                        <!-- Field requirements set to a min of 5 and max of 25 open characters while the field being required -->
+                        <input id="password" name="password" type="password" minlength="5" maxlength="25"
                             pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>

@@ -22,12 +22,12 @@
                 <div class="row">
 					<div class="input-field col s12">
 						<i class="fas fa-user-cog prefix text-darken-4"></i>
-                        <!-- Field requirements is for it to be min of 5 characters and any character is permited 
+                        <!-- Field requirements is for it to be min of 5 and a max of 25 characters and any character is permited 
                         as well as it is a mandatory field-->
-						<input id="new_username" name="new_username" type="text" minlength="5" 
-                            class="validate longtext" required>
+						<input id="new_username" name="new_username" type="text" minlength="5" maxlength="25"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate longtext" required>
 						<label for="new_username">Confirm New Username!*</label>
-                        <span class="helper-text" data-error="Min of 5 charaters required"></span>
+                        <span class="helper-text" data-error="Min of 5 to 25 charaters required"></span>
 					</div>
                 </div>
                 <div class="row">

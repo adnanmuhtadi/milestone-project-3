@@ -25,6 +25,12 @@ Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Pop-up | When you click on 'Contact Us', a center modal appears | :heavy_check_mark: |
 Email clear | If form is filed and the clear button is clicked, all information on the form will be cleared. | :heavy_check_mark: |
+Form 'Full Name' | Cannot enter more than 3 characters in that field
+Form 'Full Name' | Cannot enter more than 50 characters in that field
+Form 'Email' | Cannot enter more than 5 characters in that field
+Form 'Email' | Cannot enter more than 50 characters in that field
+Form 'Message Subject' | Cannot enter more than 5 characters in that field
+Form 'Message Subject' | Cannot enter more than 50 characters in that field
 Send Email | Error message appear, input filed highlighted red if the field has incorrect requirements and email not sent | :heavy_check_mark: |
 Send Email | Error message appear, input filed highlighted red if the field has been left out and email not sent | :heavy_check_mark: |
 Close Modal | When outside of the modal is clicked, modal would close | :heavy_check_mark: |
@@ -51,8 +57,10 @@ Feature/Function | Description | Pass | Fail
 Form | To be able to enter information on the form | :heavy_check_mark: |
 Username | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Username | If username already exists, a flash message would appear to submit
+Username | If entered less than 5 or more than 25 characters, an error would appear | :heavy_check_mark: |
 Password | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Confirm Password | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
+Password/Confirm Password | If entered less than 5 or more than 25 characters, an error would appear | :heavy_check_mark: |
 Other fields | Can still register without having them filled | :heavy_check_mark: |
 Confirm Password | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Password/Confirm password | If confirm password and current password do not match, flash message to appear | :heavy_check_mark: |
@@ -64,6 +72,7 @@ Feature/Function | Description | Pass | Fail
 Username | If username does not exist in the database, a flash error message would appear | :heavy_check_mark: |
 Username | If the field is missed, a helper text would appear in red | :heavy_check_mark: |
 Password | If the password is wrong, a flash error message would appear | :heavy_check_mark: |
+Username/Password | If entered less than 5 or more than 25 characters, an error would appear | :heavy_check_mark: |
 Username/Password | If username and password is correct, user to be directed to the 'My Recipe' page | :heavy_check_mark: |
 
 ## Add Recipe Page
@@ -72,6 +81,8 @@ Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Form | To be able to fill out the form | :heavy_check_mark: |
 Recipe Name | If field missed, a helper text appears under the field | :heavy_check_mark: |
+Recipe Name | Cannot enter less than 5 characters | :heavy_check_mark: |
+Recipe Name | Cannot enter more than 25 characters | :heavy_check_mark: |
 Prep Time | Only numbers to be entered | :heavy_check_mark: |
 Cooking Time | Only numbers to be entered | :heavy_check_mark: |
 Number of Serving | Only numbers to be entered | :heavy_check_mark: |
@@ -91,6 +102,7 @@ Add recipe | A flash message to confirm the creation of the recipe | :heavy_chec
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Form | All information to be displayed in their appropriate fields | :heavy_check_mark: |
+Form 'Recipe Name' | Cannot enter less 5 and/or more than 25 characters | :heavy_check_mark: |
 Form | To be able to amend the form from any field | :heavy_check_mark: |
 Clear button | To clear the from from exisiting data | | :x:
 Go Back button | To go back to the previous page | :heavy_check_mark: |
@@ -140,7 +152,7 @@ Edit password | once button 'Edit Password', to be directed to said page | :heav
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Current username | User current username displayed on page | :heavy_check_mark: |
-New Username | If less than 5 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
+New Username | If less than 5  or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
 Created-by | Created by field on all recipes | :heavy_check_mark: |
 Username/created-by update | When updating Username, it updates the created-by as well which where associated to the previous username | :heavy_check_mark: |
 Username Update | When updating username to be logged out and redirected to the login page with a flash message | :heavy_check_mark: |
@@ -151,10 +163,11 @@ Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Current password | Required to enter current password to proceed | :heavy_check_mark: |
 Current password | If missed, a help error message would appear | :heavy_check_mark: |
+Current password | If less than 5 or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
 Current password | If current password is incorrect, flash message to appear | :heavy_check_mark: |
-New password | If less than 5 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
+New password | If less than 5 or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
 New password | If missed, a help error message would appear | :heavy_check_mark: |
-Confirm password | If less than 5 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
+Confirm password | If less than 5 or more than 25 characters are entered, error message to appear on the bottom of the field | :heavy_check_mark: |
 Confirm password | If missed, a help error message would appear | :heavy_check_mark: |
 Password/Confirm password | If confirm password and current password do not match, flash message to appear | :heavy_check_mark: |
 
@@ -188,6 +201,8 @@ Edit button | Direct admin user to edit_mel.html | :heavy_check_mark: |
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Form | Available to input within the form | :heavy_check_mark: |
+Form | Cannot add less than 3 characters | :heavy_check_mark: |
+Form | Cannot add more than 50 characters | :heavy_check_mark: |
 Form | If field missed, a helper text appears under the field | :heavy_check_mark: |
 Go Back button | Takes user to the previous page | :heavy_check_mark: |
 Clear button | Clear the form |  | :x:

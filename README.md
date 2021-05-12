@@ -89,48 +89,81 @@ homemade recipes online
 
     #### Home Page
     - Home Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-web-browser.pdf)
-    - Home Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.pdf)   
+    - Home Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-tablet.pdf)
     - Home Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-page-mobile.pdf)
 
     I altered my design because representing the recipes looked better in cards than have accordian drop downs.
 
     #### Login Page
-    - Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-web-browser.pdf)
-    - Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-tablet.pdf)    
-    - Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-page-mobile.pdf)
+    - Login Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-web-broswer.pdf)
+    - Login Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-tablet.pdf) 
+    - Login Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/login-mobile.pdf)
 
     #### Registration Page
-    - Registration Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-web-browser.pdf)
-    - Registration Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-tablet.pdf)  
-    - Registration Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-page-mobile.pdf)
+    - Registration Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-web-browser.pdf)
+    - Registration Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-tablet.pdf) 
+    - Registration Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/registration-mobile.pdf)
+
+    #### Contact Us Page
+    - Contact Us Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-web-browser.pdf)
+    - Contact Us Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-tablet.pdf)
+    - Contact Us Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/contact-us-mobile.pdf)
 
     #### My Recipe Page
-    - My Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-web-browser.pdf)
-    - My Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-tablet.pdf)    
-    - My Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/home-login-page-mobile.pdf)
+    - My Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/my-recipes-web-browser.pdf)
+    - My Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/my-recipes-tablet.pdf)  
+    - My Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/my-recipes-mobile.pdf)
 
     I altered my design because representing the recipes looked better in cards than have accordian drop downs.
 
     #### Add New Recipe Page
-    - Add New Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-web-browser.pdf)
-    - Add New Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-tablet.pdf)
-    - Add New Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/new-meal-page-mobile.pdf)
+    - Add New Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-new-recipe-web-browser.pdf)
+    - Add New Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-new-recipe-tablet.pdf)
+    - Add New Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-new-recipe-mobile.pdf)
+
+    #### Edit Recipe Page
+    - Edit Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-recipe-web-browser.pdf)
+    - Edit Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-recipe-tablet.pdf)  
+    - Edit Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-recipe-mobile.pdf)
+
+    #### View Recipe Page
+    - View Recipe Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/view-recipe-web-browser.pdf)
+    - View Recipe Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/view-recipe-tablet.pdf)    
+    - View Recipe Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/view-recipe-mobile.pdf)
 
     #### Profile Page
-    - Profile Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-web-browser.pdf)
-    - Profile Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-tablet.pdf)
-    - Profile Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-page-mobile.pdf)
+    - Profile Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-web-browser.pdf)
+    - Profile Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-tablet.pdf)
+    - Profile Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/profile-mobile.pdf)
 
-    #### Admin Page
-    - Admin Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-web-browser.pdf)
-    - Admin Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-tablet.pdf)    
-    - Admin Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/admin-page-mobile.pdf)
+    #### Change Username Page
+    - Change Username Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-username-web-browser.pdf)
+    - Change Username Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-username-tablet.pdf)
+    - Change Username Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-username-mobile.pdf)
+
+    #### Change Password Page
+    - Change Password Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-password-web-browser.pdf)
+    - Change Password Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-password-tablet.pdf)
+    - Change Password Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/change-password-mobile.pdf)
+
+    #### Manage Meal Page
+    - Manage Meal Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/manage-meal-web-browser.pdf)
+    - Manage Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/manage-meal-tablet.pdf) 
+    - Manage Meal Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/manage-meal-mobile.pdf)
+
+    #### Add Meal Page
+    - Add Meal Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-meal-web-browser.pdf)
+    - Add Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-meal-tablet.pdf)   
+    - Add Meal Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/add-meal-mobile.pdf)
+
+    #### Edit Meal Page
+    - Edit Meal Page Wireframe (Web Browser) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-meal-web-browser.pdf)
+    - Edit Meal Page Wireframe (Tablet) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-meal-tablet.pdf)  
+    - Edit Meal Page Wireframe (Mobile) - [View PDF](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/edit-meal-mobile.pdf)
 
     Master Wireframe
     - Master Wireframe - [View](https://github.com/adnanmuhtadi/milestone-project-3/blob/master/documentation/wireframes/homemade-recipes.bmpr)
     
-More pages were created but were not accounted for in the beginning brief. I did however maintain the colour scheme and format throughout the site.
-
 #### Database Mapping
 
 The database was designed using an online tool called [DB Diagram](https://dbdiagram.io/). The tables where mapped depending on the field requirements.
