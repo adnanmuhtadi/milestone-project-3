@@ -39,7 +39,7 @@ Function to get the list of recepes from Mongo DB and display in the home page
 def get_recipes():
     recipes = list(mongo.db.recipes.find())
     amount_recipes = mongo.db.recipes.count()
-    recipes_pp = 4
+    recipes_pp = 5
     current_recipe_page = int(request.args.get('current_recipe_page', 1))
     amount_pages = range(1, int(
         math.ceil(amount_recipes / recipes_pp)) + 1)
@@ -90,7 +90,7 @@ Function to get the list of recepes from Mongo DB and display on my recipe page
 def get_my_recipes():
     recipes = mongo.db.recipes.find()
     amount_recipes = mongo.db.recipes.count()
-    recipes_pp = 7
+    recipes_pp = 9
     current_recipe_page = int(request.args.get('current_recipe_page', 1))
     amount_pages = range(1, int(
         math.ceil(amount_recipes / recipes_pp)) + 1)
