@@ -435,7 +435,7 @@ def edit_username(username):
                 {"username": username}, {"$set": username_change})
 
         # loggs the user out for them to log back in
-        flash("You have now been logged out, \
+        flash("You have now been logged out,\
               as the username has been changed.\
               Please use your new username to login.")
         session.pop("user")
@@ -596,6 +596,8 @@ def delete_meal(meal_id):
 """
 Error Handling Function
 Function to handle error 404 and error 500
+using this website to assist with Error handling
+https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling
 """
 
 

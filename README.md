@@ -460,6 +460,10 @@ Utilising the code that was used taught from the Code Instute Lessons consisted 
     - Using emailJS service to send emails from the contact form
 - [Code Acadamy - Mini Project (Task Manager)]()
     - Snippets of the code were taken from the mini-project (Task Manager) provided by Code Institue throughout the site.
+- [Error Handling](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vii-error-handling)
+    - Code within the app.py file to see the function.
+- [@Set](https://docs.mongodb.com/manual/reference/operator/update/set/)
+    - Link attached, used @set to update the one field and value in the update username and password
 
 ### Media
 
