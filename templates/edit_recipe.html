@@ -18,6 +18,7 @@
                     <input id="recipe_name" name="recipe_name" minlength="5" maxlength="50" 
                         value="{{ recipe.recipe_name }}" type="text" class="validate" required>
                     <label for="recipe_name">Recipe Name*</label>
+                    <span class="helper-text" data-error="Name of Recipe is required"></span>
                 </div>
             </div>
             <!-- Placeholder for meal name -->
@@ -87,7 +88,7 @@
                         {%- endfor -%}
                     </textarea>
                     <label for="recipe_ingredients">Ingredients*</label>
-                    <span class="helper-text">Add each ingredient on a new line</span>
+                    <span class="helper-text" data-error="Ingredients for the recipe is required">Add each ingredient on a new line</span>
                 </div>
             </div>
             <!--Placeholder for steps and a for loop to look through the dictionary and display it with a new line -->
@@ -100,7 +101,7 @@
                         {%- endfor -%}
                     </textarea>
                     <label for="recipe_steps">Steps*</label>
-                    <span class="helper-text">Add each step on a new line</span>
+                    <span class="helper-text" data-error="Steps for the recipe is required">Add each step on a new line</span>
                 </div>
             </div>
             <!-- Placeholder for if is it vegetarian or not-->

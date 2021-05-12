@@ -101,7 +101,7 @@ Update Recipe | A flash message to inform user the recipe has been updated | :he
 
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
-
+Recipe Details | 
 
 ## My Recipe Page
 
@@ -156,7 +156,45 @@ Password/Confirm password | If confirm password and current password do not matc
 Feature/Function | Description | Pass | Fail
 ------------ | ------------- | ------------- | -------------
 Avilable Logout Option | when you click on the drop down 'My Profile' Select 'Logout' | :heavy_check_mark: |
-Logout | To be directed to the login page with a flash message  | :heavy_check_mark: |
+Logout | To be directed to the login page with a flash message | :heavy_check_mark: |
+
+## Admin Access
+
+Feature/Function | Description | Pass | Fail
+------------ | ------------- | ------------- | -------------
+Manage Meal Type | View 'Manage Meal Type' in the navigation bar | :heavy_check_mark: |
+Manage Meal Type | Only available to Admin user | :heavy_check_mark: |
+Navigation bar | To view all the navigation options available | :heavy_check_mark: |
+
+## Manage Meal Type
+
+Feature/Function | Description | Pass | Fail
+------------ | ------------- | ------------- | -------------
+Meal Types | View all meal types available in card view | :heavy_check_mark: |
+Add Meal button | Direct admin user to add_meal.html to add meal type | :heavy_check_mark: |
+Delete button | Delete the meal type | :heavy_check_mark: |
+Delete button | A flash message that meal type has been deleted | :heavy_check_mark: |
+Edit button | Direct admin user to edit_mel.html | :heavy_check_mark: |
+
+## Add Meal Type
+
+Feature/Function | Description | Pass | Fail
+------------ | ------------- | ------------- | -------------
+Form | Available to input within the form | :heavy_check_mark: |
+Form | If field missed, a helper text appears under the field | :heavy_check_mark: |
+Go Back button | Takes user to the previous page | :heavy_check_mark: |
+Clear button | Clear the form |  | :x:
+Add Meal button | Add the meal type to the database which becomes visible in the Manage Meal Type page | :heavy_check_mark: |
+
+## Edit Meal Type
+
+Feature/Function | Description | Pass | Fail
+------------ | ------------- | ------------- | -------------
+Form | The name of the meal type to be visible on the form | :heavy_check_mark: |
+Go Back button | Takes user to the previous page | :heavy_check_mark: |
+Clear button | Clear the form |  | :x:
+Update Meal button | Updates the Meal Type | :heavy_check_mark: |
+Update Meal button | Redirects user back to the Manage Meal Type | :heavy_check_mark: |
 
 
 [Return to main README.md](https://github.com/adnanmuhtadi/milestone-project-3)

@@ -369,6 +369,8 @@ Utilising the code that was used taught from the Code Instute Lessons consisted 
 - [Back button functionality](https://www.computerhope.com/issues/ch000317.htm)
 - [Contact Modal](https://www.emailjs.com/)
     - Using emailJS service to send emails from the contact form
+- [Code Acadamy - Mini Project (Task Manager)]()
+    - Snippets of the code were taken from the mini-project (Task Manager) provided by Code Institue throughout the site.
 
 ### Media
 

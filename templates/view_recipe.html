@@ -123,7 +123,25 @@
                     </li>
                 </ul>
             </div>
-
+            <!-- if user is logged in, button will be available -->
+            {% if session.user == all_recipe_info.created_by %}
+                <div class="row button-set"> 
+                    <!-- To create the back button, i used the following website to assist https://www.computerhope.com/issues/ch000317.htm -->
+                    <a class="col l4 m4 s12 btn-large grey accent-1 black-text text-shadow"
+                        value="Go back!" onclick="history.back()"><i class="fas fa-arrow-circle-left"></i> Go Back
+                    </a>
+                    <!-- Delete the recipe -->
+                    <a href="{{ url_for('delete_my_recipe', recipe_id=all_recipe_info._id) }}" 
+                        class="col l4 m4 s12 middle-button btn-large red accent-1 black-text text-shadow">
+                        <i class="fas fa-trash"></i> Delete
+                    </a>
+                    <!-- Edit the recipe -->   
+                    <a href="{{ url_for('edit_recipe', recipe_id=all_recipe_info._id) }}" 
+                        class="col l4 m4 s12 center-align btn-large orange accent-1 black-text text-shadow">
+                        <i class="far fa-edit"></i> Edit
+                    </a>
+                </div>
+            {% endif %}         
         </div>
     {% endblock %}
 {% endblock %}

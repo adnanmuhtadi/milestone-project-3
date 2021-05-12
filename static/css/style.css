@@ -137,8 +137,8 @@ hr {
 }
 
 .card .card-image img{
-    width: 240px;
-    height: 230px;
+    width: 210px;
+    height: 200px;
     border-radius: 50%;
 }
 
@@ -588,7 +588,6 @@ table {
     .collapsible-body {
         padding: 20px 0;
     }
-
 }    
 
 @media only screen and (max-width: 425px) {
@@ -624,6 +623,8 @@ table {
         width: 340px;
         height: 330px;
     }
+
+    /*////////////////////////////// Registration Page */
 
     /* buttons for the registration page */
     .button-set{
@@ -740,6 +741,8 @@ table {
 }
 
 @media only screen and (max-width: 320px) {
+    
+    /*////////////////////////////// Home Page */
 
     /* shared cards */
     .card .card-image img{
