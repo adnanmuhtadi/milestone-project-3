@@ -69,8 +69,10 @@ def search():
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     search_results = mongo.db.recipes.find(
         {'$text': {'$search': query}})
+    num_of_recipes_search = mongo.db.recipes.count_documents(
+        {"$text": {"$search": query}})
     # displaying the results after the search has completed
-    result_message = f"Search Results"
+    result_message = f"Search Results - {query} ({num_of_recipes_search})"
 
     # Rendering the home page and passing all the variables mentioned above
     return render_template(
@@ -86,7 +88,7 @@ Function to delete the recipes from Mongo DB
 
 @app.route("/delete_recipe/<recipe_id>")
 def delete_recipe(recipe_id):
-    mongo.db.recipes.remove({"_id": ObjectId(recipe_id)})
+    mongo.db.recipes.delete_one({"_id": ObjectId(recipe_id)})
     flash("Recipe Successfully Deleted")
     return redirect(url_for("get_recipes"))
 
