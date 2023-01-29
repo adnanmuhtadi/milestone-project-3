@@ -40,7 +40,7 @@ Function to get the list of recipes from Mongo DB and display in the home page
 def get_recipes():
     # Variables set for the recipes and amount of recipes
     recipes = list(mongo.db.recipes.find())
-    amount_recipes = mongo.db.recipes.count()
+    amount_recipes = mongo.db.recipes.count_documents({})
     # The amount of recipes to be displayed per page
     recipes_pp = 5
     # Variable for the pagination and for it be displayed ascenting
@@ -68,7 +68,7 @@ def search():
     # using the query to find the recipe
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     search_results = mongo.db.recipes.find(
-        {'$text': {'$search': query}}).count()
+        {'$text': {'$search': query}})
     # displaying the results after the search has completed
     result_message = f"Search Results"
 
@@ -224,10 +224,10 @@ def get_my_recipes():
     # Function to get the list of recepes from Mongo DB and display
     # them in your personal list of recipes
     recipes = mongo.db.recipes.find()
-    amount_recipes = mongo.db.recipes.count()
+    amount_recipes = mongo.db.recipes.count_documents({})
     # The amount of recipes to be displayed per page
     recipes_pp = 9
-    # Variable for the pagination and for it be displayed ascenting
+    # Variable for the pagination and for it be displayed ascending
     current_recipe_page = int(request.args.get('current_recipe_page', 1))
     amount_pages = range(1, int(
         math.ceil(amount_recipes / recipes_pp)) + 1)
@@ -252,7 +252,7 @@ def mysearch():
     # using the query to find the recipe
     recipes = list(mongo.db.recipes.find({"$text": {"$search": query}}))
     search_results = mongo.db.recipes.find(
-        {'$text': {'$search': query}}).count()
+        {'$text': {'$search': query}})
     # displaying the results after the search has completed
     result_message = f"Search Results ({search_results})"
 
@@ -615,4 +615,4 @@ def internal_server_error_404(error):
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
-            debug=False)
+            debug=True)
